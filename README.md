@@ -22,7 +22,9 @@ Anzahl der Saisons, die die beiden Spieler im selben Verein gespielt haben (Bezi
 definiert, ob die beiden Spieler zum Zeitpunkt der Weltmeisterschaft im selben Verein spielen. Dichotome Ausprägung: yes/no						
 
 ## nodelist ##
-Grundregel: 	die IDs der Nodelist müssen mit den IDs der Edgelist komplett übereinstimmen. Ausprägungen der Attribute in der Regel numerisch definieren.						
+Grundregel: 	die IDs der Nodelist müssen mit den IDs der Edgelist komplett übereinstimmen. Ausprägungen der Attribute in der Regel numerisch definieren.	
+
+
 **id**		
 
 eindeutige Identifikation jedes einzelnen Spielers (vertex), der erfasst wird. Nachname des Spielers, falls Dopplung, Anfangsbuchstabe Vorname 			dahinter 			
