@@ -1,8 +1,6 @@
 # Netzwerk-Nationalteams
 # CODEBUCH							
-
-Im Codebuch definieren Sie, wie und nach welchen Kriterien erfasst werden.												
-
+											
 ## edgelist	## 
 Grundregel: 	Die Edgelist darf pro Spalte immer nur einen Wert enthalten. Bis auf die ID idealerweise numerisch codiert (als Zahl).						
 
