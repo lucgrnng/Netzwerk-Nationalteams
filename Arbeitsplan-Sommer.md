@@ -1,8 +1,13 @@
-Arbeitsplan Team WM:
-Bis zum 01.10. 
+## Arbeitsplan Team WM ##
+
+
+**Bis zum 01.10.2020 ** 
 
 Erhebung der Kader-Daten der Teams Spanien, Frankreich und Deutschland.
-Relevante Jahre: Herren-Fußabll-WM 2010, Herren-Fußabll-WM 2014, Herren-Fußabll-WM2 018
+
+
+Relevante Jahre: Herren-Fußabll-WM 2010, Herren-Fußabll-WM 2014, Herren-Fußabll-WM 2018
+
 Bereits erhobene Daten:  Herren-Fußabll-WM 2010, Team Spanien
 
 Fiona Noever: Spanien 2014 und 2018 
