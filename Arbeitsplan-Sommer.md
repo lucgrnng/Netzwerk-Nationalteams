@@ -21,3 +21,5 @@ Bereits erhobene Daten:  Herren-Fußabll-WM 2010, Team Spanien
 Bis zum 01.10. müssen die Roh-Daten gesammelt sein und in sowohl Edge, als auch Nodelist eingetragen sein. 
 
 Auf Google Tablett regelmäßig eintragen wann, was gemacht wurde. 
+
+Die Daten für die Erhebung sind auf transfermarkt.de (unserer Primärquelle) einsehbar. 
