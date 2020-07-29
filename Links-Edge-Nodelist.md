@@ -5,3 +5,6 @@ Edgelist: https://docs.google.com/spreadsheets/d/1OwQ6AHSsqH7aRtFXfzDSp0lfxKbGqi
 Nodelist: https://docs.google.com/spreadsheets/d/1OwQ6AHSsqH7aRtFXfzDSp0lfxKbGqiQdhiOFK6ZTDOM/edit#gid=159120102 
 
 Vereinskürzel: https://docs.google.com/spreadsheets/d/1OwQ6AHSsqH7aRtFXfzDSp0lfxKbGqiQdhiOFK6ZTDOM/edit#gid=489179851 
+
+
+Quellen: http://transfermarkt.de/ http://weltfussball.de/
