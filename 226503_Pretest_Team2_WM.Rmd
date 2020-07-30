@@ -1,0 +1,55 @@
+---
+title: "226305 Pretest Sommersemester 2020"
+subtitle: "Netzwerk Nationalmannschaft Spanien2010"
+author: "Luca Gröning, lg058@hdm-stuttgart.de"
+date: '`r format(Sys.Date(), "30. Juli 2020")`'
+output: html_notebook
+---
+
+## Links zu meinem Projekt  
+- [docs.google](https://docs.google.com/spreadsheets/d/1OwQ6AHSsqH7aRtFXfzDSp0lfxKbGqiQdhiOFK6ZTDOM/edit#gid=0) 
+- [Github](https://github.com/lucgrnng/Netzwerk-Nationalteams)  
+- [Codebuch](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Codebuch.md)    
+- [edgelist](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Edgelist-Spanien2010.csv)  
+- [nodelist](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Nodelist-Spanien2010.csv)
+
+
+```{r Netzwerk einlesen, echo=FALSE, message=FALSE, warning=TRUE, paged.print=FALSE}
+
+library(igraph)
+# Erstellt das Netzwerk aus unserer Edge- und Nodelists. 
+
+# Einlesen der Edge- und Nodelist
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Edgelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Nodelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
+
+# Matrix erstellen
+edgematrix <-as.matrix(el)
+
+# Zusammenführen von Edge- und Nodelist als igraph-Objekt
+# 
+Spanien2010 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+
+E(Spanien2010)$arrow.size <- .3
+Spanien2010
+```
+
+```{r}
+# Visualisierung des Kaders der spanischen Nationalmannschaft 2010 
+ 
+plot (Spanien2010,
+edge.arrow.size=.1,
+edge.color="grey",
+edge.curved=.2,
+asp=.5,
+vertex.size=.8,
+vertex.label.family = "Helvetica",
+vertex.label.color = "red3",
+vertex.label.dist=1.5,
+coords <- layout_with_kk(Spanien2010),
+main="Die spanische Nationalmannschaft 2010")
+
+#Es ist zu sehen, dass der spanische Kader der WM 2010 aus mehreren Blocks besteht. Ganz links (Martinez, LLorente) starteten ihre Karriere gemeinsam in einem Verein (Bilbao) in Spanien. In der Mitte oben ist der "Barcelona-Block" mit Spielern des FC Barcelona, darunter Spieler, die bereits in ihrer Karriere gespielt haben, aber akutell woanders spielen (Reina, Capdevilla, Torres,...). Darunter ist der Real-Madrid-Block und ganz unten wiederum Spieler mit Bezug zur spanischen Liga. Auffällig ist, dass Fábregas ganz rechts alleine steht. Das liegt daran, dass er in seiner gesamten Karriere mit keinem der anderen im Verein zusammengespielt hat und außerdem noch nie in der spanischen Liga aktiv war. 
+
+#Somit ist zu sehen, dass der spanische Kader 2010 eine dichte Blockbildung und Clusterung aufweist, was auch ein Grund für den Titelgewinn während der WM 2010 sein kann. Spannend ist es nun zu sehen, wie es bei der WM 2014 aussah, als die Spanier bereits in der Vorrunde der WM ausgeschieden sind.  
+
