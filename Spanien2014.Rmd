@@ -1,0 +1,60 @@
+
+---
+title: "Netzwerk Nationalteams"
+subtitle: "Netzwerk Nationalmannschaft Spanien2014"
+author: "Fiona Noever, fn019@hdm-stuttgart.de"
+date: '`r format(Sys.Date(), "03. Oktober 2020")`'
+output: html_notebook
+---
+
+## Links zu meinem Projekt  
+- [docs.google](https://docs.google.com/spreadsheets/d/1OwQ6AHSsqH7aRtFXfzDSp0lfxKbGqiQdhiOFK6ZTDOM/edit#gid=0) 
+- [Github](https://github.com/lucgrnng/Netzwerk-Nationalteams)  
+- [Codebuch](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Codebuch.md)    
+- [edgelist](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Sandhu%20WM%20-%20Edgelist%20Spanien2014.csv)  
+- [nodelist](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Sandhu%20WM%20-%20Nodelist%20Spanien2014.csv)
+
+
+```{r Netzwerk einlesen, echo=FALSE, message=FALSE, warning=TRUE, paged.print=FALSE}
+
+library(igraph)
+# Erstellt das Netzwerk aus unserer Edge- und Nodelists. 
+
+# Einlesen der Edge- und Nodelist
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Sandhu%20WM%20-%20Edgelist%20Spanien2014.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Sandhu%20WM%20-%20Nodelist%20Spanien2014.csv", header=T, as.is=T, sep = ",")
+
+# Matrix erstellen
+edgematrix <-as.matrix(el)
+
+# Zusammenführen von Edge- und Nodelist als igraph-Objekt
+# 
+Spanien2014 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+
+E(Spanien2014)$arrow.size <- .3
+Spanien2014
+```
+
+```{r}
+
+# Visualisierung des Kaders der spanischen Nationalmannschaft 2014 
+ 
+plot (Spanien2014,
+layout=layout_in_circle,
+edge.arrow.size=.1,
+edge.color="grey",
+edge.curved=.2,
+asp=.5,
+edge.width=E(Spanien2014)$weight,
+vertex.size=3,
+vertex.frame.color=NA,
+vertex.label.family="Helvetica",
+vertex.label.color="red3",
+vertex.label.dist=1,
+vertex.size=degree(Spanien2014),
+main="Die spanische Nationalmannschaft 2014"
+)
+
+{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
