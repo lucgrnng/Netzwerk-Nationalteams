@@ -5,7 +5,7 @@ Carrassco,Abidal,0,no
 Carrassco,Glichy,0,no
 Carrassco,Evra,0,no
 Carrassco,Gallas,0,no
-Carrassco,Planus ,1,yes
+Carrassco,Planus,1,yes
 Carrassco,Réveillere,0,no
 Carrassco,Sagna,0,no
 Carrassco,Squillaci,0,no
@@ -26,7 +26,7 @@ Lloris,Abidal,0,no
 Lloris,Glichy,0,no
 Lloris,Evra,0,no
 Lloris,Gallas,0,no
-Lloris,Planus ,0,no
+Lloris,Planus,0,no
 Lloris,Réveillere,2,yes
 Lloris,Sagna,0,no
 Lloris,Squillaci,0,no
@@ -46,7 +46,7 @@ Mandanda,Abidal,0,no
 Mandanda,Glichy,0,no
 Mandanda,Evra,0,no
 Mandanda,Gallas,0,no
-Mandanda,Planus ,0,no
+Mandanda,Planus,0,no
 Mandanda,Réveillere,0,no
 Mandanda,Sagna,0,no
 Mandanda,Squillaci,0,no
@@ -65,7 +65,7 @@ Mandanda,Valbuena,3,yes
 Abidal,Glichy,0,no
 Abidal,Evra,0,no
 Abidal,Gallas,0,no
-Abidal,Planus ,0,no
+Abidal,Planus,0,no
 Abidal,Réveillere,3,no
 Abidal,Sagna,0,no
 Abidal,Squillaci,3,no
@@ -83,7 +83,7 @@ Abidal,Henry,3,yes
 Abidal,Valbuena,0,no
 Glichy,Evra,0,no
 Glichy,Gallas,4,yes
-Glichy,Planus ,0,no
+Glichy,Planus,0,no
 Glichy,Réveillere,0,no
 Glichy,Sagna,3,yes
 Glichy,Squillaci,0,no
@@ -100,7 +100,7 @@ Glichy,Govou,0,no
 Glichy,Henry,4,no
 Glichy,Valbuena,0,no
 Evra,Gallas,0,no
-Evra,Planus ,0,no
+Evra,Planus,0,no
 Evra,Réveillere,0,no
 Evra,Sagna,0,no
 Evra,Squillaci,4,no
@@ -116,7 +116,7 @@ Evra,Gignac,0,no
 Evra,Govou,0,no
 Evra,Henry,0,no
 Evra,Valbuena,0,no
-Gallas,Planus ,0,no
+Gallas,Planus,0,no
 Gallas,Réveillere,0,no
 Gallas,Sagna,3,yes
 Gallas,Squillaci,0,no
