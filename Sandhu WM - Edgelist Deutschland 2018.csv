@@ -2,7 +2,7 @@ from,to,weight,relation
 Neuer,TerStegen,0,no
 Neuer,Trapp,0,no
 Neuer,Boateng,7,yes
-Neuer,Ginter ,0,no
+Neuer,Ginter,0,no
 Neuer,Hector,0,no
 Neuer,Hummels,2,yes
 Neuer,Kimmich,4,yes
@@ -10,7 +10,7 @@ Neuer,Plattenhardt,0,no
 Neuer,Rüdiger,0,no
 Neuer,Süle,1,yes
 Neuer,Brandt,0,no
-Neuer,Draxler ,1,no
+Neuer,Draxler,1,no
 Neuer,Goretzka,0,no
 Neuer,Gündogan,0,no
 Neuer,Khedira,0,no
@@ -23,7 +23,7 @@ Neuer,Reus,0,no
 Neuer,Werner,0,no
 TerStegen,Trapp,0,no
 TerStegen,Boateng,0,no
-TerStegen,Ginter ,0,no
+TerStegen,Ginter,0,no
 TerStegen,Hector,0,no
 TerStegen,Hummels,0,no
 TerStegen,Kimmich,0,no
@@ -31,7 +31,7 @@ TerStegen,Plattenhardt,0,no
 TerStegen,Rüdiger,0,no
 TerStegen,Süle,0,no
 TerStegen,Brandt,0,no
-TerStegen,Draxler ,0,no
+TerStegen,Draxler,0,no
 TerStegen,Goretzka,0,no
 TerStegen,Gündogan,0,no
 TerStegen,Khedira,0,no
@@ -43,7 +43,7 @@ TerStegen,Mueller,0,no
 TerStegen,Reus,0,no
 TerStegen,Werner,0,no
 Trapp,Boateng,0,no
-Trapp,Ginter ,0,no
+Trapp,Ginter,0,no
 Trapp,Hector,0,no
 Trapp,Hummels,0,no
 Trapp,Kimmich,0,no
@@ -51,7 +51,7 @@ Trapp,Plattenhardt,0,no
 Trapp,Rüdiger,0,no
 Trapp,Süle,0,no
 Trapp,Brandt,0,no
-Trapp,Draxler ,2,yes
+Trapp,Draxler,2,yes
 Trapp,Goretzka,0,no
 Trapp,Gündogan,0,no
 Trapp,Khedira,0,no
@@ -62,7 +62,7 @@ Trapp,Gomez,0,no
 Trapp,Mueller,0,no
 Trapp,Reus,0,no
 Trapp,Werner,0,no
-Boateng,Ginter ,0,no
+Boateng,Ginter,0,no
 Boateng,Hector,0,no
 Boateng,Hummels,2,yes
 Boateng,Kimmich,4,yes
@@ -70,7 +70,7 @@ Boateng,Plattenhardt,0,no
 Boateng,Rüdiger,0,no
 Boateng,Süle,1,yes
 Boateng,Brandt,0,no
-Boateng,Draxler ,0,no
+Boateng,Draxler,0,no
 Boateng,Goretzka,0,no
 Boateng,Gündogan,0,no
 Boateng,Khedira,0,no
@@ -88,7 +88,7 @@ Ginter,Plattenhardt,0,no
 Ginter,Rüdiger,0,no
 Ginter,Süle,0,no
 Ginter,Brandt,0,no
-Ginter,Draxler ,0,no
+Ginter,Draxler,0,no
 Ginter,Goretzka,0,no
 Ginter,Gündogan,2,no
 Ginter,Khedira,0,no
@@ -105,7 +105,7 @@ Hector,Plattenhardt,0,no
 Hector,Rüdiger,0,no
 Hector,Süle,0,no
 Hector,Brandt,0,no
-Hector,Draxler ,0,no
+Hector,Draxler,0,no
 Hector,Goretzka,0,no
 Hector,Gündogan,0,no
 Hector,Khedira,0,no
@@ -121,7 +121,7 @@ Hummels,Plattenhardt,0,no
 Hummels,Rüdiger,0,no
 Hummels,Süle,1,yes
 Hummels,Brandt,0,no
-Hummels,Draxler ,0,no
+Hummels,Draxler,0,no
 Hummels,Goretzka,0,no
 Hummels,Gündogan,5,no
 Hummels,Khedira,0,no
@@ -136,7 +136,7 @@ Kimmich,Plattenhardt,0,no
 Kimmich,Rüdiger,0,no
 Kimmich,Süle,1,yes
 Kimmich,Brandt,0,no
-Kimmich,Draxler ,0,no
+Kimmich,Draxler,0,no
 Kimmich,Goretzka,0,no
 Kimmich,Gündogan,0,no
 Kimmich,Khedira,0,no
@@ -150,7 +150,7 @@ Kimmich,Werner,0,no
 Plattenhardt,Rüdiger,0,no
 Plattenhardt,Süle,0,no
 Plattenhardt,Brandt,0,no
-Plattenhardt,Draxler ,0,no
+Plattenhardt,Draxler,0,no
 Plattenhardt,Goretzka,0,no
 Plattenhardt,Gündogan,1,no
 Plattenhardt,Khedira,0,no
@@ -163,7 +163,7 @@ Plattenhardt,Reus,0,no
 Plattenhardt,Werner,0,no
 Rüdiger,Süle,0,no
 Rüdiger,Brandt,0,no
-Rüdiger,Draxler ,0,no
+Rüdiger,Draxler,0,no
 Rüdiger,Goretzka,0,no
 Rüdiger,Gündogan,0,no
 Rüdiger,Khedira,0,no
@@ -175,7 +175,7 @@ Rüdiger,Mueller,0,no
 Rüdiger,Reus,0,no
 Rüdiger,Werner,2,no
 Süle,Brandt,0,no
-Süle,Draxler ,0,no
+Süle,Draxler,0,no
 Süle,Goretzka,0,no
 Süle,Gündogan,0,no
 Süle,Khedira,0,no
@@ -186,7 +186,7 @@ Süle,Gomez,0,no
 Süle,Mueller,1,yes
 Süle,Reus,0,no
 Süle,Werner,0,no
-Brandt,Draxler ,0,no
+Brandt,Draxler,0,no
 Brandt,Goretzka,0,no
 Brandt,Gündogan,0,no
 Brandt,Khedira,0,no
