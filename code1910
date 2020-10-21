@@ -265,14 +265,6 @@ farthest_vertices(Frankreich18)
 TEXT ZU FRANKREICH 2018 (noch machen)
 Das Hauptnetzwerk besteht aus zwei Komponenten mit 32 und 6 Knoten, die nicht miteinander verbunden sind. Die Dichte im Netzwerk beträgt 12,51 Prozent von allen möglichen Verbindungen. Die maximale Pfaddistanz beträgt 18 Schritte.
 
-```{r}
-Champions <- (Spanien10) + (Deutschland14) + (Frankreich18)
-
-plot(Champions)
-#Patrick wie erstellt man 3 Gesamtnetzwerke sodass die nebeneinander sind??? 
-```
-
-#ALTERNATIV KÖNNEN WIR SONST AUCH EINFACH ALLE DREI IMMER MACHEN..? 
 
 ```{r Einfache Visualisierung des erstellten Objekt der spanischen Nationalmannschaft 2010 , fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
 
@@ -347,51 +339,204 @@ Der erste Überblick zeigt, dass das Netzwerk der franzöischen Nationalmannscha
 Es wird unübersichtlich unübersichtlich , weil hier XXX Beziehungsarten mit zum Teil mehreren Gewichten in einer Abbildung dargestellt werden.
 Deshalb ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk der deutschen Nationalmannschaft 2014 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht)
 
+```{r Beziehungen mit weight=0 löschen}
+
+
+Spanien10
+Spanien10A <- subgraph.edges(Spanien10, E(Spanien10)[weight!=0])
+Spanien10A
+
+
+plot(Spanien10A,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Spanien10A)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Spanien10A),
+     main ="Übersicht der spanischen Nationalmannschaft 2010")
+
+```
+
 Chunk mit relation & value machen; aber für alle drei Ländern
-```{r Vereinfachtes Gesamtnetzwerk, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
+```{r Vereinfachtes Gesamtnetzwerk Spanien10, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 library(igraph)
-el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/edges.csv", header=T, as.is=T, sep = ",")
-nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/nodes.csv", header=T, as.is=T, sep = ",")
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Edgelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Nodelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
 edgematrix <-as.matrix(el)
 Spanien10 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
-list.edge.attributes(s)
-
-# simplify Gesamtnetzwerk 
-# Um die Ergebnisse der Gewichte nicht zu verfälschen, werden die Edge-Attribute relation und complicated gelöscht.
-Spanien10V <- delete_edge_attr(Spanien10, "relation")
-Spanien10R <- delete_edge_attr(Spanien10, "value")
 list.edge.attributes(Spanien10)
 
-# mit dem Befehl simplify() lassen sich Edge-Attribute wie das Gewicht zusammenfassen. Damit ist zwar nicht mehr nachvollziehbar, um welche Beziehung es sich handelt. Dafür lassen sich die Beziehungsstärken aber besser abbilden. Dies ist später für die Analyse von dyadischen Beziehungen wichtig.
-is_simple(s)
-s_sim <- simplify(s,edge.attr.comb=list(weight="sum"))
-is_simple(s_sim)
-s_sim
+# simplify Gesamtnetzwerk 
+# Um die Ergebnisse der Gewichte nicht zu verfälschen, wird das Edge-Attribute relation gelöscht.
+Spanien10V <- delete_edge_attr(Spanien10, "relation")
+list.edge.attributes(Spanien10V)
 
-# die aggregierten Werte für weight von s_sim werden deutlich.
-list.edge.attributes(s_sim)
-edge.attributes(s_sim)$weight
 
 # einfache Visualisierung des aggregierten Netzwerks
-plot(s_sim,
-     layout=layout_nicely,
-     edge.arrow.size=.5,
-     vertex.size=8,
+plot(Spanien10V,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
      edge.curved=.2,
-     edge.curved=curve_multiple(s_sim),
-     main="Gesamtnetzwerk vereinfacht",
-     sub="aggregierte Gewichte von Ratsuche und Zusammenarbeit")
+     asp=.5,
+     edge.width=E(Spanien10V)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Spanien10V),
+     main ="Übersicht der spanischen Nationalmannschaft 2010 ohne Edge-Attribut relation")
+
+# man kann mit denselben aber auch ein Netzwerk erstellen, welches sich nur auf das Edge-Attribut relation kozentriert.
+Spanien10R <- delete_edge_attr(Spanien10, "weight")
+list.edge.attributes(Spanien10R)
+
+
+# einfache Visualisierung des aggregierten Netzwerks
+plot(Spanien10R,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Spanien10R)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Spanien10R),
+     main ="Übersicht der spanischen Nationalmannschaft 2010 ohne Edge-Attribut weight")
+
+```
+
+```{r Vereinfachtes Gesamtnetzwerk Deutschland14, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
+library(igraph)
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Sandhu%20WM%20-%20Edgelist%20Deutschland%202014.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Sandhu%20WM%20-%20Nodelist%20Deutschland%202014.csv", header=T, as.is=T, sep = ",")
+edgematrix <-as.matrix(el)
+Deutschland14 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+list.edge.attributes(Deutschland14)
+
+# simplify Gesamtnetzwerk 
+# Um die Ergebnisse der Gewichte nicht zu verfälschen, wird das Edge-Attribute relation gelöscht.
+Deutschland14V <- delete_edge_attr(Deutschland14, "relation")
+list.edge.attributes(Deutschland14V)
+
+
+# einfache Visualisierung des aggregierten Netzwerks
+plot(Deutschland14V,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Deutschland14V)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Deutschland14V),
+     main ="Übersicht der deutschen Nationalmannschaft 2014 ohne Edge-Attribut relation")
+
+# man kann mit denselben aber auch ein Netzwerk erstellen, welches sich nur auf das Edge-Attribut relation kozentriert.
+Deutschland14R <- delete_edge_attr(Deutschland14, "weight")
+list.edge.attributes(Deutschland14R)
+
+
+# einfache Visualisierung des aggregierten Netzwerks
+plot(Deutschland14R,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Deutschland14R)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Deutschland14R),
+     main ="Übersicht der deutschen Nationalmannschaft 2014 ohne Edge-Attribut weight")
+
+```
+
+```{r Vereinfachtes Gesamtnetzwerk Deutschland14, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
+library(igraph)
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Edgelist-Frankreich%202018.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Nodelist%20Frankreich%202018.csv", header=T, as.is=T, sep = ",")
+edgematrix <-as.matrix(el)
+Frankreich18 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+list.edge.attributes(Frankreich18)
+
+# simplify Gesamtnetzwerk 
+# Um die Ergebnisse der Gewichte nicht zu verfälschen, wird das Edge-Attribute relation gelöscht.
+Frankreich18V <- delete_edge_attr(Frankreich18, "relation")
+list.edge.attributes(Frankreich18V)
+
+
+# einfache Visualisierung des aggregierten Netzwerks
+plot(Frankreich18V,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Frankreich18V)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Frankreich18V),
+     main ="Übersicht der französichen Nationalmannschaft 2018 ohne das Edge-Attribut relation")
+
+# man kann mit denselben aber auch ein Netzwerk erstellen, welches sich nur auf das Edge-Attribut relation kozentriert.
+Frankreich18R <- delete_edge_attr(Frankreich18, "weight")
+list.edge.attributes(Frankreich18R)
+
+
+# einfache Visualisierung des aggregierten Netzwerks
+plot(Frankreich18R,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Frankreich18R)$weight,
+     vertex.size=3,
+     vertex.frame.color=NA,
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Frankreich18V),
+     main ="Übersicht der französichen Nationalmannschaft 2018 ohne das Edge-Attribut weight")
+
 ```
 
 Die Anzahl der Knoten ist gleich geblieben (38), aber die Anzahl der Kanten hat sich auf 124 reduziert. Die Verteilung des Gewichts lässt klare Präferenzen innerhalb des Netzwerks zwischen einzelnen Dyaden zeigen. Diese Vorselektion ist später wichtig, um starke Beziehungspaare innerhalb des Netzwerks zu analysieren.
 
 
 ```{r 2 Übersicht Netzwerkattribute}
-list.vertex.attributes(s)
-# vertex.attributes(s)
-list.edge.attributes(s)
-# edge.attributes(s)
-# edge.attributes(s)$weight
+#Wir können uns anschauen, welche Vertex- bzw. Edge-Attribute die einzelnen Netzwerke besitzen.
+list.vertex.attributes(Spanien10)
+list.vertex.attributes(Deutschland14)
+list.vertex.attributes(Frankreich18)
+
+list.edge.attributes(Spanien10)
+list.edge.attributes(Deutschland14)
+list.edge.attributes(Frankreich18)
+#In Text: Man sieht, dass alle gleich aufgebaut sind.
 ```
 
 Das Netzwerk hat nach dem [](# Error : selection is not a URL) folgende Attribute:
@@ -410,11 +555,39 @@ Die Vertex-Attribute treffen auf alle Knoten zu.
 
 Die gesetzten Werte der Attribute lassen sich durch die Selektion des entsprechenden Attributes auslesen.
 
-#Auslesen der Attribute Club & Age & Value & Number 
+#Auslesen der einzelnen Attribute: Spanien10
 ```{r 2 Auslesen von Attributen }
-vertex.attributes(s)$sex
-edge.attributes(s)$complicated
-# wichtig: sind keine Werte gesetzt, dann behandelt igraph den Wert als NA, also not available. Das ist wichtig für die Kalkulation der Netzwerkbeziehungen. Complicated ist ein Wert der sich nur auf das Teilnetzwerk love bezieht und spielt deshalb für die anderen 2x76 Beziehungen keine Rolle. 
+vertex.attributes(Spanien10)$age
+vertex.attributes(Spanien10)$value
+vertex.attributes(Spanien10)$number
+vertex.attributes(Spanien10)$club
+
+edge.attributes(Spanien10)$weight
+edge.attributes(Spanien10)$relation
+
+```
+
+#Auslesen der einzelnen Attribute: Deutschland14
+```{r 2 Auslesen von Attributen }
+vertex.attributes(Deutschland14)$age
+vertex.attributes(Deutschland14)$value
+vertex.attributes(Deutschland14)$number
+vertex.attributes(Deutschland14)$club
+
+edge.attributes(Deutschland14)$weight
+edge.attributes(Deutschland14)$relation
+
+```
+
+#Auslesen der einzelnen Attribute: Frankreich18
+```{r 2 Auslesen von Attributen }
+vertex.attributes(Frankreich18)$age
+vertex.attributes(Frankreich18)$value
+vertex.attributes(Frankreich18)$number
+vertex.attributes(Frankreich18)$club
+
+edge.attributes(Frankreich18)$weight
+edge.attributes(Frankreich18)$relation
 
 ```
 
@@ -458,20 +631,38 @@ Das Netzwerk besteht aus drei Beziehungsarten: Ratsuche (zukünftig Teilnetzwerk
 
 ```{r Teilnetzwerke erstellen und vereinfachen, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(igraph)
-el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/edges.csv", header=T, as.is=T, sep = ",")
-nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/nodes.csv", header=T, as.is=T, sep = ",")
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Edgelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Nodelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
 edgematrix <-as.matrix(el)
-s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
-list.edge.attributes(s)
+Spanien10 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+list.edge.attributes(Spanien10)
 
-important <- subgraph.edges(s, E(s)[relation==1]) 
-notimportant <- subgraph.edges(s, E(s)[relation==2])
+important <- subgraph.edges(Spanien10, E(Spanien10)[weight>0]) 
+notimportant <- subgraph.edges(Spanien10, E(Spanien10)[weight==0])
 
 
-work # das Netzwerk hat nur noch 76 Kanten (also 2*38 Antworten)
-# help # das sind eigenständige igraph-objekte
-# love
+important
+notimportant
 
+#geht eig nicht. Für important könnten wir aber das nehmen:
+Spanien10_imp <- delete_vertices(Spanien10, V(Spanien10)[value<3])
+Spanien10_imp
+
+
+
+```
+
+```{r Deutschland14 Important}
+
+Deutschland14_imp <- delete_vertices(Deutschland14, V(Deutschland14)[value<3])
+Deutschland14_imp
+
+```
+
+```{r Frankreich18 Important}
+
+Frankreich18_imp <- delete_vertices(Frankreich18, V(Frankreich18)[value<3])
+Frankreich18_imp
 
 ```
 
@@ -479,21 +670,21 @@ Damit die Netzwerke gut vereinfacht werden können sollten die ungenutzen edge-a
 
 ```{r Nicht benötigte Edge-Attribute löschen, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(igraph)
-el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/edges.csv", header=T, as.is=T, sep = ",")
-nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/nodes.csv", header=T, as.is=T, sep = ",")
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Edgelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Nodelist-Spanien2010.csv", header=T, as.is=T, sep = ",")
 edgematrix <-as.matrix(el)
-s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+Spanien10 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
 
 # Nicht benötigte Edge-Attribute löschen
 # In den Teilnetzwerken sind edge-Attribute vorhanden, die wir für eine weitere Vereinfachung des Netzwerks nicht benötigen. Das gilt v.a. für die Teilnetzwerke work und help.
 
-work <- delete_edge_attr(work, "relation")
-work <- delete_edge_attr(work, "complicated")
+##Einmal das Netzwerk für relation und einmal für weight??
 
-help <- delete_edge_attr(help, "relation")
-help <- delete_edge_attr(help, "complicated")
+Spanien10_weight <- delete_edge_attr(Spanien10, "relation")
+Spanien10_relation <- delete_edge_attr(Spanien10, "weight")
 
-love <- delete_edge_attr(love, "relation")
+
+
 # bei love bleibt die Kategorie complicated erhalten, da sich diese ja direkt auf die Art der Liebesbeziehung bezieht. Bei erstellten Liebesnetzwerk werden auch alle Knoten gelöscht, die keine Beziehungskategorie haben, d.h. das Netzwerk ist automatisch kleiner. 
 
 #edge.attributes(love)$complicated
@@ -509,37 +700,147 @@ is_simple(help)
 h_sim <- simplify(help,edge.attr.comb=list(weight="sum"))
 is_simple(h_sim)
 h_sim
+##BRAUCHEN WIR DAS??
 
 
 # definiert, dass 3 Abbildungen in einer Zeile stehen
-par(mfrow=c(1,3), mar=c(2,0,2,0)) 
+par(mfrow=c(1,2), mar=c(2,0,2,0)) 
 
-plot(w_sim, layout=layout_nicely,
+plot(Spanien10_relation, layout=layout_nicely,
      edge.arrow.size=.2,
      edge.color="blue",
      vertex.color="grey75",
      vertex.frame.color=NA,
      main=" Teilnetzwerk Zusammenarbeit",
      sub="38 Knoten mit 75 Kanten")
-plot(h_sim, layout=layout_nicely, 
+plot(Spanien10_weight, layout=layout_nicely, 
      edge.arrow.size=.2,
      edge.color="green",
      vertex.color="grey75",
      vertex.frame.color=NA,
      main="Teilnetzwerk Ratsuche",
      sub="38 Knoten mit 75 Kanten")
-plot(love, layout=layout_nicely, 
-     edge.arrow.size=.2,
-     edge.color="red",
-     vertex.color="grey75",
-     vertex.frame.color=NA,
-     main="Teilnetzwerk Liebe",
-     sub="23 Knoten mit 24 Kanten")
+
 
 # setzt die Darstellung wieder auf eine Abbildung zurück
 par(mfrow=c(1,1), mar=c(0,0,0,0))
 ```
 
+```{r Nicht benötigte Edge-Attribute löschen, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(igraph)
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Sandhu%20WM%20-%20Edgelist%20Deutschland%202014.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Sandhu%20WM%20-%20Nodelist%20Deutschland%202014.csv", header=T, as.is=T, sep = ",")
+edgematrix <-as.matrix(el)
+Deutschland14 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+
+# Nicht benötigte Edge-Attribute löschen
+# In den Teilnetzwerken sind edge-Attribute vorhanden, die wir für eine weitere Vereinfachung des Netzwerks nicht benötigen. Das gilt v.a. für die Teilnetzwerke work und help.
+
+##Einmal das Netzwerk für relation und einmal für weight??
+
+Deutschland14_weight <- delete_edge_attr(Spanien10, "relation")
+Deutschland14_relation <- delete_edge_attr(Spanien10, "weight")
+
+
+
+# bei love bleibt die Kategorie complicated erhalten, da sich diese ja direkt auf die Art der Liebesbeziehung bezieht. Bei erstellten Liebesnetzwerk werden auch alle Knoten gelöscht, die keine Beziehungskategorie haben, d.h. das Netzwerk ist automatisch kleiner. 
+
+#edge.attributes(love)$complicated
+
+# mit dem Befehl simplify() lassen sich Edge-Attribute wie das Gewicht zusammenfassen. Damit ist zwar nicht mehr nachvollziehbar, um welche Beziehung es sich handelt. Dafür lassen sich die Beziehungsstärken aber besser abbilden. Dies ist später für die Analyse von dyadischen Beziehungen wichtig.
+# 
+is_simple(work)
+w_sim <- simplify(work,edge.attr.comb=list(weight="sum"))
+is_simple(w_sim)
+w_sim
+
+is_simple(help)
+h_sim <- simplify(help,edge.attr.comb=list(weight="sum"))
+is_simple(h_sim)
+h_sim
+##BRAUCHEN WIR DAS??
+
+
+# definiert, dass 3 Abbildungen in einer Zeile stehen
+par(mfrow=c(1,2), mar=c(2,0,2,0)) 
+
+plot(Deutschland14_relation, layout=layout_nicely,
+     edge.arrow.size=.2,
+     edge.color="blue",
+     vertex.color="grey75",
+     vertex.frame.color=NA,
+     main=" Teilnetzwerk Zusammenarbeit",
+     sub="38 Knoten mit 75 Kanten")
+plot(Deutschland14_weight, layout=layout_nicely, 
+     edge.arrow.size=.2,
+     edge.color="green",
+     vertex.color="grey75",
+     vertex.frame.color=NA,
+     main="Teilnetzwerk Ratsuche",
+     sub="38 Knoten mit 75 Kanten")
+
+
+# setzt die Darstellung wieder auf eine Abbildung zurück
+par(mfrow=c(1,1), mar=c(0,0,0,0))
+```
+
+```{r Nicht benötigte Edge-Attribute löschen, message=FALSE, warning=FALSE, paged.print=TRUE}
+library(igraph)
+el <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Edgelist-Frankreich%202018.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/lucgrnng/Netzwerk-Nationalteams/master/Nodelist%20Frankreich%202018.csv", header=T, as.is=T, sep = ",")
+edgematrix <-as.matrix(el)
+Frankreich18 <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
+
+# Nicht benötigte Edge-Attribute löschen
+# In den Teilnetzwerken sind edge-Attribute vorhanden, die wir für eine weitere Vereinfachung des Netzwerks nicht benötigen. Das gilt v.a. für die Teilnetzwerke work und help.
+
+##Einmal das Netzwerk für relation und einmal für weight??
+
+Frankreich18_weight <- delete_edge_attr(Spanien10, "relation")
+Frankreich18_relation <- delete_edge_attr(Spanien10, "weight")
+
+
+
+# bei love bleibt die Kategorie complicated erhalten, da sich diese ja direkt auf die Art der Liebesbeziehung bezieht. Bei erstellten Liebesnetzwerk werden auch alle Knoten gelöscht, die keine Beziehungskategorie haben, d.h. das Netzwerk ist automatisch kleiner. 
+
+#edge.attributes(love)$complicated
+
+# mit dem Befehl simplify() lassen sich Edge-Attribute wie das Gewicht zusammenfassen. Damit ist zwar nicht mehr nachvollziehbar, um welche Beziehung es sich handelt. Dafür lassen sich die Beziehungsstärken aber besser abbilden. Dies ist später für die Analyse von dyadischen Beziehungen wichtig.
+# 
+is_simple(work)
+w_sim <- simplify(work,edge.attr.comb=list(weight="sum"))
+is_simple(w_sim)
+w_sim
+
+is_simple(help)
+h_sim <- simplify(help,edge.attr.comb=list(weight="sum"))
+is_simple(h_sim)
+h_sim
+##BRAUCHEN WIR DAS??
+
+
+# definiert, dass 3 Abbildungen in einer Zeile stehen
+par(mfrow=c(1,2), mar=c(2,0,2,0)) 
+
+plot(Frankreich18_relation, layout=layout_nicely,
+     edge.arrow.size=.2,
+     edge.color="blue",
+     vertex.color="grey75",
+     vertex.frame.color=NA,
+     main=" Teilnetzwerk Zusammenarbeit",
+     sub="38 Knoten mit 75 Kanten")
+plot(Frankreich18_weight, layout=layout_nicely, 
+     edge.arrow.size=.2,
+     edge.color="green",
+     vertex.color="grey75",
+     vertex.frame.color=NA,
+     main="Teilnetzwerk Ratsuche",
+     sub="38 Knoten mit 75 Kanten")
+
+
+# setzt die Darstellung wieder auf eine Abbildung zurück
+par(mfrow=c(1,1), mar=c(0,0,0,0))
+```
 
 *Teilnetzwerke nach Gewichtung im Vergleich*
 Eine weitere Form der Analyse wäre es, die Teilnetzwerke work oder help nach der ersten und zweiten Nennung zu unterteilen. Mit der Annahme, dass die erste Nennung (und damit das Kantengewicht 3) eine höhere Popularität hat als die zweite Nennung lassen sich ggf. Dynamiken innerhalb des Netzwerks aufzeigen.
@@ -552,6 +853,8 @@ edgematrix <-as.matrix(el)
 s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
 list.edge.attributes(s)
 
+
+##Das hatten wir doch schon mit important oben. Aus Zeitmangel also mal noch nicht gemacht...
 work <- subgraph.edges(s, E(s)[relation==1]) 
 work <- delete_edge_attr(work, "relation")
 work <- delete_edge_attr(work, "complicated")
@@ -626,7 +929,7 @@ Ingesamt zeigt die Analyse, dass die Präferenzen für die Zusammenarbeit sich d
 
 Die Analyse der Teilnetzwerke nach Node-Attributen werden hier nur exemplarisch am Beispiel Geschlecht und Vertiefungsrichtung gezeigt. Der einfachste Weg ein Teilnetzwerk zu erstellen geht über den Befehl delete.vertices(). Damit werden alle Knoten samt Verbindungen gelöscht, die bestimmte Bedingungen erfüllen. Wenn die Node-Attribute numerisch codiert sind lassen sich logische Operatoren einsetzen.
 
-*Teilnetzwerk Club*
+*Teilnetzwerk Club* #Funktioniert eigentlich nicht mit Club. Weiß nicht was wir uns dachten...
 
 ```{r Teilnetzwerk nach Node-Attribut Geschlecht, fig.height=6, fig.width=10, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(igraph)
@@ -639,7 +942,7 @@ list.vertex.attributes(s)
 vertex_attr(s)$sex
 
 s_fem <- delete_vertices(s, V(s)[sex > "1"]) 
-s_fem
+s_fem 
 plot(s_fem, layout=layout_with_kk,
      main="Gesamtnetzwerk: weibliche Akteure",
      edge.color="pink",
