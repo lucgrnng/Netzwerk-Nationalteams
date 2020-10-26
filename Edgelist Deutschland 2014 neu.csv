@@ -7,7 +7,7 @@ Neuer,Goetze,1,yes
 Neuer,Kroos,3,yes
 Neuer,Oezil,1,no
 Neuer,Schweinsteiger,3,yes
-Neuer,Mueller ,3,yes
+Neuer,Mueller,3,yes
 Weidenfeller,Durm,1,yes
 Weidenfeller,Grosskreutz,5,yes
 Weidenfeller,Hummels,5,yes
@@ -17,7 +17,7 @@ Boateng,Lahm,3,yes
 Boateng,Goetze,1,yes
 Boateng,Kroos,3,yes
 Boateng,Schweinsteiger,3,yes
-Boateng,Mueller ,3,yes
+Boateng,Mueller,3,yes
 Durm,Grosskreutz,1,yes
 Durm,Hummels,1,yes
 Grosskreutz,Hummels,5,yes
@@ -31,20 +31,20 @@ Lahm,Goetze,1,yes
 Lahm,Kroos,6,yes
 Lahm,Schweinsteiger,11,yes
 Lahm,Klose,3,no
-Lahm,Mueller ,5,yes
+Lahm,Mueller,5,yes
 Mertesacker,Oezil,4,yes
 Mertesacker,Podolski,2,yes
 Mertesacker,Klose,1,no
 Goetze,Kroos,1,yes
 Goetze,Schweinsteiger,1,yes
-Goetze,Mueller ,1,yes
+Goetze,Mueller,1,yes
 Khedira,Oezil,3,no
 Kramer,Schuerrle,2,no
 Kroos,Schweinsteiger,6,yes
-Kroos,Mueller ,5,yes
+Kroos,Mueller,5,yes
 Oezil,Podolski,1,yes
 Podolski,Schweinsteiger,2,no
 Podolski,Klose,2,no
 Schweinsteiger,Klose,3,no
-Schweinsteiger,Mueller ,5,yes
-Klose,Mueller ,1,no
+Schweinsteiger,Mueller,5,yes
+Klose,Mueller,1,no
