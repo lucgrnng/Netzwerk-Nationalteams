@@ -18,37 +18,44 @@ output: html_notebook
 
 *Genaueres zu den Unterpunkten in der Anleitung von Sandhu im Bericht*
 
-# Einleitung
-Wir untersuchen die wichtigsten Akteure in einem (fiktiven) studentischen Netzwerk aus dem Studiengang CR/PR, 3. Semester. Dabei interessiert uns besonders, ob es besonders zentrale Akteure innerhalb des Netzwerks gibt. Für das Netzwerk wurden 38 Studierende mit einem Fragebogen nach soziodemographischen Variablen (Alter, Geschlecht, Haarfarbe, Augenfarbe) sowie Verhaltensmuster (Vertiefungsrichtung, Konsum von Tabakwaren, Vorhandensein von Tattoos) befragt. Auf der Beziehungsebene interessiert uns, wer mit präferiert zusammenarbeit, wer besonders um Rat gefragt wird und wer eine Liebesbeziehung innerhalb des Netzwerks hat. 
-
+Wir untersuchen die Gewinner der letzten drei Fußballweltmeisterschaften (Spanien 2010, Deutschland 2014, Frankreich 2018), um herauszufinden, ob die Mannschaften aus mehreren Blöcken bestanden, die zum Zeitpunkt der Weltmeisterschaft gemeinsam in einem Verein spielten. 
+Dabei interessiert uns besonders, welche Spieler in ihrer Karriere mit anderen Spielern aus der Nationalmannschaft zusammengespielt haben und wie viele Saisons sie miteinander gespielt haben. Insbesondere die Block- und Clusterbildung innerhalb der Nationalmannschaften sind dabei von großer Bedeutung. 
+Außerdem wollen wir untersuchen, ob es zentrale Akteure innerhalb des Netzwerks gibt, die auffälig viele Verbindungen aufweisen. Für das Netzwerk wurden die Karrieren der Spieler aus den jeweiligen Kadern der drei beschriebenen Weltmeistern untersucht. 
+Der Vergleich mit den darauffolgenden oder vorherigen Weltmeisterschaften eines jeweiligen Landes und der Untersuchung nach der jeweiligen Clusterbildung ist außerdem Bestandteil dieser Forschung. 
+Daraus wollen wir ein Fazit ziehen, ob der Erfolg einer Fußballnationallmanschaften mit der Anzahl der CLuster in Zusammenhang steht. 
 
 # Vorarbeiten und vergleichbare Studien
 ## Forschungsstand
-Das Forschungsdesign lehnt sich zum einen an die lange Tradition der Netzwerkanalyse in der Schulforschung an (XXXX). Es greift zudem die klassische Studie von Krackhardt (XXXX) auf, der ein Ratsuche und Unterstützungsnetzwerk in einem Unternehmen untersuchte. 
+Das Forschungsdesign lehnt sich nicht an eine vergleichbare Studien an.
 
-## Arbeitshypothesen
-Wir gehen von folgenden Arbeitshypothesen aus:
-a) Ratsuche: Der Knoten mit dem höchsten Indegree hat wahrscheinlich die Funktion des Semestersprechers.
-b) Zusammenarbeit: orientiert sich primär an Homophilie, d.h. gleiche Vertiefungsrichtung.
+--> *Studien nachhaken bzw. Sandhu fragen
 
-Ansonsten hat die Analyse einen überwiegend explorativen Charakter.
+## Hypothesen
+Wir gehen von folgenden Hypothesen aus:
+a) Clusterbildung: Die Nationalmannschaften waren erfolgreich, da sie eine hohe Clusterbildung aufweisen. 
+b) Clusterbildung: Die gleichen Nationalmannschaften waren weniger erfolgreich, da sie weniger Cluster aufwiesen.
+c) Mannschaftsblöcke: Die Mannschaftsblöcke kommen nicht bei jedem der Weltmeister aus der jeweiligen nationalen Liga.
+d) *(Alter oder value)
 
 # Datenerhebung: Zugang, Bereinigung und Codebuch
 
 ## Zugang
-Studierende wurden innerhalb der Veranstaltung 226305a vom Dozierenden mit einem Online-Fragebogen befragt im Sommersemester 2017 befragt.
+Der Zugang zu den Datensätzen erfolgte ausschließlich über die Onlineplattformen: www.transfermarkt.de, www.weltfussball.de sowie www.kicker.de. 
 
 ## Bereinigung des Datensatzes
-Der Datensatz wurde anschließend anonymisiert. Die Relationen Ratsuche und Zusammenarbeit sind erhalten geblieben, die Beziehungen Liebe sind fiktiv. Der Datensatz ist unter [Github](https://github.com/hdm-crpr/226305/tree/master/data/crpr2) verfügbar.
+Die Datensätze wurden anschließend in Excel-Listen übertragen. Dabei wurden zuerst Karrierelisten für die jeweiligen Spieler erstellt und anschließend in eine Edgelist und Nodelist übertragen und überprüft. Bei dieser Überprüfung ließen sich erste Verbindungen ohne eine Visualisierung erkennen. Der Datensatz ist unter [Github](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Karrierelisten.csv) verfügbar. 
+
 
 ## Codebuch
-Das [Codebuch](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Codebuch.md) beschreibt die Variablen, Relationen und Gewichte des Netzwerks und ist ebenfalls auf Github hinterlegt.
+Das [Codebuch](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Codebuch.md) beschreibt die Trikotnummern, Vereine, das Alter sowie die Bedeutung der Spieler. Außerdem wurde defnitert, ob die jeweiligen Spieler zum Zeitpunkt der Fußballweltmeisterschaft zusammengespielt haben und/oder wie viele Saisons die Spieler zuvor in einem Verein zusammengespielt haben. Die Datensätze sind ebenfalls auf Github hinterlegt.
 
 # Analyse und Interpretation
 
-# Einlesen das Datensatzes & Erstellung igraph-Objekt
+# Die Gesamtnetzwerk
 
-Das Gesamtnetzwerk umfasst 38 Knoten und 176 Beziehungen (siehe igraph-Objekt). Es ist gerichtet und gewichtet.
+Das Gesamtnetzwerk des Siegers der Fußballweltmeisterschaft 2010 "Spanien 2010" umfasst 23 Knoten und 46 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet. *Visualisierung um Beziehungen hervorzuheben* *In Erfahrung bringen* *Patti versucht über Visualisierung (delete_weight...) Problem zu lösen* 
+Das Gesamtnetzwerk des Siegers der Fußballweltmeisterschaft 2014 "Deutschland 2014" umfasst 23 Knoten und 50 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet.
+Das Gesamtnetzwerk des Siegers der Fußballweltmeisterschaft 2018 "Frankreich 2018" umfasst 23 Knoten und 28 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet.
 
 ```{r Gesamnetzwerke erstellen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 
@@ -85,15 +92,13 @@ Frankreich18
 
 ```
 
-TEXT ZU DEN NETZWERKEN (NOCH MACHEN)
-Einleitender Text, was wurde gemacht (edge nodelist einlesen usw.)
-dabei kam heraus... 
-Spanien 10:
-- 23 Knoten, 51 Beziehungen, DNW -- Bedeutung rausfinden
-Deutschland 14: 
-- 23 Knoten, 49 Beziehungen, DNW -- Bedeutung rausfinden
-Frankreich 18: 
-- 23 Knoten, 28 Beziehungen, DNW -- Bedeutung rausfinden
+Für die jeweiligen Fußballweltmeister der Jahre 2010, 2014 und 2018 wurden die Edge-, und Nodelist zuerst in GitHub hochgeladen und anschließend in R  eingelesen.
+Dabei lässt sich festellen, dass alle Fußballweltmeister 23 Knoten aufweisen, da jede Nationalität bei einer Fußballweltmeisterschaft einen Kader von 23 Spielern melden darf. 
+Die jeweiligen Länder haben unterschiedlich viele Beziehungen zueinander, die sich in der Übersicht ablesen lassen. Das Ergebnis zeigt: Mit 51 Beziehungen hat Spanien die meisten Beziehungen, gefolgt von Deutschland mit 49 Beziehungen. 
+Frankreich hat mit 28 Beziehungen mit Abstand die wenigsten Beziehungen untereinander.  
+
+--> *DNW -- Bedeutung rausfinden und dann Text erstellen
+--> *Was bedeuten die Zahlen in der Klammer am Anfang 
 
 ```{r Gesamnetzwerk von Deutschland erstellen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 
@@ -123,10 +128,19 @@ diameter(Frankreich18)
 
 ```
 
-TEXT ZU ERKENNTNISSEN (noch machen)
-1) ja sind vereinfacht
-2) es gibt nicht mehrere komponenten, also nur ein netzwerk jeweils (bei allen) --> nochmal nachlesen (bei sandhu auf folien nachschlagen)
-3) 10 - 9 - 7 (Spanien & Deutschland größer als Frankreich da sie mehr Verbindungen aufweisen)
+Durch das Ausführen des Chunks ergeben sich folgende Fragen: 
+
+Sind die Netzwerke bereits vereinfacht? 
+- Ja, die Netzwerke sind bei den drei Fußballweltmeistern Spanien 2010, Deutschland 2014 und Frankreich 2018 vereinfacht. 
+
+Bestehen die Netzwerke aus Komponenten? 
+- Die Netzwerke der drei Fußballweltmeister Spanien 2010, Deutschland 2014 und Frankreich 2018 bestehen aus jeweils einem Gesamtnetzwerk und nicht aus mehreren Komponenten. 
+*--> Nochmal nachlesen (bei Sandhu auf Folien nachschlagen)
+
+Welchen Umfang haben die Netzwerke? 
+- Das Netzwerk Spanien 2010 hat einen Umfang von 10, das Netzwerk Deutschland 2014 hat einen Umfang von 9 und das Netzwerk von Frankreich 2018 hat einen Umfahg von 7. 
+  Die Netzwerke Spanien 2010 und Deutschland 2014 haben einen größeren Umfang, da sie mehr Verbindungen als das Netzwerk Frankreich 2018 aufweisen. 
+*--> Stimmen die Zahlen? 
 
 #Visualisierung der Netzwerke
 ##Visualisierung des Netzwerk Spanien 2010
@@ -151,9 +165,12 @@ plot(Spanien10,
 ```
 
 *Vereinfachtes Gesamtnetzwerk Spanien2010*
-Der erste Überblick zeigt, dass das Netzwerk der spanischen Nationalmannschaft 2010 geprägt ist von einzelnen, stark gewichteten Kanten. Teilweise sind Akteure schwach eingebunden, teiweise auch gar nicht. 
 
-Deshalb ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk der spanischen Nationalmannschaft 2010 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht)
+Der erste Überblick zeigt, dass das Netzwerk der spanischen Nationalmannschaft 2010 von einzelnen, stark gewichteten Kanten geprägt ist. 
+Teilweise sind einige Akteure nur sehr schwach oder überhaupt nicht eingebunden. 
+Deshalb ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk der spanischen Nationalmannschaft 2010 zu erstellen. 
+Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden
+(um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht). 
 
 ```{r Einfache Visualisierung des erstellten Objekt der deutschen Nationalmannschaft 2014, fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
 
@@ -176,9 +193,10 @@ plot(Deutschland14,
 ```
 
 *Vereinfachtes Gesamtnetzwerk Deutschland2014*
-Der erste Überblick zeigt, dass das Netzwerk der deutschen Nationalmannschaft 2014 nicht ganz so stark geprägt ist von einzelnen, stark gewichteten Kanten wie beim spanischen Team. Allerdings - auch hier sind Akteure schwach eingebunden, teiweise auch gar nicht.
-
-Deshalb ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk der deutschen Nationalmannschaft 2014 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht)
+Der erste Überblick zeigt, dass das Netzwerk der deutschen Nationalmannschaft 2014 nicht ganz so stark von einzelnen, stark gewichteten Kanten geprägt ist, wie bei der spanischen Nationalmannschaft. 
+Allerdings sind auch hier mehrere Akteure nur sehr schwach oder überhaupt nicht eingebunden.
+Deshalb ist es auch hier sinnvoll, ein vereinfachtes Gesamtnetzwerk der deutschen Nationalmannschaft 2014 zu erstellen. 
+Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht).
 
 ```{r Einfache Visualisierung des erstellten Objekt der französischen Nationalmannschaft 2018, fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
 
@@ -199,16 +217,23 @@ plot(Frankreich18,
 ```
 
 *Vereinfachtes Gesamtnetzwerk Frankreich2018*
-Der erste Überblick zeigt, dass das Netzwerk der franzöischen Nationalmannschaft 2018 kaum stark geprägt ist von einzelnen, stark gewichteten Kanten wie bei den vorherigen Champions. 
+Der erste Überblick zeigt, dass das Netzwerk der franzöischen Nationalmannschaft 2018 nicht von einzelnen, stark gewichteten Kanten geprägt ist, anders als es bei den vorherigen Nationalmannschaften der Fußballweltmeister der Fall war. 
 
-Es macht Sinn, ein vereinfachtes Gesamtnetzwerk der französischen Nationalmannschaft 2018 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht)
-EVTL TEXT NOCH LÄNGER ???? 
+Wiederum macht es auch hier Sinn, ein vereinfachtes Gesamtnetzwerk der französischen Nationalmannschaft 2018 zu erstellen. 
+Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht).
+-->* evtl. längerer Text. 
 
-#Genauerer Blick auf die Netzwerattribute
+#Genauerer Blick auf die Netzwerkattribute
 
 Einleitender Text 
-(was bisher gemacht, was jetzt geplant ist)
-sowohl edge als auch node-attribute genauer anschauen
+
+Bisher wurden in den vorherigen Abschnitten die Edge-, und Nodelisten aus Github in R eingelesen, woraus erste Erkenntnisse ersichtlich wurden. 
+Anschließend wurden die drei Gesamtnetzwerke der Fußballweltmeister Spanien 2010, Deutschland 2014 und Frankreich 2018 visualisiert. 
+Die Ergebnisse der Visualisierung, wurden im Anschluss miteinander vergleichen und festgehalten. Dabei wurde sichtbar, dass der Fußballweltmeister Frankreich 2018, im Vergleich zu den Fußballweltmeistern Spanien 2010 und Deutschland 2014, deutlich schwächere und weniger Beziehungen zueinander aufweist. 
+
+Im weiteren Verlauf dieses Forschungsberichts werden wir unter anderem die Edge-, als auch die Node-Attribute genauer untersuchen und analysieren. 
+
+
 ```{r 2 Übersicht Netzwerkattribute}
 #Wir können uns anschauen, welche Vertex- bzw. Edge-Attribute die einzelnen Netzwerke besitzen.
 list.vertex.attributes(Spanien10)
@@ -218,14 +243,13 @@ list.vertex.attributes(Frankreich18)
 list.edge.attributes(Spanien10)
 list.edge.attributes(Deutschland14)
 list.edge.attributes(Frankreich18)
-#In Text: Man sieht, dass alle gleich aufgebaut sind.
+
 ```
 
-TEXT DAZU (überall gleiche Attribute herangezogen um aussagekräftige Ergebnisse zu kriegen etc.)
-
-NOCH MACHEN
+Durch das Ausführen des Chunks wird sichtbar, dass überall die gleichen Attribute herangezogen wurden, um aussagekräftige Ergebnisse festhalten zu können. 
 
 #Auslesen der einzelnen Attribute: Spanien10
+
 ```{r 2 Auslesen von Attributen }
 vertex.attributes(Spanien10)$age
 vertex.attributes(Spanien10)$value
@@ -237,15 +261,24 @@ edge.attributes(Spanien10)$relation
 
 ```
 
-Text dazu
-(Jede Zeile einzeln durchgehen und schon genauer beantworten)
-1. Zeile alter
-2. Zeile value 
-... 
-weight (Leute haben 1 Saison zsm gespielt bis leute haben 10 Saison miteinander gespielt. )
-relation 
+Durch das Auslesen der einzelnen Attribute der Fußballnationalmannschaft von Spanien 2010, lassen sich folgende Ergebnisse festhalten:
+Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler war zum Zeitpunkt der Weltmeisterschaft 2010, 20 Jahre alt und der älteste Spieler war 31 Jahre alt. 
+Durch das Attribut value werden die Spieleinsätze der spanischen Nationalspieler während der Weltmeisterschaft 2010 beschrieben. 
+Dadurch, dass Spanien im Jahr 2010 Fußballweltmeister geworden ist, haben sie insgesamt 7 Spiele absolviert. 
+Bei dieser Beschreibung wurden nicht die Einsatzminuten als Berechnungsgrundlage verwendet, sondern ob der jeweilige Spieler in einem Spiel eingesetzt wurde. 
+Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
+Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren von 1 bis 23. 
+Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2010 unter Vertrag stand. 
+Dabei lässt sich erkennen, dass bei dem Fußballverein Real Madrid (RMA) 4 Spieler unter Vertrag standen und bei dem Fußballverein FC Barcelona (BAR) 7 Spieler unter Vertrag standen und damit diese beide Vereine die meisten Spieler stellten. 
+Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein gespielt haben. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. 
+Es lässt sich erkennen, dass einige Spieler bis zu 10 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammengespielt haben. 
+Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis nicht berücksichtigt. 
+*--> Stimmt das so? 
 
---> alles auch im Codebuch einlesen. 
+Relation ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2010 mit einem anderen Spieler im selben Verein gespielt haben und somit eine Verbindung aufweisen. 
+
+... 
+*--> alles auch im Codebuch einlesen (was ist damit gemeint)? 
 Für Programmieren: Code für durchschnittsalter raussuchen. 
 #Auslesen der einzelnen Attribute: Deutschland14
 ```{r 2 Auslesen von Attributen }
@@ -257,6 +290,7 @@ vertex.attributes(Deutschland14)$club
 edge.attributes(Deutschland14)$weight
 edge.attributes(Deutschland14)$relation
 ```
+
 Text dazu
 (Jede Zeile einzeln durchgehen und schon genauer beantworten)
 1. Zeile alter
