@@ -154,7 +154,8 @@ plot(Spanien10,
      asp=.5,
      edge.width=E(Spanien10)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.frame.color="yellow2",
+     vertex.color="yellow2",
      vertex.label.family="Helvetica",
      vertex.label.color="red3",
      vertex.label.dist=1,
@@ -179,9 +180,10 @@ plot(Deutschland14,
      asp=.5,
      edge.width=E(Deutschland14)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.frame.color="gold",
+     vertex.color="gold",
      vertex.label.family="Helvetica",
-     vertex.label.color="red3",
+     vertex.label.color="black",
      vertex.label.dist=1,
      vertex.size=degree(Deutschland14),
      main ="Übersicht der deutschen Nationalmannschaft 2014")
@@ -202,9 +204,10 @@ plot(Frankreich18,
      asp=.5,
      edge.width=E(Frankreich18)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.color="red3",
+     vertex.frame.color="red3",
      vertex.label.family="Helvetica",
-     vertex.label.color="red3",
+     vertex.label.color="blue2",
      vertex.label.dist=1,
      vertex.size=degree(Frankreich18),
      main ="Übersicht der französischen Nationalmannschaft 2018")
@@ -370,7 +373,8 @@ plot(Spanien10V,
      asp=.5,
      edge.width=E(Spanien10V)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.frame.color="yellow2",
+     vertex.color="yellow2",
      vertex.label.family="Helvetica",
      vertex.label.color="red3",
      vertex.label.dist=1,
@@ -390,7 +394,8 @@ plot(Spanien10R,
      asp=.5,
      edge.width=E(Spanien10R)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.frame.color="yellow2",
+     vertex.color="yellow2",
      vertex.label.family="Helvetica",
      vertex.label.color="red3",
      vertex.label.dist=1,
@@ -419,9 +424,10 @@ plot(Deutschland14V,
      asp=.5,
      edge.width=E(Deutschland14V)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.frame.color="gold",
+     vertex.color="gold",
      vertex.label.family="Helvetica",
-     vertex.label.color="red3",
+     vertex.label.color="black",
      vertex.label.dist=1,
      vertex.size=degree(Deutschland14V),
      main ="Übersicht der deutschen Nationalmannschaft 2014 ohne Edge-Attribut relation")
@@ -439,9 +445,10 @@ plot(Deutschland14R,
      asp=.5,
      edge.width=E(Deutschland14R)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.color="gold",
+     vertex.frame.color="gold",
      vertex.label.family="Helvetica",
-     vertex.label.color="red3",
+     vertex.label.color="black",
      vertex.label.dist=1,
      vertex.size=degree(Deutschland14R),
      main ="Übersicht der deutschen Nationalmannschaft 2014 ohne Edge-Attribut weight")
@@ -467,9 +474,10 @@ plot(Frankreich18V,
      asp=.5,
      edge.width=E(Frankreich18V)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.color="red3",
+     vertex.frame.color="red3",
      vertex.label.family="Helvetica",
-     vertex.label.color="red3",
+     vertex.label.color="blue3",
      vertex.label.dist=1,
      vertex.size=degree(Frankreich18V),
      main ="Übersicht der französichen Nationalmannschaft 2018 ohne das Edge-Attribut relation")
@@ -477,6 +485,9 @@ plot(Frankreich18V,
 # man kann mit denselben aber auch ein Netzwerk erstellen, welches sich nur auf das Edge-Attribut relation kozentriert.
 Frankreich18R <- delete_edge_attr(Frankreich18, "weight")
 list.edge.attributes(Frankreich18R)
+
+E(Frankreich18)[E(Frankreich18)$relation == "yes"]$color <- "green" 
+E(Frankreich18)[E(Frankreich18)$relation == "no"]$color <- "red" 
 
 # einfache Visualisierung des aggregierten Netzwerks
 plot(Frankreich18R,
@@ -487,9 +498,10 @@ plot(Frankreich18R,
      asp=.5,
      edge.width=E(Frankreich18R)$weight,
      vertex.size=3,
-     vertex.frame.color=NA,
+     vertex.color="red3",
+     vertex.frame.color="red3",
      vertex.label.family="Helvetica",
-     vertex.label.color="red3",
+     vertex.label.color="blue3",
      vertex.label.dist=1,
      vertex.size=degree(Frankreich18V),
      main ="Übersicht der französichen Nationalmannschaft 2018 ohne das Edge-Attribut weight")
@@ -556,11 +568,89 @@ nochmal reinlesen, Skripte Sandhu; Ergebnisse daraus ziehen
 
 Abschließender Text. Welche Spieler waren besonders wichtig etc?
 
---> K-Core sagt XYZ aus, daher interessant: Wie sieht es aus mit CLustern? Sind diese important Spieler vor allem da? Ist das gleich?
+Der K-Core bezeichnet die größte der Gruppen, deren Entitäten mit mindestens K anderen Entitäten innherhalb der Gruppe verbunden sind. Daher ist es interessant herasuzufinden: Wie sieht es aus mit CLustern? Sind diese Spieler in Clustern aufzufinden? 
+
+Um eine überisichtliche Visualisierung zu gewährleisten, werden in den folgenden Abbildungen nur noch die Rücknnummern der Spieler angezeigt. Diese sind wie folgt (auch in der Nodelist hinterlegt) verteilt:
+
+*Kader Spanien*
+1 - Casillas
+23 - Reina
+12 - Valdés
+17 - Arbeloa
+11 - Capdevilla
+4 - Marchena
+3 - Piqué
+5 - Puyol
+2 - Albiol
+15 - Ramos
+16 - Busquets
+10 - Fábregas
+21 - Silva
+6 - Iniesta
+20 - Martinez
+22 - Navas
+14 - Alonso
+8 - Xavi
+7 - Villa
+9 - Torres
+19 - Llorrente
+13 - Mata
+18 - Pedro
+
+*Kader Deutschland*
+1 - Neuer
+22 - Weidenfeller
+12 - Zieler
+20 - Boateng
+15 - Durm
+3 - Ginter
+2 - Grosskreutz
+4 - Hoewedes
+5 - Hummels
+16 - Lahm
+17 - Mertesacker
+21 - Mustafi
+14 - Draxler
+19 - Goetze
+6 - Khedira
+23 - Kramer
+18 - Kroos
+8 - Oezil
+10 - Podolski
+9 - Schuerrle
+7 - Schweinsteiger
+11 - Klose
+13 - Mueller
+
+*Kader Frankreich*
+23 - Areola
+1 - Lloris
+16 - Mandanda
+21 - Hernandez
+3 - Kimpembe
+22 - Mendy
+2 - Pavard
+17 - Rami
+19 - Sidibe
+5 - Umtiti
+4 - Varane
+18 - Fekir
+13 - Kante
+14 - Matuidi
+15 - NZonzi
+6 - Pogba
+12 - Tolisso
+20 - Thauvin
+11 - Dembele
+9 - Giroud
+7 - Griezmann
+10 - Mbappe
+8 - Lemar
 
 #Cluster und Cliquen 
 
 ```{r Netzwerke Degree}
+
 # Anzahl der Cluster
 clusters(Spanien10)
 is_connected(Spanien10)
@@ -569,7 +659,7 @@ components(Spanien10)
 cwSpanien10 <- cluster_walktrap(Spanien10)
 modularity(cwSpanien10)
 membership(cwSpanien10)
-plot(cwSpanien10, Spanien10, edge.arrow.size=0.1, main="Cluster Spanien 2010")
+plot(cwSpanien10, Spanien10, vertex.label=V(Spanien10)$number, edge.arrow.size=0.1, main="Cluster Spanien 2010")
 
 clusters(Deutschland14)
 is_connected(Deutschland14)
@@ -578,7 +668,7 @@ components(Deutschland14)
 cwDeutschland14 <- cluster_walktrap(Deutschland14)
 modularity(cwDeutschland14)
 membership(cwDeutschland14)
-plot(cwDeutschland14, Deutschland14, edge.arrow.size=0.1, main="Cluster Deutschland 2014")
+plot(cwDeutschland14, Deutschland14, vertex.label=V(Deutschland14)$number,edge.arrow.size=0.1, main="Cluster Deutschland 2014")
 
 clusters(Frankreich18)
 is_connected(Frankreich18)
@@ -587,7 +677,7 @@ components(Frankreich18)
 cwFrankreich18 <- cluster_walktrap(Frankreich18)
 modularity(cwFrankreich18)
 membership(cwFrankreich18)
-plot(cwFrankreich18, Frankreich18, edge.arrow.size=0.1, main="Cluster Frankreich 2018")
+plot(cwFrankreich18, Frankreich18, vertex.label=V(Frankreich18)$number, edge.arrow.size=0.1, main="Cluster Frankreich 2018")
 
 #Largest CLiques
 largest_cliques(Spanien10)
@@ -605,33 +695,32 @@ Sowohl Cluster (Bilder) als auch Cliquen (R Console)
 
 ### 4.2.2 Teilnetzwerke nach Node-Attributen (CLUBS)
 
-Hier teilnetzwerke erstellen für die großen clubs der länder --> Blöcke anzeigen lassen.
-Erst später Texten 
+Aufgrund der Liste in Kapitel XY, lässt sich herauslesen dass vor allem in Spanien und Deutschland zwei dominierende CLubs in den Nationalmannschaften auftreten. In Frankreich ist das nicht der Fall, aber um die sogenannte "Block-Bildung" deutlicher aufzuzeichnen 
 
 *Teilnetzwerk Club* 
 
 ```{r Teilnetzwerk nach Node-Attribut Geschlecht, fig.height=6, fig.width=10, message=FALSE, warning=FALSE, paged.print=TRUE}
 library(igraph)
-el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/edges.csv", header=T, as.is=T, sep = ",")
-nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/nodes.csv", header=T, as.is=T, sep = ",")
-edgematrix <-as.matrix(el)
-s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
 
-list.vertex.attributes(s)
-vertex_attr(s)$sex
+#Farbe nach den dominierenden Clubs in Spanien: FC Barcelona (BAR) und Real Madrid (RMA)
+V(Spanien10)[V(Spanien10)$club == "BAR"]$color <- "blue"
+V(Spanien10)[V(Spanien10)$club == "RMA"]$color <- "gold"
+plot(Spanien10, vertex.label=V(Spanien10)$number)
 
-s_fem <- delete_vertices(s, V(s)[sex > "1"]) 
-s_fem 
-plot(s_fem, layout=layout_with_kk,
-     main="Gesamtnetzwerk: weibliche Akteure",
-     edge.color="pink",
-     edge.arrow.size=.3,
-     vertex.color="pink",
-     vertex.frame.color=NA,
-     sub="n=29, 110 Kanten")
+#Farbe nach den dominierenden Clubs in Deutschland: FC Bayern München (FCB) und Borussia Dortmund (BVB)
+V(Deutschland14)[V(Deutschland14)$club == "FCB"]$color <- "red"
+V(Deutschland14)[V(Deutschland14)$club == "BVB"]$color <- "yellow"
+plot(Deutschland14, vertex.label=V(Deutschland14)$number)
+
+#Farbe nach den dominierenden Clubs in Frankreich: Paris St. Germain (PSG) und Olympique Marseille (OM)
+V(Frankreich18)[V(Frankreich18)$club == "PSG"]$color <- "blue4"
+V(Frankreich18)[V(Frankreich18)$club == "OM"]$color <- "lightblue"
+plot(Frankreich18, vertex.label=V(Frankreich18)$number)
+
 ```
 
 TEXT ZU CLUB-Blöcke 
+Erkenntnisse (rote und grüne Verbindungen ignorieren, Farben haben nichts zu bedeuten)
 
 ### Wichtigkeit der Spieler für den Erfolg
 
@@ -642,6 +731,7 @@ wie das aussieht mit important spieler etc.
 
 Spanien10_imp <- delete_vertices(Spanien10, V(Spanien10)[value<4])
 Spanien10_imp
+plot(Spanien10_imp, vertex.label=V(Spanien10_imp)$number)
 
 ```
 
@@ -649,6 +739,7 @@ Spanien10_imp
 
 Deutschland14_imp <- delete_vertices(Deutschland14, V(Deutschland14)[value<4])
 Deutschland14_imp
+plot(Deutschland14_imp, vertex.label=V(Deutschland14_imp)$number)
 
 ```
 
@@ -656,42 +747,152 @@ Deutschland14_imp
 
 Frankreich18_imp <- delete_vertices(Frankreich18, V(Frankreich18)[value<4])
 Frankreich18_imp
-
+plot(Frankreich18_imp, vertex.label=V(Frankreich18_imp)$number)
 ```
 
 Beobachtugen:
 bsp. Deutschland: 14 Spieler, aber 33 Verbindungen -> eingespielt
-Frankreich: 15 Spieler, 5 Verbindungen -> nicht eingespielt
+Frankreich: 15 Spieler, 5 Verbindungen -> nicht eingespielt, außerdem nur ein Spieler aus Verein aus Frankreich
 
 ### 5.1.1 Gesamtvisualisierung
 
 ```{r Visualisierung eines multiplexe Netzwerke erstellen, fig.height=8, fig.width=10, message=TRUE, paged.print=TRUE}
 library(igraph)
-el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/edges.csv", header=T, as.is=T, sep = ",")
-nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/crpr2/nodes.csv", header=T, as.is=T, sep = ",")
-edgematrix <-as.matrix(el)
-s <- graph_from_data_frame(d=edgematrix, vertices=nodes, directed=T)
 
-# definiert die Farbe der Relation
-E(s)[E(s)$relation == 1]$color <- "blue" 
-E(s)[E(s)$relation == 2]$color <- "darkgreen"
-E(s)[E(s)$relation == 3]$color <- "red"
+plot(Spanien10,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Spanien10)$weight,
+     vertex.size=3,
+     vertex.frame.color="yellow2",
+     vertex.color="yellow2",
+     vertex.label.family="Helvetica",
+     vertex.label.color="red3",
+     vertex.label.dist=1,
+     vertex.size=degree(Spanien10),
+     main ="Übersicht der spanischen Nationalmannschaft 2010")
+
+V(Spanien10)[V(Spanien10)$club == "BAR"]$color <- "blue"
+V(Spanien10)[V(Spanien10)$club == "RMA"]$color <- "gold"
+V(Spanien10)[V(Spanien10)$club == "LIV"]$color <- "darkred"
+V(Spanien10)[V(Spanien10)$club == "VIL"]$color <- "yellow"
+V(Spanien10)[V(Spanien10)$club == "VAL"]$color <- "orange"
+V(Spanien10)[V(Spanien10)$club == "ARS"]$color <- "red3"
+V(Spanien10)[V(Spanien10)$club == "ATH"]$color <- "white"
+V(Spanien10)[V(Spanien10)$club == "SEV"]$color <- "brown"
+
+plot(Spanien10,
+     layout=layout_nicely,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Spanien10)$weight,
+     vertex.size=V(Spanien10)$value,
+     vertex.label=V(Spanien10)$number,
+     vertex.frame.color="yellow2",
+     vertex.label.family="Helvetica",
+     vertex.label.color="black",
+     vertex.size=degree(Spanien10),
+     main="Gesamtvisualisierung Spanien 2010 nach Vereinen und Value aufgeteilt")
+
+plot(Deutschland14,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Deutschland14)$weight,
+     vertex.size=3,
+     vertex.frame.color="gold",
+     vertex.color="gold",
+     vertex.label.family="Helvetica",
+     vertex.label.color="black",
+     vertex.label.dist=1,
+     vertex.size=degree(Deutschland14),
+     main ="Übersicht der deutschen Nationalmannschaft 2014")
+
+V(Deutschland14)[V(Deutschland14)$club == "FCB"]$color <- "red"
+V(Deutschland14)[V(Deutschland14)$club == "BVB"]$color <- "yellow"
+V(Deutschland14)[V(Deutschland14)$club == "H96"]$color <- "green3"
+V(Deutschland14)[V(Deutschland14)$club == "SCF"]$color <- "red2"
+V(Deutschland14)[V(Deutschland14)$club == "S04"]$color <- "blue"
+V(Deutschland14)[V(Deutschland14)$club == "ARS"]$color <- "red3"
+V(Deutschland14)[V(Deutschland14)$club == "SAM"]$color <- "lightblue"
+V(Deutschland14)[V(Deutschland14)$club == "RMA"]$color <- "gold"
+V(Deutschland14)[V(Deutschland14)$club == "BMG"]$color <- "darkgreen"
+V(Deutschland14)[V(Deutschland14)$club == "CHE"]$color <- "blue2"
+V(Deutschland14)[V(Deutschland14)$club == "LAZ"]$color <- "white"
+E(Deutschland14)[E(Deutschland14)$relation == "yes"]$color <- "green"
+
+plot(Deutschland14,
+     layout=layout_with_kk,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Deutschland14)$weight,
+     vertex.size=V(Deutschland14)$value,
+     vertex.label=V(Deutschland14)$number,
+     vertex.frame.color="gold",
+     vertex.label.family="Helvetica",
+     vertex.label.color="black",
+     vertex.size=degree(Deutschland14),
+     main ="Gesamtvisualisierung Deutschland 2014 nach Vereinen und Value aufgeteilt")
+
+plot(Frankreich18,
+     layout=layout_in_circle,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Frankreich18)$weight,
+     vertex.size=3,
+     vertex.color="red3",
+     vertex.frame.color="red3",
+     vertex.label.family="Helvetica",
+     vertex.label.color="blue2",
+     vertex.label.dist=1,
+     vertex.size=degree(Frankreich18),
+     main ="Übersicht der französischen Nationalmannschaft 2018")
+
+V(Frankreich18)[V(Frankreich18)$club == "PSG"]$color <- "blue4"
+V(Frankreich18)[V(Frankreich18)$club == "OM"]$color <- "lightblue"
+V(Frankreich18)[V(Frankreich18)$club == "TOT"]$color <- "darkblue"
+V(Frankreich18)[V(Frankreich18)$club == "ATM"]$color <- "red"
+V(Frankreich18)[V(Frankreich18)$club == "MCI"]$color <- "skyblue"
+V(Frankreich18)[V(Frankreich18)$club == "VFB"]$color <- "white"
+V(Frankreich18)[V(Frankreich18)$club == "ASM"]$color <- "gold2"
+V(Frankreich18)[V(Frankreich18)$club == "BAR"]$color <- "blue"
+V(Frankreich18)[V(Frankreich18)$club == "RMA"]$color <- "gold"
+V(Frankreich18)[V(Frankreich18)$club == "OL"]$color <- "grey"
+V(Frankreich18)[V(Frankreich18)$club == "CHE"]$color <- "blue2"
+V(Frankreich18)[V(Frankreich18)$club == "JUV"]$color <- "grey2"
+V(Frankreich18)[V(Frankreich18)$club == "SEV"]$color <- "brown"
+V(Frankreich18)[V(Frankreich18)$club == "MUN"]$color <- "purple"
+
+plot(Frankreich18,
+     layout=layout_with_kk,
+     edge.arrow.size=.1,
+     edge.color="grey",
+     edge.curved=.2,
+     asp=.5,
+     edge.width=E(Frankreich18)$weight,
+     vertex.size=V(Frankreich18)$value,
+     vertex.label=V(Frankreich18)$number,
+     vertex.frame.color="red3",
+     vertex.label.family="Helvetica",
+     vertex.label.color="black",
+     vertex.size=degree(Frankreich18),
+     main ="Gesamtvisualisierung Frankreich 2018 nach Vereinen und Value aufgeteilt")
 
 # Visualisierungsparameter festlegen
 par(mar=c(6,3,3,3)) 
 
-# Plot mit den gesetzten Farben für das Attribut Beziehung realisieren
-plot(s,
-     asp=0,
-     edge.arrow.size=.5,
-     vertex.color="gray75",
-     vertex.frame.color="NA",
-     vertex.size=8,
-     layout=layout_with_kk,
-     edge.curved=curve_multiple(s),
-     main="Multiplexes Netzwerk, d.h. verschiedene Formen der Beziehung",
-     sub="n=38 Knoten; Kantenfarbe 
-     blau=Zusammenarbeit, grün=Ratsuche, rot=Beziehung")
+
 
 par(mar=c(0,0,0,0)) 
 
