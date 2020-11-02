@@ -342,19 +342,11 @@ Für Programmieren: Code für durchschnittsalter raussuchen.
 
 ##Aufzählung der Attribute 
 
-Einleitende Worte
-Chunk mit relation & value machen; um aufzuzeigen dass es stärkere verbindungen gibt und weniger starke
-aber für alle drei Ländern
+In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Spanien2010 gibt. 
 
 #Netzwerk Spanien 2010 ohne Edge-Attribut relation und Edge-Attribut weight
 
-##Aufzählung der Attribute 
-
-Einleitende Worte
-Chunk mit relation & value machen; um aufzuzeigen dass es stärkere verbindungen gibt und weniger starke
-aber für alle drei Ländern
-
-#Netzwerk Spanien 2010 ohne Edge-Attribut relation und Edge-Attribut weight
+*--> Was passiert bei relation? 
 
 ```{r Vereinfachtes Gesamtnetzwerk Spanien10, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 
@@ -404,9 +396,14 @@ plot(Spanien10R,
 
 ```
 
-Beobachtungen schreiben
+Die Visualiserung verdeutlicht die Wichtigkeit des Attributs weight, durch welches die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich  wird. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Spanien2010 lässt sich beobachten, dass die Spieler Xavi, Iniesta, Puyol und Valdés sehr starke Beziehungen zueinander haben und damit einen großen Block in der Nationalmannschaft bilden. 
+
+
+*--> Was wird durch relation beobachtet? 
 
 #Netzwerk Deutschland 2014 ohne Edge-Attribut relation und Edge-Attribut weight
+
+In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Spanien2010 gibt. 
 
 ```{r Vereinfachtes Gesamtnetzwerk Deutschland14, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 # simplify Gesamtnetzwerk 
@@ -454,9 +451,14 @@ plot(Deutschland14R,
      main ="Übersicht der deutschen Nationalmannschaft 2014 ohne Edge-Attribut weight")
 
 ```
-Beobachtungen schreiben
+
+Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich. Durch das Atributt werden die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Deutschland lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger stichti hierbei hervor.
 
 #Netzwerk Frankreich 2018 ohne Edge-Attribut relation und Edge-Attribut weight
+
+Wie bereits bei den Teilnetzwerken Spanien2010 und Deutschland 2014, wird
+*--> Weiter schreiben 
+auch in diesem Abschnitt durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Deutschland2014 gibt. 
 
 ```{r Vereinfachtes Gesamtnetzwerk Frankreich18, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 # simplify Gesamtnetzwerk 
@@ -508,14 +510,13 @@ plot(Frankreich18R,
 
 ```
 
-TEXT DAZU SCHREIBEN (Bebachtungen etc.)
+
 
 ## 4.2 Analyse der Teilnetzwerke 
 ###4.2.1 Einzelne Netzwerkdaten rausfiltern
 
-Einleitender Text
-(Was haben wir bisher gemacht, was wollen wir jetzt rausfinden)
---> Dichte und Pfaddistanzen
+Ergänzend zu dem Auslesen der Atributte, werden in diesem Abschnitt zuerst die Dichte der Teilnertzwerke von Spanien2010, Deutschland2014 und Frankreich2018 untersucht und anschließend die Pfaddistanzen beobachtet. Die Pfaddistanz beschreibt die weiteste Distanz zwischen zwei Knoten in den jeweiligen Teilnetzwerken. 
+
 ``` {r Teilnetzwerke erstellen und vereinfachen, message=FALSE, warning=FALSE, paged.print=FALSE}
 ## Dichte des Netzwerks
 edge_density(Spanien10, loops=FALSE)
@@ -529,16 +530,15 @@ farthest_vertices(Frankreich18)
 
 ```
 
-Text schreiben 
-Beobachtungen:
-1) Dichte (auch mit genauen Zahlen am Besten; bei Frankreich viel weniger zb)
-2) Weiteste Distanz (zwei Spieler, und die Distanz) 
+Die Ergebnisse zeigen, dass die Nationalmannschaft von Spanien2010 eine Dichte von 20,2% aufweist und somit das dichteste Teilnetzwerk in dieser Untersuchung ist. Die Dichte von 19,4% der Nationalmannschaft von Deutschland2014, kommt der Dichte von Spanien2010 sehr nahe und liegt nur knapp dahinter. Die Nationalmannschaft von Frankreich 2018 weißt mit einer Dichte von 11,1%, mit Abstand das am wenigsten dichte Teilnetzwerk auf. 
 
-
+Mit der Untersuchung der Pfaddistanzen wird festgestellt, welche zwei Knoten am weitesten voneinander entfernt sind und wie groß die Distanz zwischen diesen beiden Knoten ist. Bei dem Teilnetzwerk Spanien2010, lässt sich erkennen, dass die Spieler Machena und Pedro insgesamt 14 Knoten voneinander entfernt liegen und somit die weiteste Distanz zueinander aufweisen. Bei dem Teilnetzwerk der Nationalmannschaften Deutschland2014 lässt sich festellen, dass die Spieler Durm und Höwedes 9 Knoten voneinander entfernt liegen und somit die weiteste Distanz zueinander haben. Bei dem Teilnetzwerk von Frankreich2018 haben die weiteste Diszanz zueinander die Spieler Matuidi und Dembele, mit ebenfalls 9 Knoten.
+Daraus lässt sich festellen, dass die weiteste Distanz zwischen zwei Knoten bei dem spanischen Teilnetzwerk im Vergleich zu den anderen beiden Teilnetzwerken wesentlich höher ist. Dieses Ergebnis ist aufgrund des höchsten density Werts von Spanien2010 überaschend.  
 
 ##Akteursmaße
 
-Einleitender Satz: Akteure mit wichtigen Beziehungen
+In diesem Abschnitt werden die Akteuren mit den wichtigsten Beziehungen untersucht. 
+*--> Moodle nacharbeiten 
 
 ```{r Netzwerke Degree}
 #Degree
@@ -573,79 +573,81 @@ Der K-Core bezeichnet die größte der Gruppen, deren Entitäten mit mindestens 
 Um eine überisichtliche Visualisierung zu gewährleisten, werden in den folgenden Abbildungen nur noch die Rücknnummern der Spieler angezeigt. Diese sind wie folgt (auch in der Nodelist hinterlegt) verteilt:
 
 *Kader Spanien*
-1 - Casillas
-23 - Reina
-12 - Valdés
-17 - Arbeloa
-11 - Capdevilla
-4 - Marchena
-3 - Piqué
-5 - Puyol
-2 - Albiol
-15 - Ramos
-16 - Busquets
-10 - Fábregas
-21 - Silva
-6 - Iniesta
-20 - Martinez
-22 - Navas
-14 - Alonso
-8 - Xavi
-7 - Villa
-9 - Torres
-19 - Llorrente
-13 - Mata
-18 - Pedro
+ 1  -  Casillas
+ 2  -  Albiol
+ 3  -  Piqué
+ 4  -  Marchena
+ 5  -  Puyol
+ 6  -  Iniesta
+ 7  -  Villa
+ 8  -  Xavi
+ 9  -  Torres
+ 10 -  Fábregas
+ 11 -  Capdevilla
+ 12 -  Valdés
+ 13 -  Mata
+ 14 -  Alonso
+ 15 -  Ramos
+ 16 -  Busquets
+ 17 -  Arbeloa
+ 18 -  Pedro
+ 19 -  Llorrente
+ 20 -  Martinez
+ 21 -  Silva
+ 22 -  Navas
+ 23 -  Reina
+
 
 *Kader Deutschland*
-1 - Neuer
-22 - Weidenfeller
-12 - Zieler
-20 - Boateng
-15 - Durm
-3 - Ginter
-2 - Grosskreutz
-4 - Hoewedes
-5 - Hummels
-16 - Lahm
-17 - Mertesacker
-21 - Mustafi
-14 - Draxler
-19 - Goetze
-6 - Khedira
-23 - Kramer
-18 - Kroos
-8 - Oezil
-10 - Podolski
-9 - Schuerrle
-7 - Schweinsteiger
-11 - Klose
-13 - Mueller
+ 1  -  Neuer
+ 2  -  Grosskreutz
+ 3  -  Ginter
+ 4  -  Hoewedes
+ 5  -  Hummels
+ 6  -  Khedira
+ 7  -  Schweinsteiger
+ 8  -  Oezil
+ 9  -  Schuerrle
+ 10 -  Podolski
+ 11 -  Klose
+ 12 -  Zieler
+ 13 -  Mueller
+ 14 -  Draxler
+ 15 -  Durm
+ 16 -  Lahm
+ 17 -  Mertesacker
+ 18 -  Kroos
+ 19 -  Goetze
+ 20 -  Boateng
+ 21 -  Mustafi
+ 22 -  Weidenfeller
+ 23 -  Kramer
+
 
 *Kader Frankreich*
-23 - Areola
-1 - Lloris
-16 - Mandanda
-21 - Hernandez
-3 - Kimpembe
-22 - Mendy
-2 - Pavard
-17 - Rami
-19 - Sidibe
-5 - Umtiti
-4 - Varane
-18 - Fekir
-13 - Kante
-14 - Matuidi
-15 - NZonzi
-6 - Pogba
-12 - Tolisso
-20 - Thauvin
-11 - Dembele
-9 - Giroud
-7 - Griezmann
-10 - Mbappe
-8 - Lemar
+ 1  -  Lloris
+ 2  -  Pavard
+ 3  -  Kimpembe
+ 4  -  Varane
+ 5  -  Umtiti
+ 6  -  Pogba
+ 7  -  Griezmann
+ 8  -  Lemar
+ 9  -  Giroud
+ 10 -  Mbappe
+ 11 -  Dembele
+ 12 -  Tolisso
+ 13 -  Kante
+ 14 -  Matuidi
+ 15 -  NZonzi
+ 16 -  Mandanda
+ 17 -  Rami
+ 18 -  Fekir
+ 19 -  Sidibe
+ 20 -  Thauvin
+ 21 -  Hernandez
+ 22 -  Mendy
+ 23 -  Areola
 
 #Cluster und Cliquen 
 
@@ -689,7 +691,9 @@ max_cliques(Deutschland14)
 max_cliques(Frankreich18)
 
 ```
-ERKLÄRENDER TEXT USW
+
+Durch die Visualisierung lässt sich erkennen, dass vor allem bei Spanien 2010 wenige Cluster mit vielen Spielern vorhanden waren. 
+*--> Beschreibung Cluster und Cliquen
 Beobachtungen und Unterschiede
 Sowohl Cluster (Bilder) als auch Cliquen (R Console)
 
@@ -719,13 +723,11 @@ plot(Frankreich18, vertex.label=V(Frankreich18)$number)
 
 ```
 
-TEXT ZU CLUB-Blöcke 
-Erkenntnisse (rote und grüne Verbindungen ignorieren, Farben haben nichts zu bedeuten)
 
 ### Wichtigkeit der Spieler für den Erfolg
 
-Einleitender Text
-wie das aussieht mit important spieler etc.
+In dem folgenden Abschnitt wird untersucht, welche Spieler bei der jeweiligen Weltmeisterschaft mehr als viermal eingesetzt wurden und deren value Wert dadurch höher als 4 ist. Dadurch haben diese Spieler einen höheren Wert(value) als andere. 
+
 
 ```{r Teilnetzwerke erstellen und vereinfachen, message=FALSE, warning=FALSE, paged.print=FALSE}
 
@@ -735,6 +737,8 @@ plot(Spanien10_imp, vertex.label=V(Spanien10_imp)$number)
 
 ```
 
+Bei dem Teilnetzwerk Spanien 2010 lässt sich festellen, dass insgesamt 13 Spieler in mindestens 4 Spielen eingesetzt wurden. Diese Spieler haben untereinander insgesamt 19 Verbindungen. Das verdeutlicht, dass die Spieler die häufig eingesetzt wurden untereinander viele Beziehungen aufweisen und dadurch klare Blöcke erkennbar sind. 
+
 ```{r Deutschland14 Important}
 
 Deutschland14_imp <- delete_vertices(Deutschland14, V(Deutschland14)[value<4])
@@ -743,6 +747,9 @@ plot(Deutschland14_imp, vertex.label=V(Deutschland14_imp)$number)
 
 ```
 
+Bei dem Teilnetzwerk Deutschland 2014 wurden insgesamt 14 Speiler in mindestens 4 Spielen eingesetzt. Diese 14 Spieler weisen untereinander insgesamt 33 Verbindungen auf. Dadurch lässt sich festellen, dass die Spieler dieses Netzwerks sehr starke Beziehungen zueinander haben und auch hier klare Blöcke erkennbar sind, die deutlich stärker als bei dem vorherigen Teilnetzwerk sind.
+
+
 ```{r Frankreich18 Important}
 
 Frankreich18_imp <- delete_vertices(Frankreich18, V(Frankreich18)[value<4])
@@ -750,10 +757,10 @@ Frankreich18_imp
 plot(Frankreich18_imp, vertex.label=V(Frankreich18_imp)$number)
 ```
 
-Beobachtugen:
-bsp. Deutschland: 14 Spieler, aber 33 Verbindungen -> eingespielt
-Frankreich: 15 Spieler, 5 Verbindungen -> nicht eingespielt, außerdem nur ein Spieler aus Verein aus Frankreich
+Bei dem Teilnertzwerk Frankreich 2018 lässt sich erkennen, dass insgesamt 15 Spieler während der Fußballweltmeisterschaft in mehr als 4 Spielen zum Einsatz kamen. Es lässt sich außerdem beobachten, dass diese Spieler allerdings nur 5 Beziehungen zueinander haben und damit deutlich weniger, als bei den Teilnwetzwerken Spanien 2010 und Deutschland 2014. Insbesondere lässt sich in dem Teilnertzwerk von Frankreich 2018 beboachten, dass die jeweiligen Blöce nicht aus der nationalen Liga stammen. Bei den vorherigen Untersuchungen der Teilnetzwerke Spanien2010 und Deutschland2014, waren die größten Blöcke von Vereinen aus der jeweiligen nationalen Liga. Das trifft auf das Teilnetzwerk von Frankreich2018 nicht zu. 
 
+
+Blöcke aus der nationalen Liga... 
 ### 5.1.1 Gesamtvisualisierung
 
 ```{r Visualisierung eines multiplexe Netzwerke erstellen, fig.height=8, fig.width=10, message=TRUE, paged.print=TRUE}
@@ -909,5 +916,3 @@ par(mar=c(0,0,0,0))
 ## Codebuch
 
 ## Datenmaterial und Skript
-
-## Team, Arbeitsaufwand und Lessons Learned
