@@ -3,7 +3,7 @@
 title: "226305 Forschungsbericht"
 subtitle: "Analyse der vergangenen drei Fußballweltmeister"
 date: "Sommersemester 2020"
-author: "Fiona Noever, Luca Gröning, Loris Hoffmann, Patrick Steinle | fn009@hdm-stuttgart.de, lg058@hdm-stuttgart.de, lh112@hdm-stuttgart.de, psXXX@hdm-stuttgart.de "
+author: "Fiona Noever, Luca Gröning, Loris Hoffmann, Patrick Steinle | fn009@hdm-stuttgart.de, lg058@hdm-stuttgart.de, lh112@hdm-stuttgart.de, ps134@hdm-stuttgart.de "
 output: html_notebook
 ---
 
@@ -452,7 +452,7 @@ plot(Deutschland14R,
 
 ```
 
-Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich. Durch das Atributt werden die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Deutschland lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger stichti hierbei hervor.
+Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich. Durch das Atributt werden die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Deutschland lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger sticht hierbei hervor.
 
 #Netzwerk Frankreich 2018 ohne Edge-Attribut relation und Edge-Attribut weight
 
@@ -537,7 +537,8 @@ Daraus lässt sich festellen, dass die weiteste Distanz zwischen zwei Knoten bei
 
 #Degree und Betweenness 
 
-*--> Einleitung Degree und Betweenness In diesem Abschnitt werden die Akteuren mit den wichtigsten Beziehungen untersucht. 
+Degree-Zentralität bedeutet, dass Akteure mit vielen Beziehungen wichtig sind. Der Wert zeigt, wie viele Beziehungen jeder Spieler zu anderen Spielern hat. Ein höherer Betweennees-Wert veranschaulicht, dass man häufig über diese Knoten laufen muss um zu anderen Knoten zu gelangen. Die Spieler mit einem hohen Betweenness-Wert können als Bindeglieder zwischen den einzelnen Gruppierungen angesehen werden.
+In diesem Abschnitt sollen die Akteuren mit den wichtigsten Beziehungen betrachtet werden. 
  
 
 ```{r Netzwerke Degree}
@@ -553,15 +554,16 @@ betweenness(Frankreich18)
 
 ```
 
-Beobachtungen, Ergebnisse: 
+Beobachtungen:
 
-Degree: Degreezentralität bedeutet, dass Akteure mit vielen Beziehungen wichtig sind. Der Wert zeigt, wie viele Bezeihungen jeder Spieler zu anderen Spielern hat. Bei Spanien lässt sich folgednes erkennen: .....
-                  Frankreich 
-                  Deutschland... 
+Degree:
+Zehn Spieler der spanischen Nationalmannschaft 2010 haben sechs oder sieben Verbindungen zu andern Spielern im Kader. Das spricht ergänzend für die Erkenntnis, dass die Spieler in diesem Team vermehrt in Vereinen zusammenspielten. Nur ein Spieler hat keine Verbindung. Das könnte für Eingespieltheit sprechen.
+In den Reihen Deutschlands 2014 gibt es sogar Spieler, welche neun Verbindungen haben. Sie sind also mit vielen Teammitgliedern vernetzt. Auch das erhöht die Chance, dass die Spieler untereinander gut harmonieren.
+Solche Spieler mit vielen Verbindungen sind bei der Weltmeister-Mannschaft Frankreich 2018 nicht existent. 
                   
-Betweenness: Ein höherer Betweennees Wert veranschaulicht, dass man häufig über diese Knoten laufen muss um zu anderen Knoten zu gelangen. Die Spieler mit einem hohem Betweenness Wert können als Bindeglieder zwischen den einzelnen Gruppierungen angesehen werden. Bei Spanien2010 lässt sich erkennen...
-Frankreich
-Deutschland...
+Betweenness:
+Reina (Spanien), Neuer (Deutschland) und Sidibe (Frankreich) haben jeweils den höchsten Betweeness-Wert in ihrer Mannschaft. Bei Spanien ist auffällig, dass die Knoten mit hohem Degree-Wert häufig einen Betweeness-Wert von 0 haben. Das spricht in diesem Fall dafür, dass das gesamte Netzwerk so gut vernetzt ist, dass diese Knoten nicht überbrückt werden müssen, um zu weiteren Knoten gelangen. Viele Spieler sind auf direktem Weg verbunden. In einer ähnlichen, aber abgeschwächten Form ist das auch bei Deutschland der Fall.
+Bei Frankreich braucht es diese Spieler mit hohem Betwenness-Wert, da es insgesamt weniger Verbindungen gibt.
 
 
 Abschließender Text. Welche Spieler waren besonders wichtig etc?
@@ -579,7 +581,8 @@ coreness(Frankreich18)
 
 ```
 
-*--> Der K-Core Wert ist bei Frankreich deutlich geringer, das liegt daran: 
+Die Werte bei Spanien und Deutschland sind deutlich höher als bei Frankreich. Es wird wohl eine erhöhte Clusterbildung geben. Diese wird im folgenden Kapitel betrachtet.
+
 
 Um eine überisichtliche Visualisierung zu gewährleisten, werden in den folgenden Abbildungen nur noch die Rücknnummern der Spieler angezeigt. Diese sind wie folgt (auch in der Nodelist hinterlegt) verteilt:
 
@@ -662,9 +665,9 @@ Um eine überisichtliche Visualisierung zu gewährleisten, werden in den folgend
 
 #Cluster und Cliquen 
 
-```{r Netzwerke Degree}
+```{r Netzwerke Cluster}
 
-# Anzahl der Cluster
+# Cluster
 clusters(Spanien10)
 is_connected(Spanien10)
 
@@ -703,14 +706,16 @@ max_cliques(Frankreich18)
 
 ```
 
-Durch die Visualisierung lässt sich erkennen, dass vor allem bei Spanien 2010 wenige Cluster mit vielen Spielern vorhanden waren. 
-*--> Beschreibung Cluster und Cliquen
-Beobachtungen und Unterschiede
-Sowohl Cluster (Bilder) als auch Cliquen (R Console)
+Spanien hat laut der Ausgabe lediglich drei klare Cliquen. Diese beinhalten dabei sehr viele Spieler. Die größte Clique besteht aus sieben Spielern (Pedro, Valdes, Pique, Puyol, Busquets, Iniesta und Xavi). Besonders auffällig ist, dass diese Spieler allesamt beim FC Barcelona spielen. Insgesamt kann R bei Spanien maximal 10 Cliquen erkennen. 
+Bei Deutschland sehen die Ergebnisse nicht so ähnlich aus, wie vermutet. Die Spieler werden in fünf Cliquen unterteilt. Dabei werden aber auch sehr kleine Cliquen aufgelistet. Die größte der Cliquen besteht auch hier aus sieben Spielern (Neuer, Boateng, Lahm, Götze, Kroos, Schweinsteiger und Müller). Auch diese gehören demselben Verein an, in diesem Fall dem FC Bayern München. Insgesamt können bei der deutschen Nationalmannschaft von 2014 maximal 17 Cliquen gebildet werden.
+Frankreich hat ähnliche Ergebnisse wie Deutschland. Fünf klare Cliquen, maximal 16. Jedoch besteht die größte Clique lediglich aus vier Spielern. Zudem ist diese nicht eindeutig zu erkennen, sondern es gibt zwei Möglichkeiten. Eine Vereins-Verbundeheit herrscht jeweils aber nicht.
+Die Visualisierung gewährleistet jedoch noch einmal einen anderen Blick. Das Ergebnis der spanischen Nationalmannschaft 2010 bestätigt sich. Neben dem Barcelona-Block sind aber auch noch zwei weitere große Cluster zu erkennen mit fünf bzw. sieben Knoten. 
+Deutschlands Bild lehnt sich in der Visaulisierung nun stärker an das Vorbild Spaniens. Es gibt zwei große Gruppierungen mit fünf und sieben Spielern (FCB/BVB). Nur wenige Spieler sind isoliert.
+In Frankreichs WM-Kader von 2018 gibt es dabei jedoch keine großen Cluster. Das lässt darauf schließen, dass es keine Blöcke wie bei den vorherigen Weltmeistern gab. 
 
 ### 4.2.2 Teilnetzwerke nach Node-Attributen (CLUBS)
 
-Aufgrund der Liste in Kapitel XY, lässt sich herauslesen dass vor allem in Spanien und Deutschland zwei dominierende CLubs in den Nationalmannschaften auftreten. In Frankreich ist das nicht der Fall, aber um die sogenannte "Block-Bildung" deutlicher aufzuzeichnen 
+Aufgrund der Liste in Kapitel XY, lässt sich herauslesen dass vor allem in Spanien und Deutschland zwei dominierende Clubs in den Nationalmannschaften auftreten. In Frankreich ist das nicht der Fall, aber um die sogenannte "Block-Bildung" deutlicher aufzuzeichnen, werden im folgenden Chunk die zwei Vereine farblich hervorgehoben, welche jeweils die meisten Spieler stellten.
 
 *Teilnetzwerk Club* 
 
@@ -734,6 +739,9 @@ plot(Frankreich18, vertex.label=V(Frankreich18)$number)
 
 ```
 
+Bei Spanien 2010 sind es sieben Spieler des FC Barcelona sowie vier Spieler von Real Madrid. Die beiden besten Vereine Spaniens machen somit knapp die Hälfte des Kaders aus.
+Genau gleich sieht es bei Deutschland 2014 aus. Sieben Bayern-Spieler und vier Dortmunder machen den Großteil des Kaders aus.
+Der letzte Weltmeister, Frankreich 2018, hat hingegen lediglich zwei Vereine mit jeweils drei Spielern (Paris St. Germain und Olympique Marseille). Von einer Blockbildung kann man hier also nicht sprechen.
 
 ### Wichtigkeit der Spieler für den Erfolg
 
@@ -748,7 +756,7 @@ plot(Spanien10_imp, vertex.label=V(Spanien10_imp)$number)
 
 ```
 
-Bei dem Teilnetzwerk Spanien 2010 lässt sich festellen, dass insgesamt 13 Spieler in mindestens 4 Spielen eingesetzt wurden. Diese Spieler haben untereinander insgesamt 19 Verbindungen. Das verdeutlicht, dass die Spieler die häufig eingesetzt wurden untereinander viele Beziehungen aufweisen und dadurch klare Blöcke erkennbar sind. 
+Bei dem Teilnetzwerk Spanien 2010 lässt sich festellen, dass insgesamt 13 Spieler in mindestens 4 Spielen eingesetzt wurden. Diese Spieler haben untereinander insgesamt 19 Verbindungen. Das verdeutlicht, dass die Spieler, die häufig eingesetzt wurden, untereinander viele Beziehungen aufweisen und dadurch klare Blöcke erkennbar sind. 
 
 ```{r Deutschland14 Important}
 
@@ -758,7 +766,7 @@ plot(Deutschland14_imp, vertex.label=V(Deutschland14_imp)$number)
 
 ```
 
-Bei dem Teilnetzwerk Deutschland 2014 wurden insgesamt 14 Speiler in mindestens 4 Spielen eingesetzt. Diese 14 Spieler weisen untereinander insgesamt 33 Verbindungen auf. Dadurch lässt sich festellen, dass die Spieler dieses Netzwerks sehr starke Beziehungen zueinander haben und auch hier klare Blöcke erkennbar sind, die deutlich stärker als bei dem vorherigen Teilnetzwerk sind.
+Bei dem Teilnetzwerk Deutschland 2014 wurden insgesamt 14 Spieler in mindestens 4 Spielen eingesetzt. Diese 14 Spieler weisen untereinander insgesamt 33 Verbindungen auf. Dadurch lässt sich festellen, dass die Spieler dieses Netzwerks sehr starke Beziehungen zueinander haben und auch hier klare Blöcke erkennbar sind, die deutlich stärker als bei dem vorherigen Teilnetzwerk sind.
 
 
 ```{r Frankreich18 Important}
@@ -773,6 +781,9 @@ Bei dem Teilnertzwerk Frankreich 2018 lässt sich erkennen, dass insgesamt 15 Sp
 
 Blöcke aus der nationalen Liga... 
 ### 5.1.1 Gesamtvisualisierung
+
+In der letzten Visualisierung soll jedes Netzwerk auf zwei Weisen dargestellt werden. Der erste Plot ist eher puristisch. Dabei sollen noch einmal die Knoten übersichtlich im Kreis angeordnet dargestellt werden. Außerdem wird durch die Gewichtung der Kanten/Beziehungen graphisch dargestellt, welche Spieler einige Saisons in einem Verein zusammenspielten.
+Im zweiten Plot werden die Vereine der verschiedenen Spieler in unterschiedlichen Farben dargestellt. Jedem Verein wird eine andere Farbe zugeordnet. Durch ein anderes Layout werden die Blöcke erneut angedeutet.
 
 ```{r Visualisierung eines multiplexe Netzwerke erstellen, fig.height=8, fig.width=10, message=TRUE, paged.print=TRUE}
 library(igraph)
