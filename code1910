@@ -273,6 +273,7 @@ Relation ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der F
 *--> alles auch im Codebuch einlesen (was ist damit gemeint)? 
 Für Programmieren: Code für durchschnittsalter raussuchen. 
 #Auslesen der einzelnen Attribute: Deutschland14
+
 ```{r 2 Auslesen von Attributen }
 vertex.attributes(Deutschland14)$age
 vertex.attributes(Deutschland14)$value
@@ -398,7 +399,6 @@ plot(Spanien10R,
 
 Die Visualiserung verdeutlicht die Wichtigkeit des Attributs weight, durch welches die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich  wird. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Spanien2010 lässt sich beobachten, dass die Spieler Xavi, Iniesta, Puyol und Valdés sehr starke Beziehungen zueinander haben und damit einen großen Block in der Nationalmannschaft bilden. 
 
-
 *--> Was wird durch relation beobachtet? 
 
 #Netzwerk Deutschland 2014 ohne Edge-Attribut relation und Edge-Attribut weight
@@ -456,9 +456,7 @@ Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnet
 
 #Netzwerk Frankreich 2018 ohne Edge-Attribut relation und Edge-Attribut weight
 
-Wie bereits bei den Teilnetzwerken Spanien2010 und Deutschland 2014, wird
-*--> Weiter schreiben 
-auch in diesem Abschnitt durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Deutschland2014 gibt. 
+Wie bereits bei den Teilnetzwerken Spanien2010 und Deutschland 2014, wird auch in diesem Abschnitt durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Frankreich2018 gibt. 
 
 ```{r Vereinfachtes Gesamtnetzwerk Frankreich18, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 # simplify Gesamtnetzwerk 
@@ -537,8 +535,10 @@ Daraus lässt sich festellen, dass die weiteste Distanz zwischen zwei Knoten bei
 
 ##Akteursmaße
 
-In diesem Abschnitt werden die Akteuren mit den wichtigsten Beziehungen untersucht. 
-*--> Moodle nacharbeiten 
+#Degree und Betweenness 
+
+*--> Einleitung Degree und Betweenness In diesem Abschnitt werden die Akteuren mit den wichtigsten Beziehungen untersucht. 
+ 
 
 ```{r Netzwerke Degree}
 #Degree
@@ -551,24 +551,35 @@ betweenness(Spanien10)
 betweenness(Deutschland14)
 betweenness(Frankreich18)
 
-#Closeness
-closeness(Spanien10)
-closeness(Deutschland14)
-closeness(Frankreich18)
+```
+
+Beobachtungen, Ergebnisse: 
+
+Degree: Degreezentralität bedeutet, dass Akteure mit vielen Beziehungen wichtig sind. Der Wert zeigt, wie viele Bezeihungen jeder Spieler zu anderen Spielern hat. Bei Spanien lässt sich folgednes erkennen: .....
+                  Frankreich 
+                  Deutschland... 
+                  
+Betweenness: Ein höherer Betweennees Wert veranschaulicht, dass man häufig über diese Knoten laufen muss um zu anderen Knoten zu gelangen. Die Spieler mit einem hohem Betweenness Wert können als Bindeglieder zwischen den einzelnen Gruppierungen angesehen werden. Bei Spanien2010 lässt sich erkennen...
+Frankreich
+Deutschland...
+
+
+Abschließender Text. Welche Spieler waren besonders wichtig etc?
 
 #K-Core
-coreness(Spanien10)
+
+Einleitung: Der K-Core bezeichnet die größte der Gruppen, deren Entitäten mit mindestens K anderen Entitäten innherhalb der Gruppe verbunden sind. Daher ist es interessant herasuzufinden: Wie sieht es aus mit CLustern? Sind diese Spieler in Clustern aufzufinden? 
+
+```{r Netzwerke K-Core}
+
+#K-Core
+coreness(Spanien10) 
 coreness(Deutschland14)
 coreness(Frankreich18)
 
 ```
 
-Beobachtungen, Ergebnisse: 
-nochmal reinlesen, Skripte Sandhu; Ergebnisse daraus ziehen
-
-Abschließender Text. Welche Spieler waren besonders wichtig etc?
-
-Der K-Core bezeichnet die größte der Gruppen, deren Entitäten mit mindestens K anderen Entitäten innherhalb der Gruppe verbunden sind. Daher ist es interessant herasuzufinden: Wie sieht es aus mit CLustern? Sind diese Spieler in Clustern aufzufinden? 
+*--> Der K-Core Wert ist bei Frankreich deutlich geringer, das liegt daran: 
 
 Um eine überisichtliche Visualisierung zu gewährleisten, werden in den folgenden Abbildungen nur noch die Rücknnummern der Spieler angezeigt. Diese sind wie folgt (auch in der Nodelist hinterlegt) verteilt:
 
@@ -916,3 +927,16 @@ par(mar=c(0,0,0,0))
 ## Codebuch
 
 ## Datenmaterial und Skript
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
