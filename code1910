@@ -27,6 +27,7 @@ a) Clusterbildung: Die Nationalmannschaften waren erfolgreich, da sie eine hohe 
 b) Clusterbildung: Die gleichen Nationalmannschaften waren weniger erfolgreich, da sie weniger Cluster aufwiesen.
 c) Mannschaftsblöcke: Die Mannschaftsblöcke kommen nicht bei jedem der Weltmeister aus der jeweiligen nationalen Liga.
 d) *--> Hypothese noch aufstellen (Alter oder value)
+Value: Nur weil ein 23-Mann-Kader viele Beziehungen hat, heißt das nicht, dass auch die Spieler mit den meisten Einsatzzeiten stark vernetzt sind.
 
 *2. Vorarbeiten und vergleichbare Studien*
 ## Forschungsstand
@@ -127,10 +128,12 @@ Sind die Netzwerke bereits vereinfacht?
 
 Bestehen die Netzwerke aus Komponenten? 
 - Die Netzwerke der drei Fußballweltmeister Spanien 2010, Deutschland 2014 und Frankreich 2018 bestehen aus jeweils einem Gesamtnetzwerk mit jeweils 23 Knoten und  bestehen nur aus einer Komponente. 
+*falsch...
+Richtig: Keines der drei Netzwerke besteht aus lediglich aus einer Kompnente. Das heißt, bei allen Nationalmannschaften gibt es Spieler, welche keine Verbindung zu einem Mitspieler haben. Jedoch sieht man, dass Spanien 2010 eine große und nur zwei weitere kleine Komponenten aufweist. Deutschland 2014 und Frankreich 2018 hingegen haben vier kleine Komponenten neben der Großen. Die Größe der großen Komponenten nimmt im Zeitverlauf der Weltmeisterschaften stetig ab: Spanien 2010 hat eine große Kompnente aus 20 Spielern, Deutschland 2014 aus 18 und Frankreich 2018 aus 16.
 
 Welchen Umfang haben die Netzwerke? 
 - Das Netzwerk Spanien 2010 hat einen Umfang von 14, das Netzwerk Deutschland 2014 hat einen Umfang von 9 und das Netzwerk von Frankreich 2018 hat einen Umfang von 9. Das Netzwerke Spanien 2010 hat einen größeren Umfang, als die Netzwerke von Deutschland 2014 und Frankreich 2018.  
-*--> Stimmen die Zahlen? Begründung !!!!!!!!
+*--> Stimmen die Zahlen? Begründung !!!!!!!! --> können das auch weglassen, kenne den Nutzen auch nicht
 
 #Visualisierung der einzelnen Gesamtnetzwerke
 ##Visualisierung des Netzwerk Spanien 2010
@@ -321,11 +324,11 @@ Relation ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der F
 
 ##Aufzählung der Attribute 
 
-In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Spanien2010 gibt. 
+In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und weniger starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Spanien2010 gibt. 
 
 #Netzwerk Spanien 2010 ohne Edge-Attribut relation und Edge-Attribut weight
 
-*--> Was passiert bei relation? PATRICK PLSSSSS
+
 
 ```{r Vereinfachtes Gesamtnetzwerk Spanien10, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 
@@ -356,11 +359,13 @@ plot(Spanien10V,
 Spanien10R <- delete_edge_attr(Spanien10, "weight")
 list.edge.attributes(Spanien10R)
 
+E(Spanien10R)[E(Spanien10R)$relation == "yes"]$color <- "green" 
+E(Spanien10R)[E(Spanien10R)$relation == "no"]$color <- "red"
+
 # einfache Visualisierung des aggregierten Netzwerks
 plot(Spanien10R,
      layout=layout_in_circle,
      edge.arrow.size=.1,
-     edge.color="grey",
      edge.curved=.2,
      asp=.5,
      edge.width=E(Spanien10R)$weight,
@@ -375,13 +380,14 @@ plot(Spanien10R,
 
 ```
 
-Die Visualiserung verdeutlicht die Wichtigkeit des Attributs weight, durch welches die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich  wird. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Spanien2010 lässt sich beobachten, dass die Spieler Xavi, Iniesta, Puyol und Valdés sehr starke Beziehungen zueinander haben und damit einen großen Block in der Nationalmannschaft bilden. 
+Die erste Visualiserung verdeutlicht die Wichtigkeit des Attributs weight, durch welches die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich  wird. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar, dafür aber, wer zum Zeitpunkt der Weltmeisterschaft im selben Verein spielte. 
+In dem Teilnetzwerk Spanien2010 lässt sich beobachten, dass die Spieler Xavi, Iniesta, Puyol und Valdés sehr starke Beziehungen zueinander haben und damit einen großen Block in der Nationalmannschaft bilden. 
+Wenn man sich die Visualisierung des Edge-Attributs relation anschaut, sieht man deutlich mehr grüne als rote Beziehungen. Viele Spieler gehören also zum Zeitpunkt des Titelgewinns einem Verein an. Das spricht dafür, dass die Spieler zu diesem Zeitpunkt eine aktuelle Verbundenheit verspüren.
 
-*--> Was wird durch relation beobachtet? PATRICK PLSSSS 
 
 #Netzwerk Deutschland 2014 ohne Edge-Attribut relation und Edge-Attribut weight
 
-In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Spanien2010 gibt. 
+In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Deutschland2014 gibt. 
 
 ```{r Vereinfachtes Gesamtnetzwerk Deutschland14, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 # simplify Gesamtnetzwerk 
@@ -411,11 +417,14 @@ plot(Deutschland14V,
 Deutschland14R <- delete_edge_attr(Deutschland14, "weight")
 list.edge.attributes(Deutschland14R)
 
+E(Deutschland14R)[E(Deutschland14R)$relation == "yes"]$color <- "green" 
+E(Deutschland14R)[E(Deutschland14R)$relation == "no"]$color <- "red" 
+
+
 # einfache Visualisierung des aggregierten Netzwerks
 plot(Deutschland14R,
      layout=layout_in_circle,
      edge.arrow.size=.1,
-     edge.color="grey",
      edge.curved=.2,
      asp=.5,
      edge.width=E(Deutschland14R)$weight,
@@ -430,7 +439,8 @@ plot(Deutschland14R,
 
 ```
 
-Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich. Durch das Atributt werden die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar. In dem Teilnetzwerk Deutschland lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger sticht hierbei hervor.
+Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich. Durch das Atributt werden die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. (Ohne das Atributt weight ist eine Blockbildung nicht erkennbar.) In dem Teilnetzwerk Deutschland lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger sticht hierbei hervor.
+Interessant hierbei ist auch, dass genau diese Spieler  eine grüne Beziehung zueinander haben. Sie spielen zum Zeitpunkt der Weltmeisterschaft also im selben Verein. Das erhöht die Intensität der Verbundenheit. Insgesamt gibt es einige grüne Beziehungen.
 
 #Netzwerk Frankreich 2018 ohne Edge-Attribut relation und Edge-Attribut weight
 
@@ -464,14 +474,13 @@ plot(Frankreich18V,
 Frankreich18R <- delete_edge_attr(Frankreich18, "weight")
 list.edge.attributes(Frankreich18R)
 
-E(Frankreich18)[E(Frankreich18)$relation == "yes"]$color <- "green" 
-E(Frankreich18)[E(Frankreich18)$relation == "no"]$color <- "red" 
+E(Frankreich18R)[E(Frankreich18R)$relation == "yes"]$color <- "green" 
+E(Frankreich18R)[E(Frankreich18R)$relation == "no"]$color <- "red" 
 
 # einfache Visualisierung des aggregierten Netzwerks
 plot(Frankreich18R,
      layout=layout_in_circle,
      edge.arrow.size=.1,
-     edge.color="grey",
      edge.curved=.2,
      asp=.5,
      edge.width=E(Frankreich18R)$weight,
@@ -485,6 +494,8 @@ plot(Frankreich18R,
      main ="Übersicht der französichen Nationalmannschaft 2018 ohne das Edge-Attribut weight")
 
 ```
+Die beiden Visualisierungen des Netzwerks Frankreich2018 zeigen ein stark verändertes Bild. Der Plot des weight-Attributs zeigt keine sehr starken Beziehungen und es werden keine Blöcke sichtbar. 
+Auch die Visualisierung des relation-Attributs zeigt ein umgekehrtes Bild. Hier gibt es deutlich mehr rote als grüne Beziehungen. Beim Titelgewinn 2018 haben also nur wenige Spieler gemeinsam in einem Verein gespielt. Die Spieler haben ihre Verbindung vor allem aus der Vergangenheit. Das kann andeuten, dass die Verbundenheit nicht mehr so aktiv beziehungsweise intensiv besteht.
 
 ## 4.2 Analyse der Teilnetzwerke 
 ###4.2.1 Einzelne Netzwerkdaten rausfiltern
@@ -542,6 +553,8 @@ Reina (Spanien), Neuer (Deutschland) und Sidibe (Frankreich) haben jeweils den h
 Bei Frankreich braucht es diese Spieler mit hohem Betwenness-Wert, da es insgesamt weniger Verbindungen gibt.
 
 *--> Abschließender Text. Welche Spieler waren besonders wichtig etc? (Brauchen wir das Patrick)
+Es gibt also gerade bei Spanien2010 und Deutschland 2014 nicht den einen wichtigen Akteur. Es geht vielmehr darum, dass es die angesprochenen Blöcke gibt. Um ein Netzwerk zu erstellen, benötigt es nicht nur ein Ego, sondern in diesem Fall viele wichtige Spieler. Diese wurden über den Degree-Wert analysiert. Jedoch kann ein Spieler mit beispielsweise zwei Verbindungen ebenfalls sehr wichtig sein, wenn er zwei große Cliquen verbindet.
+Im Endeffekt geht also, wie so oft im Fußball, um das Team an sich.
 
 #K-Core
 
@@ -685,6 +698,7 @@ Deutschlands Bild lehnt sich in der Visaulisierung nun stärker an das Vorbild S
 In Frankreichs WM-Kader von 2018 gibt es dabei jedoch keine großen Cluster. Das lässt darauf schließen, dass es keine Blöcke wie bei den vorherigen Weltmeistern gab. 
 
 *--> Patrick redest du von Clustern oder Cliquen? Dachte Cluster sind in den Abbildungen zu sehen und Cliquen in der Konsole..?
+Patrick: Im Text behandle ich die Befehle largest_cliques und max_cliques. Deshalb spreche ich von Cliquen. Ab der Visualisierung gehts dann ja um Cluster.
 
 ### 4.2.2 Teilnetzwerke nach Node-Attributen (Nationale Top-Clubs)
 
@@ -921,6 +935,7 @@ Durch die Berechnung der Akteursmaße sieht man auch sehr deutlich, dass es gewi
 Die nationalen Ligen sind für die Zusammensetzung der Nationalmannschaft oft von enormer Relevanz. Dies sieht man vor allem bei den Nationalmannschaften Spanien 2010 und Deutschland 2014. Viele der hier eingesetzten Spieler kommen aus der nationalen Liga (X viele bei Spanien,  X viele bei Deutschland). Dadurch zeigt sich auch auf, dass die Spieler untereinander eingespielter sind und sich besser kennen. Bei Frankreich war dies nicht unbedingt der Fall (X Spieler spielten in der nationalen Ligue1), allerdings waren die Spieler auch zum Zeitpunkt der WM in Russland im Schnitt noch relativ jung. Daher lässt sich die zweite unserer Hypothesen ("Die Mannschaftsblöcke kommen nicht bei jedem der Weltmeister aus der jeweiligen nationalen Liga") bestätigen, jedoch wer es in den vergangenen Jahrzehnten öfter der Fall, dass der Weltmeister eine breite Anzahl an Spielern der eigenen Liga besaß. 
 
 HIER NOCH HYPOTHESE 4 rein (age oder Value)
+Auch die Einsatzzeiten veränderten das Ergebnis nicht. Die Spieler mit vielen Einsätzen (also einem hohen Value-Wert) hatten im Verhältnis ähnlich viele Verbindungen untereinander. Das bestätigt die Hypothese der Eingespieltheit. Es würde demnach eben keinen Mehrwert bieten, wenn die Auswechselspieler eine große Verbundenheit durch die Vereine haben, da diese gar nicht oft spielten. Wobei auch diese eine gute Stimmung in die Nationalmannschaft transportieren können.
 
 Allerdings zeigen sich hier auch schon die ersten Limitationen auf, auf die im Folgenden eingegangen wird.
 
