@@ -17,42 +17,52 @@ output: html_notebook
 **
 
 *1. Einleitung, Forschungsfrage und Motivation*
-Wir untersuchen die Gewinner der letzten drei Fußballweltmeisterschaften (Spanien 2010, Deutschland 2014, Frankreich 2018), um herauszufinden, ob die Mannschaften aus mehreren Blöcken bestanden, die zum Zeitpunkt der Weltmeisterschaft gemeinsam in einem Verein spielten. Dabei interessiert uns besonders, welche Spieler in ihrer Karriere mit anderen Spielern aus der Nationalmannschaft zusammengespielt haben und wie viele Saisons sie miteinander gespielt haben. Insbesondere die Block- und Clusterbildung innerhalb der Nationalmannschaften sind dabei von großer Bedeutung. Außerdem wollen wir untersuchen, ob es zentrale Akteure innerhalb des Netzwerks gibt, die auffälig viele Verbindungen aufweisen. Für das Netzwerk wurden die Karrieren der Spieler aus den jeweiligen Kadern der drei beschriebenen Weltmeistern untersucht. 
 
-Der Vergleich mit den darauffolgenden oder vorherigen Weltmeisterschaften eines jeweiligen Landes und der Untersuchung nach der jeweiligen Clusterbildung ist außerdem Bestandteil dieser Forschung. Daraus wollen wir ein Fazit ziehen, ob der Erfolg einer Fußballnationallmanschaften mit der Anzahl der CLuster in Zusammenhang steht. 
+In dieser Arbeit werden die drei Gewinner der letzten Fußballweltmeisterschaften aus den Jahren 2010, 2014 und 2018  untersucht,um herauszufinden, ob die Mannschaften aus mehreren Blöcken bestanden, die zum Zeitpunkt der jeweiligen Weltmeisterschaft gemeinsam in einem Verein spielten. Dabei interessiert uns besonders, welche Spieler in Laufe ihrer Karriere mit anderen Spielern aus der jeweiligen Nationalmannschaft zusammengespielt haben und wie viele Saisons diese Spieler miteinander gespielt haben. Insbesondere die Block- und Clusterbildung innerhalb der Nationalmannschaften sind dabei von großer Bedeutung. Außerdem wollen wir untersuchen, ob es zentrale Akteure innerhalb der jeweiligen Netzwerke gibt, die auffälig viele Verbindungen aufweisen. Für das Netzwerk wurden die Karrieren der Spieler aus den jeweiligen Kadern der drei beschriebenen Weltmeistern untersucht. 
+
+Der Vergleich mit den darauffolgenden oder vorherigen Weltmeisterschaften eines jeweiligen Landes und der Untersuchung nach der jeweiligen Clusterbildung, ist ebenfalls Bestandteil dieser Forschung. In einem Fazit wird die Theorie hinterfragt, ob der Erfolg der Fußballnationalmanschaften mit der Anzahl der Cluster in Zusammenhang steht. 
+
+In dieser Arbeit werden die drei Gewinner der letzten drei Fußballweltmeisterschaften folgendermaßen benannt: Spanien2010, Deutschland2014 und Frankreich2018. 
 
 ## Hypothesen
-Wir gehen von folgenden Hypothesen aus:
-a) Clusterbildung: Die Nationalmannschaften waren erfolgreich, da sie eine hohe Clusterbildung aufweisen. 
-b) Clusterbildung: Die gleichen Nationalmannschaften waren weniger erfolgreich, da sie weniger Cluster aufwiesen.
+
+Vor der Auswertung der Daten wurde von folgenden Hypothesen ausgegangen:
+
+a) Clusterbildung:    Die Nationalmannschaften waren erfolgreich, da sie eine hohe Clusterbildung aufweisen. 
+b) Clusterbildung:    Die gleichen Nationalmannschaften waren weniger erfolgreich, da sie weniger Cluster aufwiesen. *-->? 
 c) Mannschaftsblöcke: Die Mannschaftsblöcke kommen nicht bei jedem der Weltmeister aus der jeweiligen nationalen Liga.
-d) *--> Hypothese noch aufstellen (Alter oder value)
-Value: Nur weil ein 23-Mann-Kader viele Beziehungen hat, heißt das nicht, dass auch die Spieler mit den meisten Einsatzzeiten stark vernetzt sind.
+d) Value:             Nur weil ein 23-Mann-Kader viele Beziehungen hat, heißt das nicht, dass auch die Spieler mit den meisten                           Einsatzzeiten stark vernetzt sind.
 
 *2. Vorarbeiten und vergleichbare Studien*
+
 ## Forschungsstand
-Das Forschungsdesign lehnt sich nicht an eine vergleichbare Studien an.
+Das Forschungsdesign lehnt sich nicht an vergleichbare Studien an.
 
 *3. Datenerhebung: Zugang, Bereinigung und Codebuch*
 
 ## Zugang und Quellen
-Der Zugang und Quellen der Datensätze erfolgte ausschließlich über die Onlineplattformen: www.transfermarkt.de, www.weltfussball.de sowie www.kicker.de. 
+Der Zugang zu den Quellen der Datensätze erfolgte ausschließlich über die Onlineplattformen: www.transfermarkt.de, www.weltfussball.de sowie www.kicker.de. 
 
 ## Bereinigung des Datensatzes
-Die Datensätze wurden anschließend in Excel-Listen übertragen. Dabei wurden zuerst Karrierelisten für die jeweiligen Spieler erstellt und anschließend in eine Edgelist und Nodelist übertragen und überprüft. Bei dieser Überprüfung ließen sich erste Verbindungen ohne eine Visualisierung erkennen. Der Datensatz ist unter [Github](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Karrierelisten.csv) verfügbar. 
+Die Datensätze wurden anschließend in Excel-Listen übertragen. Dabei wurden zuerst Karrierelisten für die jeweiligen Spieler erstellt und anschließend in eine Edgelist und Nodelist übertragen und überprüft. Bei dieser Überprüfung ließen sich erste Verbindungen ohne eine Visualisierung erkennen. 
+Der Datensatz ist unter [Github] (https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Karrierelisten.csv) verfügbar. 
 
 ## Codebuch
-Das [Codebuch](https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Codebuch.md) beschreibt die Trikotnummern, Vereine, das Alter sowie die Bedeutung der Spieler. Außerdem wurde defnitert, ob die jeweiligen Spieler zum Zeitpunkt der Fußballweltmeisterschaft zusammengespielt haben und/oder wie viele Saisons die Spieler zuvor in einem Verein zusammengespielt haben. Die Datensätze sind ebenfalls auf Github hinterlegt.
+Das [Codebuch] (https://github.com/lucgrnng/Netzwerk-Nationalteams/blob/master/Codebuch.md) beschreibt die Trikotnummern, Vereine, das Alter sowie die Bedeutung für die Manschaft der jeweiligen Spieler. Außerdem wurde defnitert, ob die jeweiligen Spieler zum Zeitpunkt der jeweiligen Fußballweltmeisterschaft zusammengespielt haben und/oder wie viele Saisons die Spieler zuvor in einem Verein zusammengespielt haben.
+Diese Datensätze sind ebenfalls auf Github hinterlegt.
 
 *4. Analyse und Interpretation*
 
 ## Die Gesamtnetzwerke
 
-Das Gesamtnetzwerk des Fußballweltmeisterschaft Siegers "Spanien 2010" umfasst 23 Knoten und 46 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet. 
+Das Gesamtnetzwerk von Spanien 2010 umfasst 23 Knoten und 46 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet. 
 
-Das Gesamtnetzwerk des Fußballweltmeisterschaft Siegers "Deutschland 2014" umfasst 23 Knoten und 50 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet.
+Das Gesamtnetzwerk von Deutschland 2014 umfasst 23 Knoten und 50 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet.
 
-Das Gesamtnetzwerk des Fußballweltmeisterschaft Siegers "Frankreich 2018" umfasst 23 Knoten und 28 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet.
+Das Gesamtnetzwerk von Frankreich 2018 umfasst 23 Knoten und 28 Beziehungen (siehe igraph-Objekt). Es ist ungerichtet und gewichtet.
+
+Für die jeweiligen Fußballweltmeister Spanien2010, Deutschland2014 und Frankreich2018 wurden die Edge-, und Nodelist zuerst in GitHub hochgeladen und anschließend in R und R Studio eingelesen.
+
 
 ```{r Gesamnetzwerke erstellen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 
@@ -89,10 +99,10 @@ Frankreich18
 
 ```
 
-Für die jeweiligen Fußballweltmeister der Jahre 2010, 2014 und 2018 wurden die Edge-, und Nodelist zuerst in GitHub  hochgeladen und anschließend in R und R Studio eingelesen.
 
-Dabei lässt sich festellen, dass alle Fußballweltmeister 23 Knoten aufweisen, da jede Nationalität bei einer Fußballweltmeisterschaft einen Kader von 23 Spielern melden darf. Die jeweiligen Länder haben unterschiedlich viele Beziehungen zueinander, die sich in der Übersicht ablesen lassen. Das Ergebnis zeigt: Mit 51 Beziehungen hat Spanien die meisten Beziehungen, gefolgt von Deutschland mit 49 Beziehungen. Frankreich hat mit 28 Beziehungen mti Abstand die wenigsten Beziehungen untereinander.  
+Dabei lässt sich festellen, dass alle Fußballweltmeister jeweils 23 Knoten aufweisen, da jede Nationalität bei einer Fußballweltmeisterschaft einen Kader von 23 Spielern melden darf. Die jeweiligen Länder haben unterschiedlich viele Beziehungen zueinander, die sich in der Übersicht ablesen lassen. Das Ergebnis zeigt: Mit 51 Beziehungen hat Spanien die meisten Beziehungen, gefolgt von Deutschland mit 49 Beziehungen. Frankreich hat mit 28 Beziehungen mit großem Abstand die wenigsten Beziehungen untereinander.  
 
+*--> Warum steht in dieser Reihe Gesamtnetzwerk von Deutschland, und dann werden dei Fragen aufgeführt? 
 ```{r Gesamnetzwerk von Deutschland erstellen, echo=FALSE, message=FALSE, warning=FALSE, paged.print=TRUE}
 
 library(igraph)
@@ -121,22 +131,29 @@ diameter(Frankreich18)
 
 ```
 
+
 Durch das Ausführen des Chunks ergeben sich folgende Fragen und daraus resultierende Antworten: 
 
 Sind die Netzwerke bereits vereinfacht? 
+
 - Ja, die Netzwerke  bei den drei Fußballweltmeistern Spanien aus dem Jahr 2010, Deutschland aus dem Jahre 2014 und Frankreich aus dem Jahre 2018 sind vereinfacht. 
 
+
 Bestehen die Netzwerke aus Komponenten? 
-- Die Netzwerke der drei Fußballweltmeister Spanien 2010, Deutschland 2014 und Frankreich 2018 bestehen aus jeweils einem Gesamtnetzwerk mit jeweils 23 Knoten und  bestehen nur aus einer Komponente. 
-*falsch...
-Richtig: Keines der drei Netzwerke besteht aus lediglich aus einer Kompnente. Das heißt, bei allen Nationalmannschaften gibt es Spieler, welche keine Verbindung zu einem Mitspieler haben. Jedoch sieht man, dass Spanien 2010 eine große und nur zwei weitere kleine Komponenten aufweist. Deutschland 2014 und Frankreich 2018 hingegen haben vier kleine Komponenten neben der Großen. Die Größe der großen Komponenten nimmt im Zeitverlauf der Weltmeisterschaften stetig ab: Spanien 2010 hat eine große Kompnente aus 20 Spielern, Deutschland 2014 aus 18 und Frankreich 2018 aus 16.
+
+- Keines der drei Netzwerke besteht aus lediglich aus einer Kompnente. Das heißt: Bei allen Nationalmannschaften gibt es Spieler, welche keine Verbindung zu einem Mitspieler haben. Jedoch sieht man, dass Spanien2010 eine große und nur zwei weitere kleine Komponenten aufweist. Deutschland2014 und Frankreich2018 hingegen haben vier kleine Komponenten neben der Großen. Die Größe der großen Komponenten nimmt im Zeitverlauf der Weltmeisterschaften stetig ab: Spanien2010 hat eine große Komponente aus 20 Spielern, Deutschland2014 aus 18 Spielern und Frankreich2018 aus 16 Spielern.
+
 
 Welchen Umfang haben die Netzwerke? 
+
 - Das Netzwerk Spanien 2010 hat einen Umfang von 14, das Netzwerk Deutschland 2014 hat einen Umfang von 9 und das Netzwerk von Frankreich 2018 hat einen Umfang von 9. Das Netzwerke Spanien 2010 hat einen größeren Umfang, als die Netzwerke von Deutschland 2014 und Frankreich 2018.  
 *--> Stimmen die Zahlen? Begründung !!!!!!!! --> können das auch weglassen, kenne den Nutzen auch nicht
 
 #Visualisierung der einzelnen Gesamtnetzwerke
+
 ##Visualisierung des Netzwerk Spanien 2010
+
+
 ```{r Einfache Visualisierung des erstellten Objekt der spanischen Nationalmannschaft 2010 , fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
 
 plot(Spanien10,
@@ -156,12 +173,16 @@ plot(Spanien10,
      main ="Übersicht der spanischen Nationalmannschaft bei der WM 2010")
 ```
 
-*Vereinfachtes Gesamtnetzwerk Spanien2010*
-Der erste Überblick zeigt, dass das Netzwerk der spanischen Nationalmannschaft 2010 von einzelnen, stark gewichteten Kanten geprägt ist. Teilweise sind einige Akteure nur sehr schwach oder überhaupt nicht eingebunden. 
 
-Deshalb ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk der spanischen Nationalmannschaft 2010 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht). 
+*Vereinfachtes Gesamtnetzwerk Spanien2010*
+
+Der erste Überblick zeigt, dass das Netzwerk Spanien2010 von einzelnen, stark gewichteten Kanten geprägt ist. Außerdem lässt sich erkennen, dass einige Akteure nur sehr schwach oder überhaupt nicht in das Netzwerk  eingebunden sind. 
+
+Daher ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk von Spanien2010 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht). 
 
 ##Visualisierung des Gesamtnetzwerk Deutschland 2014
+
+
 ```{r Einfache Visualisierung des erstellten Objekt der deutschen Nationalmannschaft 2014, fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
 
 plot(Deutschland14,
@@ -181,12 +202,15 @@ plot(Deutschland14,
      main ="Übersicht der deutschen Nationalmannschaft bei der WM 2014")
 ```
 
-*Vereinfachtes Gesamtnetzwerk Deutschland2014*
-Der erste Überblick zeigt, dass das Netzwerk der deutschen Nationalmannschaft 2014 nicht ganz so stark von einzelnen, stark gewichteten Kanten geprägt ist, wie bei der spanischen Nationalmannschaft. Allerdings sind auch hier mehrere Akteure nur sehr schwach oder überhaupt nicht eingebunden.
 
-Deshalb ist es auch hier sinnvoll, ein vereinfachtes Gesamtnetzwerk der deutschen Nationalmannschaft 2014 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht).
+*Vereinfachtes Gesamtnetzwerk Deutschland2014*
+
+Der erste Überblick zeigt, dass das Netzwerk Deutschland2014 nicht ganz so stark von einzelnen, stark gewichteten Kanten geprägt ist, wie zuvor bei dem Netzwerk Spanien2010 zu erkennen war. Wie bei dem Netzwerk Spanien2010, sind auch hier mehrere Akteure nur sehr schwach oder überhaupt nicht eingebunden.
+
+Aus diesem Grund ist es hier ebenfalls sinnvoll, ein vereinfachtes Gesamtnetzwerk von Deutschland2014  zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird auch hier das Beziehungsnetzwerk vorher gelöscht).
 
 ##Visualisierung des Gesamtnetzwerk Frankreich 2018
+
 
 ```{r Einfache Visualisierung des erstellten Objekt der französischen Nationalmannschaft 2018, fig.height=10, fig.width=16, message=TRUE, warning=TRUE, paged.print=TRUE}
 
@@ -207,18 +231,22 @@ plot(Frankreich18,
      main ="Übersicht der französischen Nationalmannschaft bei der WM 2018")
 ```
 
-*Vereinfachtes Gesamtnetzwerk Frankreich2018*
-Der erste Überblick zeigt, dass das Netzwerk der franzöischen Nationalmannschaft 2018 nicht von einzelnen, stark gewichteten Kanten geprägt ist, anders als es bei den vorherigen Nationalmannschaften der Fußballweltmeister der Fall war. Es fällt auf, dass deutlich schwächere Kanten vorhanden sind und es keine herausstechenden Verbindungen gibt. 
 
-Wiederum macht es auch hier Sinn, ein vereinfachtes Gesamtnetzwerk der französischen Nationalmannschaft 2018 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird das Beziehungsnetzwerk vorher gelöscht).
+*Vereinfachtes Gesamtnetzwerk Frankreich2018*
+
+Anders als bei den zuvor untersuchten Netzwerken Spanien2010 und Deutschland2014 zeigt der erste Überblick, dass das Netzwerk Frankreich2018 nicht von einzelnen, stark gewichteten Kanten geprägt ist. Es fällt auf, dass bei diesem Netzwerk deutlich schwächere Kanten vorhanden sind und es keine herausstechenden Verbindungen gibt. 
+Wiederum macht es auch hier Sinn, ein vereinfachtes Gesamtnetzwerk von Frankreich2018 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird wie bei den vorherigen beiden Netzwerken, das Beziehungsnetzwerk vorher gelöscht).
+
 
 #Genauerer Blick auf die Netzwerkattribute
 
-Bisher wurden in den vorherigen Abschnitten die Edge-, und Nodelisten aus Github in R eingelesen, woraus erste Erkenntnisse ersichtlich wurden. Anschließend wurden die drei Gesamtnetzwerke der Fußballweltmeister Spanien 2010, Deutschland 2014 und Frankreich 2018 visualisiert. Die Ergebnisse der Visualisierung, wurden im Anschluss miteinander vergleichen und festgehalten. Dabei wurde sichtbar, dass der Fußballweltmeister Frankreich 2018, im Vergleich zu den Fußballweltmeistern Spanien 2010 und Deutschland 2014, deutlich schwächere und weniger Beziehungen zueinander aufweist. 
+In den vorherigen Abschnitten wurden die Edge-, und Nodelisten aus Github in R eingelesen, woraus sich erste Ergebnisse festhalten ließen und Erkenntnisse ersichtlich wurden. Anschließend wurden die drei Gesamtnetzwerke Spanien2010, Deutschland2014 und Frankreich2018 visualisiert. Die Ergebnisse der Visualisierung wurden im Anschluss miteinander vergleichen und festgehalten. 
+Dabei wurde sichtbar, dass Frankreic 2018 im Vergleich zu Spanien2010 und Deutschland2014, deutlich schwächere und weniger Beziehungen zueinander aufweist. 
 
-Im weiteren Verlauf dieses Forschungsberichts werden wir unter anderem die Edge-, als auch die Node-Attribute genauer untersuchen und analysieren. 
+Im weiteren Verlauf dieses Forschungsberichts werden unter anderem die Edge-, als auch die Node-Attribute genauer untersucht und analysiert.  
 
 ##Übersicht Netzwerkattribute
+
 
 ```{r 2 Übersicht Netzwerkattribute}
 #Wir können uns anschauen, welche Vertex- bzw. Edge-Attribute die einzelnen Netzwerke besitzen.
@@ -232,9 +260,13 @@ list.edge.attributes(Frankreich18)
 
 ```
 
-Durch das Ausführen des Chunks wird sichtbar, dass bei allen drei Mannschaften die gleichen Attribute herangezogen wurden, um aussagekräftige Ergebnisse festhalten zu können und außerdem die Teams untereinander vergleichen zu können. 
+
+Durch das Ausführen des Chunks wird sichtbar, dass bei allen drei Mannschaften die gleichen Attribute herangezogen wurden, um aussagekräftige Ergebnisse festhalten zu können und die Teams miteinander vergleichen zu können. 
+
+All diese Attribute mit ihrer Beschreibung sind auch in dem oben angegebenen Codebuch verzeichnet. 
 
 #Auslesen der einzelnen Attribute: Spanien10
+
 
 ```{r 2 Auslesen von Attributen }
 vertex.attributes(Spanien10)$age
@@ -247,25 +279,27 @@ edge.attributes(Spanien10)$relation
 
 ```
 
-*Aussagekraft der einzelnen Attribute beim Netzwerk der spanischen Nationalmannschaft 2010*
-Durch das Auslesen der einzelnen Attribute der Fußballnationalmannschaft von Spanien 2010, lassen sich folgende Ergebnisse festhalten:
 
-Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler bei Spanien war zum Zeitpunkt der Weltmeisterschaft 2010, 20 Jahre alt und der älteste Spieler war 31 Jahre alt. Das Durchschnittsalter der Spieler war zum Zeitpunkt der Weltmeisterschaft bei: 25,9 Jahren. 
+*Aussagekraft der einzelnen Attribute bei dem Netzwerk Spanien2010* 
 
-Durch das Attribut value werden die Spieleinsätze der spanischen Nationalspieler während der Weltmeisterschaft 2010 beschrieben. Dadurch, dass Spanien im Jahr 2010 Fußballweltmeister geworden ist, haben sie insgesamt 7 Spiele absolviert. Bei dieser Beschreibung wurden nicht die Einsatzminuten als Berechnungsgrundlage verwendet, sondern ob der jeweilige Spieler in einem Spiel eingesetzt wurde. Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
+Durch das Auslesen der einzelnen Attribute von Spanien 2010, lassen sich folgende Ergebnisse festhalten:
 
-Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren zwischen 1 und 23. 
+Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler bei Spanien2010 war zum Zeitpunkt der Weltmeisterschaft 2010, 20 Jahre alt und der älteste Spieler 31 Jahre alt. Das Durchschnittsalter der Spieler war zum Zeitpunkt der Weltmeisterschaft bei: 25,9 Jahren. 
 
-Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2010 unter Vertrag stand. Dabei lässt sich erkennen, dass bei dem Fußballverein Real Madrid (RMA) 4 Spieler unter Vertrag standen und bei dem Fußballverein FC Barcelona (BAR) 7 Spieler unter Vertrag standen und damit diese beide Vereine die meisten Spieler stellten. 
+Durch das Attribut value werden die Spieleinsätze der spanischen Nationalspieler während der Weltmeisterschaft 2010 beschrieben. Dadurch, dass Spanien im Jahr 2010 die Fußballweltmeisterschaft gewonnen konnte, hat die Mannschaft insgesamt 7 Spiele absolviert.
+Wichtig hierbei ist, dass bei dieser Beschreibung nicht die Einsatzminuten als Berechnungsgrundlage verwendet wurden, sondern lediglich ob der jeweilige Spieler in einem Spiel eingesetzt wurde. Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
 
-Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielen oder früher gespielt haben. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 10 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammengespielt haben. Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis nicht berücksichtigt. 
+Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren zwischen 1 und 23 und werden in dieser Forschungsarbeit zu einem späteren Zeitpunkt aufgezeigt.  
+
+Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zu dem Zeitpunkt der Fußballweltmeisterschaft 2010 unter Vertrag stand. Dabei lässt sich erkennen, dass bei dem Fußballverein Real Madrid mit dem Kürzel (RMA), insgesamt 4 Spieler unter Vertrag standen und bei dem Fußballverein FC Barcelona mit dem Kürzel (BAR), 7 Spieler unter Vertrag standen. Damit stellten diese beiden Vereine die meisten Spieler.  
+
+Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielen oder in der Vergangenheit spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 10 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammenspielten. Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis in dieser Untersuchung nicht berücksichtigt. 
 *--> Stimmt das so? !!!!! (auch bei anderen Chunks)
 
 Relation ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2010 mit einem anderen Spieler im selben Verein gespielt haben und somit eine Verbindung aufweisen. 
 
-All diese Attribute mit ihrer Beschreibung sind auch im Codebuch verzeichnet. 
- 
 #Auslesen der einzelnen Attribute: Deutschland14
+
 
 ```{r 2 Auslesen von Attributen }
 vertex.attributes(Deutschland14)$age
@@ -277,24 +311,27 @@ edge.attributes(Deutschland14)$weight
 edge.attributes(Deutschland14)$relation
 ```
 
-*Aussagekraft der einzelnen Attribute beim Netzwerk der deutschn Nationalmannschaft 2014*
-Durch das Auslesen der einzelnen Attribute der Fußballnationalmannschaft von Deutschland 2014, lassen sich folgende Ergebnisse festhalten:
 
-Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler war zum Zeitpunkt der Weltmeisterschaft 2014, 22 Jahre alt und der älteste Spieler war 36 Jahre alt. Das Durchschnittsalter der Spieler war zum Zeitpunkt der Weltmeisterschaft bei: 26,3 Jahren. 
-Im Vergleich zu den zuvor ausgewerteten Daten des Netzwerks Spanien 2010 zeigt sich, dass der älteste Spieler des Netzwerks Deutschland 2014 fünf Jahre älter war und der jüngste Spieler ein Jahr älter.  
+*Aussagekraft der einzelnen Attribute bei dem Netzwerk Deutschland2014*
 
-Durch das Attribut value werden die Spieleinsätze der deutschen Nationalspieler während der Weltmeisterschaft 2014 beschrieben. Dadurch, dass Deutschland im Jahr 2014 Fußballweltmeister geworden ist, haben sie ebenfalls insgesamt 7 Spiele absolviert. Bei dieser Beschreibung wurden nicht die Einsatzminuten als Berechnungsgrundlage verwendet, sondern ob der jeweilige Spieler in einem der Spiele eingesetzt wurde. Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
+Durch das Auslesen der einzelnen Attribute von Deutschland 2014, lassen sich folgende Ergebnisse festhalten:
 
-Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren zwischen 1 und 23. 
+Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler des Netzwerks Deutschland2014 war zu dem Zeitpunkt der Weltmeisterschaft 2014, 22 Jahre alt und der älteste Spieler 36 Jahre alt. 
+Im Vergleich zu den zuvor ausgewerteten Daten des Netzwerks Spanien 2010 zeigt sich, dass der älteste Spieler des Netzwerks Deutschland 2014 fünf Jahre älter war und der jüngste Spieler ein Jahr älter. Das Durchschnittsalter der Spieler war zum Zeitpunkt der Weltmeisterschaft bei: 26,3 Jahren und damit im Durschnitt 0,4 Jahre älter als bei dem Netzwerk Spanien 2010.   
 
-Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2014 unter Vertrag stand. Dabei lässt sich erkennen, dass bei dem Fußballverein Bayern München (FCB) 7 Spieler unter Vertrag standen und damit insgesamt in der gesamten Untersuchung dieser Block der Größte ist. Bei dem Fußballverein Borussia Dortmund (BVB) standen zum Zeitpunkt der Fußballweltmeisterschaft 2014 4 Spieler unter Vertrag. Diese beiden Vereinen stellten somit die meisten Spieler.   
+Durch das Attribut value werden die Spieleinsätze der deutschen Nationalspieler während der Weltmeisterschaft 2014 beschrieben. Dadurch, dass Deutschland im Jahr 2014 die Fußballweltmeisterschaft gewinnen konnte, haben die Spieler ebenfalls insgesamt 7 Spiele absolviert. Wichtig hierbei ist, dass bei dieser Beschreibung nicht die Einsatzminuten als Berechnungsgrundlage verwendet wurden, sondern lediglich ob der jeweilige Spieler in einem Spiel eingesetzt wurde. Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
 
-Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielen oder früher gespielt haben. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 11 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammengespielt haben. Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis nicht berücksichtigt. 
+Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren zwischen 1 und 23 und werden ebenfalls in dieser Forschungsarbeit zu einem späteren Zeitpunkt aufgezeigt.  
 
+Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2014 unter Vertrag stand. Dabei lässt sich erkennen, dass bei dem Fußballverein Bayern München mit dem Kürzel (FCB), 7 Spieler unter Vertrag standen und damit insgesamt in der gesamten Untersuchung dieser Block der Größte ist.Bei dem Fußballverein Borussia Dortmund mit dem Kürzel (BVB), standen zum Zeitpunkt der Fußballweltmeisterschaft 2014, 4 Spieler unter Vertrag. Diese beiden Vereinen stellten somit die meisten Spieler. Es lässt sich hierbei festellen, dass sowohl bei Spanien2010 als auch bei Deutschland2014, die auf nationaler- und internationaler Ebene erfolgreichsten Vereine des jeweiligen Landes die meisten Spieler für die Nationalmannschaft stellten. 
+
+Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielen oder in der Vergangenheit spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 11 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammenspielten. Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis nicht berücksichtigt. 
 
 Relation ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2014 mit einem anderen Spieler im selben Verein gespielt haben und somit eine Verbindung aufweisen. 
 
 #Auslesen der einzelnen Attribute: Frankreich18
+
+
 ```{r 2 Auslesen von Attributen }
 vertex.attributes(Frankreich18)$age
 vertex.attributes(Frankreich18)$value
@@ -305,29 +342,28 @@ edge.attributes(Frankreich18)$weight
 edge.attributes(Frankreich18)$relation
 ```
  
+ 
 *Aussagekraft der einzelnen Attribute beim Netzwerk der französischen Nationalmannschaft 2018*
-Durch das Auslesen der einzelnen Attribute der Fußballnationalmannschaft von Frankreich 2018, lassen sich folgende Ergebnisse festhalten:
 
-Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler war zum Zeitpunkt der Weltmeisterschaft 2018, 19 Jahre alt und der älteste Spieler war 33 Jahre alt. Das Durchschnittsalter der Spieler war zum Zeitpunkt der Weltmeisterschaft bei: 26,0 Jahren. 
+Durch das Auslesen der einzelnen Attribute von Frankreich 2018, lassen sich folgende Ergebnisse festhalten:
 
-*--> So machen? ABÄNDERN AUF FRANKREICH (Im Vergleich zu den zuvor ausgewerteten Daten des Netzwerks Spanien 2010 zeigt sich, dass der älteste Spieler des Netzwerks Deutschland 2014 fünf Jahre älter war und der jüngste Spieler ein Jahr älter).  
+Das Attribut age beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler war zum Zeitpunkt der Weltmeisterschaft 2018, 19 Jahre alt und der älteste Spieler war 33 Jahre alt. Das Durchschnittsalter der Spieler war zum Zeitpunkt der Weltmeisterschaft bei: 26,0 Jahren. Diese Auswertung verdeutlicht im Vergleich zu den Netzwerken Spanien2010 und Deutschland2014, dass das Netzwerk Frankreich2018 den jüngsten Spieler (Kylian Mbappé, 19 Jahre) stellt, hingegen Deutschland2014 mit (Miroslav Klose, 36 Jahre) den ältesten Spieler stellt. Das Durschschnittsalter ist bei dem Netzwerk Spanien2010 mit 25,9 Jahren am Niedrigsten. 
 
-Durch das Attribut value werden die Spieleinsätze der französischen Nationalspieler während der Weltmeisterschaft 2018 beschrieben. Dadurch, dass Frankreich im Jahr 2018 Fußballweltmeister geworden ist, hat die Mannschaft ebenfalls insgesamt 7 Spiele absolviert. Bei dieser Beschreibung wurden nicht die Einsatzminuten als Berechnungsgrundlage verwendet, sondern ob der jeweilige Spieler in einem der Spiele eingesetzt wurde. Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
+Durch das Attribut value werden die Spieleinsätze der französischen Nationalspieler während der Weltmeisterschaft 2018 beschrieben. Dadurch, dass Frankreich im Jahr 2018 die Fußballweltmeisterschaft gewinnen konnte, haben die Spieler ebenfalls  insgesamt 7 Spiele absolviert. Bei dieser Beschreibung wurden ebenfalls nicht die Einsatzminuten als Berechnungsgrundlage verwendet, sondern lediglich ob der jeweilige Spieler in einem der Spiele eingesetzt wurde. Somit beträgt der höchste value Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
 
-Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren wie bei den vorherigen Mannschaften zwischen 1 bis 23. 
+Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrieren zwischen 1 und 23 und werden ebenfalls in dieser Forschungsarbeit zu einem späteren Zeitpunkt aufgezeigt.  
 
-Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2018 unter Vertrag stand. Dabei lässt sich erkennen, dass bei den Fußballvereinen Paris Saint Germain (PSG) und Olympique Marseille (OM) jeweils 3 Spieler unter Vertrag standen. Diese beiden Vereinen stellten somit die meisten Spieler. Damit sind diese Blöcke im Vergleich zu den deutlich größeren Blocks der vorherigen Untersuchungen wesentlich kleiner sind. Wie bei den vorherhigen Untersuchungen zeigt sich auch hier, dass die größten Blöcke jeweils von Vereinen aus der nationalen Liga des jeweiligen Fußballweltmeisters stammen.   
+Mit dem Attribut club wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2018 unter Vertrag stand. Dabei lässt sich erkennen, dass bei den Fußballvereinen Paris Saint Germain mit dem Kürzel (PSG), und Olympique Marseille mit dem Kürzel (OM), jeweils 3 Spieler zum Zeitpunkt der Weltmeisterschaft 2018 unter Vertrag standen. Diese beiden Vereinen stellten somit die meisten Spieler. Damit sind diese Blöcke im Vergleich zu den deutlich größeren Blocks der zuvor untersuchten Netzwerke wesentlich kleiner. Wie bei den vorherhigen Untersuchungen zeigt sich auch hier, dass die größten Blöcke jeweils von Vereinen aus der nationalen Liga des jeweiligen Fußballweltmeisters stammen.   
 
-Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielen oder früher gespielt haben. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 5 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammengespielt haben. Hier lässt sich erkennen, dass die Spieler wesentlich kürzer zusammengespielt haben, als bei den vorherigen Untersuchen. Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis nicht berücksichtigt. 
+Das Attribut weight veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielen oder in der Vergangenheit spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 5 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammengespielt haben. Das zeigt, dass die Spieler bei dem Netzwerk Frankreich2018 wesentlich kürzer zusammengespielt haben, als bei den vorherigen Untersuchen. Wenn ein Spieler keine Saison mit einem anderen Spieler zusammengespielt hat und somit keine Verbindungen aufweist (=weight "0") wurde dieses Ergebnis nicht berücksichtigt.
 
 Relation ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2018 mit einem anderen Spieler im selben Verein gespielt haben und somit eine Verbindung aufweisen. 
 
 ##Aufzählung der Attribute 
 
-In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und weniger starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Spanien2010 gibt. 
+In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es starke und schwache Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks Spanien2010 gibt. 
 
 #Netzwerk Spanien 2010 ohne Edge-Attribut relation und Edge-Attribut weight
-
 
 
 ```{r Vereinfachtes Gesamtnetzwerk Spanien10, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
@@ -380,14 +416,17 @@ plot(Spanien10R,
 
 ```
 
-Die erste Visualiserung verdeutlicht die Wichtigkeit des Attributs weight, durch welches die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich  wird. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar, dafür aber, wer zum Zeitpunkt der Weltmeisterschaft im selben Verein spielte. 
-In dem Teilnetzwerk Spanien2010 lässt sich beobachten, dass die Spieler Xavi, Iniesta, Puyol und Valdés sehr starke Beziehungen zueinander haben und damit einen großen Block in der Nationalmannschaft bilden. 
-Wenn man sich die Visualisierung des Edge-Attributs relation anschaut, sieht man deutlich mehr grüne als rote Beziehungen. Viele Spieler gehören also zum Zeitpunkt des Titelgewinns einem Verein an. Das spricht dafür, dass die Spieler zu diesem Zeitpunkt eine aktuelle Verbundenheit verspüren.
 
+Die erste Visualiserung verdeutlicht die Wichtigkeit des Attributs weight, durch welches die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich wird. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. Ohne das Atributt weight ist eine Blockbildung nicht erkennbar, es lässt sich allerdings erkennen, wer zum Zeitpunkt der Weltmeisterschaft im selben Verein spielte. 
+
+In dem Teilnetzwerk Spanien2010 lässt sich beobachten, dass die Spieler Xavi, Iniesta, Puyol und Valdés sehr starke Beziehungen zueinander haben und damit einen großen Block in der Nationalmannschaft bilden. 
+
+Wenn man sich die Visualisierung des Edge-Attributs relation anschaut, sieht man deutlich mehr grüne als rote Beziehungen. Viele Spieler gehören also zum Zeitpunkt des Titelgewinns einem Verein an. Das spricht dafür, dass die Spieler zu diesem Zeitpunkt eine aktuelle Verbundenheit verspüren.
 
 #Netzwerk Deutschland 2014 ohne Edge-Attribut relation und Edge-Attribut weight
 
-In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Deutschland2014 gibt. 
+In dem folgenden Abschnitt wird durch das Auslesen der Attribute relation & weight verdeutlicht, dass es starke und schwache Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Deutschland2014 gibt. 
+
 
 ```{r Vereinfachtes Gesamtnetzwerk Deutschland14, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 # simplify Gesamtnetzwerk 
@@ -439,12 +478,13 @@ plot(Deutschland14R,
 
 ```
 
-Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich. Durch das Atributt werden die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Dabei lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. (Ohne das Atributt weight ist eine Blockbildung nicht erkennbar.) In dem Teilnetzwerk Deutschland lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger sticht hierbei hervor.
-Interessant hierbei ist auch, dass genau diese Spieler  eine grüne Beziehung zueinander haben. Sie spielen zum Zeitpunkt der Weltmeisterschaft also im selben Verein. Das erhöht die Intensität der Verbundenheit. Insgesamt gibt es einige grüne Beziehungen.
+
+Wie bereits bei dem Teilnetzwerk Spanien2010 erkennbar war, wird bei dem Teilnetzwerk Deutschland2014 ebenfalls die Wichtigkeit des Attributs weight deutlich.  Denn durch das Atributt wird die Stärke der einzelnen Verbindungen zwischen den Knoten deutlich. Durch das Auslesen der Attribute lassen sich bereits erste Blockbildungen in den jeweiligen Teilnetzwerken erkennen. (Ohne das Atributt weight ist eine Blockbildung nicht erkennbar.) In dem Teilnetzwerk Deutschland2014 lässt sich beobachten, dass die Spieler Lahm, Schweinsteiger und Kroos eine sehr intensive Bezeihung zueinander haben. Vor allem die Beziehung zwischen Lahm und Schweinsteiger sticht hierbei hervor. Interessant hierbei ist auch, dass genau diese Spieler  eine grüne Beziehung zueinander haben. Sie spielten zum Zeitpunkt der Weltmeisterschaft im selben Verein. Das erhöht die Intensität der Verbundenheit. Insgesamt gibt es einige grüne Beziehungen.
 
 #Netzwerk Frankreich 2018 ohne Edge-Attribut relation und Edge-Attribut weight
 
-Wie bereits bei den Teilnetzwerken Spanien2010 und Deutschland 2014, wird auch in diesem Abschnitt durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und wenige starke Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks der Nationalmannschaft von Frankreich2018 gibt. 
+Wie bereits bei den Teilnetzwerken Spanien2010 und Deutschland2014, wird auch in diesem Abschnitt durch das Auslesen der Attribute relation & weight verdeutlicht, dass es stärkere und schwache Beziehungen zwischen den einzelnen Knoten des Gesamtnetzwerks  Frankreich2018 gibt. 
+
 
 ```{r Vereinfachtes Gesamtnetzwerk Frankreich18, fig.height=8, fig.width=16, message=FALSE, warning=FALSE}
 # simplify Gesamtnetzwerk 
@@ -494,13 +534,15 @@ plot(Frankreich18R,
      main ="Übersicht der französichen Nationalmannschaft 2018 ohne das Edge-Attribut weight")
 
 ```
-Die beiden Visualisierungen des Netzwerks Frankreich2018 zeigen ein stark verändertes Bild. Der Plot des weight-Attributs zeigt keine sehr starken Beziehungen und es werden keine Blöcke sichtbar. 
-Auch die Visualisierung des relation-Attributs zeigt ein umgekehrtes Bild. Hier gibt es deutlich mehr rote als grüne Beziehungen. Beim Titelgewinn 2018 haben also nur wenige Spieler gemeinsam in einem Verein gespielt. Die Spieler haben ihre Verbindung vor allem aus der Vergangenheit. Das kann andeuten, dass die Verbundenheit nicht mehr so aktiv beziehungsweise intensiv besteht.
+
+
+Die beiden Visualisierungen des Netzwerks Frankreich2018 zeigen ein stark verändertes Bild. Der Plot des weight-Attributs zeigt keine sehr starken Beziehungen und es werden keine Blöcke sichtbar. Auch die Visualisierung des relation-Attributs zeigt ein umgekehrtes Bild. Hier gibt es deutlich mehr rote als grüne Beziehungen. Das verdeutlicht klar, dass zu dem Zeitpunkt des Titelgewinns im Jahr 2018 nur wenige Spieler gemeinsam in einem Verein spielten. Das widerspricht einer der Hyphotesen, dass die Nationalmannschaften aufgrund einer hohen Clusterbildung erfolgriech waren. Die Spieler haben ihre Verbindung vor allem aus der Vergangenheit. Das kann andeuten, dass die Verbundenheit nicht mehr so aktiv beziehungsweise intensiv besteht.
 
 ## 4.2 Analyse der Teilnetzwerke 
 ###4.2.1 Einzelne Netzwerkdaten rausfiltern
 
 Ergänzend zu dem Auslesen der Atributte, werden in diesem Abschnitt zuerst die Dichte der Teilnertzwerke von Spanien2010, Deutschland2014 und Frankreich2018 untersucht und anschließend die Pfaddistanzen beobachtet. Die Pfaddistanz beschreibt die weiteste Distanz zwischen zwei Knoten in den jeweiligen Teilnetzwerken. 
+
 
 ``` {r Teilnetzwerke erstellen und vereinfachen, message=FALSE, warning=FALSE, paged.print=FALSE}
 ## Dichte des Netzwerks
@@ -514,6 +556,7 @@ farthest_vertices(Deutschland14)
 farthest_vertices(Frankreich18)
 
 ```
+
 
 Die Ergebnisse zeigen, dass die Nationalmannschaft von Spanien2010 eine Dichte von 20,2% aufweist und somit das dichteste Teilnetzwerk in dieser Untersuchung ist. Die Dichte von 19,4% der Nationalmannschaft von Deutschland2014, kommt der Dichte von Spanien2010 sehr nahe und liegt nur knapp dahinter. Die Nationalmannschaft von Frankreich 2018 weißt mit einer Dichte von 11,1%, mit Abstand das am wenigsten dichte Teilnetzwerk auf. 
 
