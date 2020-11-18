@@ -1,3 +1,38 @@
+
+Skip to content
+Pull requests
+Issues
+Marketplace
+Explore
+@Lorish16
+lucgrnng /
+Netzwerk-Nationalteams
+
+1
+0
+
+    1
+
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+
+    Insights
+
+Netzwerk-Nationalteams/code1910
+@p134s
+p134s Update code1910
+Latest commit d6460c3 2 days ago
+History
+3 contributors
+@Lorish16
+@lucgrnng
+@p134s
+1019 lines (741 sloc) 64.8 KB
 ---
 title: "226305 Forschungsbericht"
 subtitle: "Analyse der vergangenen drei Fußballweltmeister"
@@ -739,6 +774,7 @@ max_cliques(Frankreich18)
 
 ```
 
+
 Spanien2010 hat drei klare Cliquen, welche sehr viele Spieler beinhalten. Die größte Clique besteht aus sieben Spielern (Pedro, Valdes, Pique, Puyol, Busquets, Iniesta und Xavi). Besonders auffällig ist, dass diese Spieler allesamt bei dem FC Barcelona, mit dem Kürzel (BAR), spielen. Insgesamt kann R bei Spanien maximal 10 Cliquen erkennen. 
 Bei Deutschland2014 sehen die Ergebnisse nicht so aus wie vermutet. Die Spieler werden in fünf Cliquen unterteilt. Dabei werden auch sehr kleine Cliquen aufgelistet. Die größte Clique besteht auch hier aus sieben Spielern (Neuer, Boateng, Lahm, Götze, Kroos, Schweinsteiger und Müller). Auch diese gehören demselben Verein an, in diesem Fall dem FC Bayern München mit dem Kürzel (FCB). Insgesamt können bei Deutschland2014 maximal 17 Cliquen gebildet werden.
 Frankreich2018 hat ähnliche Ergebnisse wie Deutschland2014: fünf klare Cliquen, maximal 16. Die größte Clique besteht lediglich aus vier Spielern. Zudem ist diese nicht eindeutig zu erkennen, sondern es gibt zwei Möglichkeiten. Eine Vereins-Verbundenheit herrscht jeweils aber nicht. 
@@ -776,7 +812,7 @@ plot(Frankreich18, vertex.label=V(Frankreich18)$number)
 
 
 Bei dem Kader von Spanien2010 sind es 7 Spieler vom FC Barcelona, mit dem Kürzel (BAR) in blau, sowie 4 Spieler von Real Madrid. mit dem Kürzel (RMA) in gold. Die beiden besten Vereine Spaniens machen somit knapp die Hälfte des Kaders aus und bilden somit eine große, eingespielte Gruppe.
-Die gleichen Ergebnisse lassen sich auch bei Deutschland 2014 festhalten. 7 Spieler von FC Bayern München, mit dem Kürzel (FCB) in rot, sowie 4 Spieler von Borussia Dortmund, mit dem Kürzel (BVB) in gelb, machen den Großteil des Kaders aus. Im Vergleich zu Spanien2010 sind diese Blöcke auch vor allem durch den Spieler mit der Nummer 19, Mario Götze, untereinander vernetzt. Götze, der ein Jahr vor der WM von Borussia Dortmund zu dem FC Bayern München wechselte, erzielte in dem Finale der Fußballweltmeisterschaft das Siegtor gegen Argentinien. Bei Frankreich2018 lässt sich erkennen, dass lediglich 2 der nationalen Vereine, Paris Saint Germain, mit dem Kürzel (PSG) in dunkelblau, und Olympique Marseille, mit dem Kürzel (OM) in hellblau, jeweils 3 Spieler für den Kader stellten. Aus diesem Grund kann man hier nicht von einer Blockbildung sprechen. Außerdem ist deutlich zu sehen, dass die einzelnen Knoten nicht so stark untereinander vernetzt sind wie bei den Kadern von Spanien2010 und Deutschland2014.
+Die gleichen Ergebnisse lassen sich auch bei Deutschland 2014 festhalten. 7 Spieler von FC Bayern München, mit dem Kürzel (FCB) in rot, sowie 4 Spieler von Borussia Dortmund, mit dem Kürzel (BVB) in gelb, machen den Großteil des Kaders aus. Im Vergleich zu Spanien2010 sind diese Blöcke auch vor allem durch den Spieler mit der Nummer 19, Mario Götze, untereinander vernetzt. Götze, der ein Jahr vor der Beginn der Fußballweltmeisterschaft von Borussia Dortmund zu dem FC Bayern München wechselte, erzielte in dem Finale der Fußballweltmeisterschaft das Siegtor gegen Argentinien. Bei Frankreich2018 lässt sich erkennen, dass lediglich 2 der nationalen Vereine, Paris Saint Germain, mit dem Kürzel (PSG) in dunkelblau, und Olympique Marseille, mit dem Kürzel (OM) in hellblau, jeweils 3 Spieler für den Kader stellten. Aus diesem Grund kann man hier nicht von einer Blockbildung sprechen. Außerdem ist deutlich zu sehen, dass die einzelnen Knoten nicht so stark untereinander vernetzt sind wie bei den Kadern von Spanien2010 und Deutschland2014.
 
 # Wichtigkeit der Spieler für den Erfolg
 
@@ -827,9 +863,9 @@ plot(Frankreich18_imp,
 ```
 
 
-Bei dem Teilnertzwerk Frankreich2018_imp lässt sich erkennen, dass insgesamt 15 Spieler während der Fußballweltmeisterschaft in mehr als 4 Spielen zum Einsatz kamen. Es lässt sich außerdem beobachten, dass diese Spieler allerdings nur 5 Beziehungen zueinander haben und damit deutlich weniger, als bei den Teilnetzwerken Spanien2010_imp und Deutschland2014_imp. Es entsteht also keine Blockbildung. Insbesondere lässt sich in dem Teilnetzwerk von Frankreich2018_imp beboachten, dass die jeweiligen Blöcke nicht aus der nationalen Liga stammen. Bei den vorherigen Untersuchungen der Teilnetzwerke Spanien2010_imp und Deutschland2014_imp, waren die größten Blöcke von Vereinen aus der jeweiligen nationalen Liga. Das trifft auf das Teilnetzwerk von Frankreich2018_imp nicht zu. 
+Bei dem Teilnetzwerk Frankreich2018_imp lässt sich erkennen, dass insgesamt 15 Spieler während der Fußballweltmeisterschaft in mehr als 4 Spielen zum Einsatz kamen. Es lässt sich außerdem beobachten, dass diese Spieler allerdings nur 5 Beziehungen zueinander haben und damit deutlich weniger, als bei den Teilnetzwerken Spanien2010_imp und Deutschland2014_imp. Es entsteht also keine Blockbildung. Insbesondere lässt sich in dem Teilnetzwerk von Frankreich2018_imp beboachten, dass die jeweiligen Blöcke nicht aus der nationalen Liga stammen. Bei den vorherigen Untersuchungen der Teilnetzwerke Spanien2010_imp und Deutschland2014_imp, waren die größten Blöcke von Vereinen aus der jeweiligen nationalen Liga. Das trifft auf das Teilnetzwerk von Frankreich2018_imp nicht zu. 
 
-Oft haben die Blöcke aus der nationalen Liga ein hohes Ausmaß am Erfolg der Teams, da die Spieler dadurch eingespielter sind und sich untereinander besser kennen. So wird in Berichterstattungen oft schon vor Anpfiff des Spiels diskutiert, ob das Team einen Erfolg einbringen kann, wenn der jeweilige nationale Block nicht dabei sein sollte. Wie zu sehen ist, hat das nicht unbedingt etwas zu bedeuten. Da die französische Liga nicht so stark ist wie andere europäische Top-Ligen (Spanien, England oder Deutschland) spielen hier relativ wenige Nationalspieler. Trotzdem konnte sich das neuformierte Team im Jahr 2018 durchsetzen und die Weltmeisterschaft gewinnen.  
+Oft haben die Blöcke aus der nationalen Liga ein hohes Ausmaß an demErfolg der Teams, da die Spieler dadurch eingespielter sind und sich untereinander besser kennen. So wird in Berichterstattungen oft schon vor Anpfiff des Spiels diskutiert, ob das Team einen Erfolg einbringen kann, wenn der jeweilige nationale Block nicht dabei sein sollte. Wie zu sehen ist, hat das nicht unbedingt etwas zu bedeuten. Da die französische Liga nicht so stark ist wie andere europäische Top-Ligen (Spanien, England oder Deutschland) spielen hier relativ wenige Nationalspieler. Trotzdem konnte sich das neuformierte Team im Jahr 2018 durchsetzen und die Weltmeisterschaft gewinnen.  
 *--> können wir das ohne Quellen so sagen? Zu viel Gefachsimpelt?
 
 ### Gesamtvisualisierung
@@ -1017,3 +1053,20 @@ Die Zusammenarbeit im Team lief durchgehend gut. Zu Beginn der Arbeit konnten wi
 Die Zusammenarbeit im Team lief durchgehend gut. Gemeinsam konnten wir schnell ein Thema finden. Dieses wurde im Verlauf der Zeit immer konkreter. Das reslutierte aus einer guten Kommunikation. Jeder stellte seine Ideen vor, welche im Anschluss diskutiert wurde.
 Diese Kommunikation und Zielstrebigkeit förderte die Stimmung im Team. Auch das gute Zeitmanagement wirkte der positiven Stimmung bei.
 Jeder einzelne brachte seine Stärken ein. So kam es zu Einezelarbeiten oder Treffen zu zweit. Der entscheidende Punkt für den Erfolg war sicherlich, dass es nach jeder Einzelarbeit ein Treffen mit der gesamten Gruppe gab. Somit war jedes Team-Mitglied zu jeder Zeit auf demselben Kenntnisstand. 
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+We use optional third-party analytics cookies to understand how you use GitHub.com so we can build better products.
+
+.
