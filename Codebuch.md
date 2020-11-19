@@ -47,7 +47,7 @@ definiert fehlende Werte
 							
 ## Legende zu den Vereinskürzeln ##
 
-*Spanische La Liga*
+**Spanische La Liga**
 ATH - Athletic Bilbao
 ATM – Atletico Madrid
 BAR – FC Barcelona
@@ -56,7 +56,7 @@ SEV – FC Sevilla
 VAL – FC Valencia
 VIL – FC Villareal
 
-*Englische Premier League*
+**Englische Premier League**
 ARS – FC Arsenal London
 CHE – FC Chelsea
 LIV – FC Liverpool 
@@ -64,7 +64,7 @@ MCI – Manchester City
 MUN – Manchester United 
 TOT – Tottenham Hotspur
 
-*Deutsche Bundesliga*
+**Deutsche Bundesliga**
 BMG – Borussia Mönchengladbach
 BVB – Borussia Dortmund
 FCB – Bayern München
@@ -73,12 +73,12 @@ S04 – Schalke 04
 SCF – SC Freiburg
 VFB – VfB Stuttgart
 
-*Italienische Serie A*
+**Italienische Serie A**
 JUV – Juventus Turin
 LAZ – Lazio Rom
 SAM – Sampdoria Genua
 
-*Französische Ligue 1*
+**Französische Ligue 1**
 ASM – AS Monaco
 OL – Olympique Lyon 
 OM – Olympique Marseille
