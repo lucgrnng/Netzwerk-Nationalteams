@@ -1,7 +1,7 @@
 # Netzwerk-Nationalteams
 # CODEBUCH							
 											
-## edgelist	##					
+## edgelist ##					
 
 **from**	
 
