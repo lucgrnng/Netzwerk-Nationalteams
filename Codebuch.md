@@ -45,4 +45,41 @@ Bedeutung des Spielers am Erfolg der Mannschaft, Anzahl Turnier-Einsätze des Sp
 
 definiert fehlende Werte						
 							
-		
+## Legende zu den Vereinskürzeln ##
+
+*Spanische La Liga*
+ATH - Athletic Bilbao
+ATM – Atletico Madrid
+BAR – FC Barcelona
+RMA – Real Madrid
+SEV – FC Sevilla
+VAL – FC Valencia
+VIL – FC Villareal
+
+*Englische Premier League*
+ARS – FC Arsenal London
+CHE – FC Chelsea
+LIV – FC Liverpool 
+MCI – Manchester City
+MUN – Manchester United 
+TOT – Tottenham Hotspur
+
+*Deutsche Bundesliga*
+BMG – Borussia Mönchengladbach
+BVB – Borussia Dortmund
+FCB – Bayern München
+H96 – Hannover 96
+S04 – Schalke 04
+SCF – SC Freiburg
+VFB – VfB Stuttgart
+
+*Italienische Serie A*
+JUV – Juventus Turin
+LAZ – Lazio Rom
+SAM – Sampdoria Genua
+
+*Französische Ligue 1*
+ASM – AS Monaco
+OL – Olympique Lyon 
+OM – Olympique Marseille
+PSG – Paris Saint-Germain
