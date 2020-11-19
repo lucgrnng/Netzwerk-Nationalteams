@@ -1,38 +1,3 @@
-
-Skip to content
-Pull requests
-Issues
-Marketplace
-Explore
-@Lorish16
-lucgrnng /
-Netzwerk-Nationalteams
-
-1
-0
-
-    1
-
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-
-    Insights
-
-Netzwerk-Nationalteams/code1910
-@p134s
-p134s Update code1910
-Latest commit d6460c3 2 days ago
-History
-3 contributors
-@Lorish16
-@lucgrnng
-@p134s
-1019 lines (741 sloc) 64.8 KB
 ---
 title: "226305 Forschungsbericht"
 subtitle: "Analyse der vergangenen drei Fußballweltmeister"
@@ -76,6 +41,8 @@ Das Forschungsdesign lehnt sich nicht an vergleichbare Studien an.
 
 ## Zugang und Quellen
 Der Zugang zu den Quellen der Datensätze erfolgte ausschließlich über die Onlineplattformen: www.transfermarkt.de, www.weltfussball.de sowie www.kicker.de. 
+Diese wurden durch die im Literaturverzeichnis angegebenen Quellen ergänzt. 
+
 
 ## Bereinigung des Datensatzes
 Die Datensätze wurden anschließend in Excel-Listen übertragen. Dabei wurden zuerst Karrierelisten für die jeweiligen Spieler erstellt und anschließend in eine Edgelist und Nodelist übertragen und überprüft. Bei dieser Überprüfung ließen sich erste Verbindungen ohne eine Visualisierung erkennen. 
@@ -253,7 +220,7 @@ plot(Frankreich18,
 
 Anders als bei den zuvor untersuchten Netzwerken Spanien2010 und Deutschland2014 zeigt der erste Überblick, dass das Netzwerk Frankreich2018 nicht von einzelnen, stark gewichteten Kanten geprägt ist. Es fällt auf, dass bei diesem Netzwerk deutlich schwächer gewichtete Kanten vorhanden sind und es keine herausstechenden Verbindungen gibt. Obwohl es nur wenige Verbindungen insgesamt gibt, sind es mit den Akteuren Pogba und Varane nur zwei Spieler, die gar keine Verbindung aufweisen. 
 
-Daher ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk von Spanien2010, Deutschland2014 und Frankreich2018 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden (um das Ergebnis nicht zu verfälschen, wird wie bei den vorherigen beiden Netzwerken, das Beziehungsnetzwerk vorher gelöscht).
+Daher ist es sinnvoll, ein vereinfachtes Gesamtnetzwerk von Spanien2010, Deutschland2014 und Frankreich2018 zu erstellen. Vereinfacht bedeutet, dass die unterschiedlichen Beziehungsarten ignoriert werden und dafür die Gewichte des Value- und Relation-Netzwerks zusammengefasst werden. 
 
 #Genauerer Blick auf die Netzwerkattribute
 
@@ -282,6 +249,7 @@ list.edge.attributes(Frankreich18)
 
 Durch das Ausführen des Chunks wird sichtbar, dass bei allen drei Mannschaften die gleichen Attribute herangezogen wurden, um aussagekräftige Ergebnisse festhalten zu können und die Teams miteinander vergleichen zu können. 
 Hierbei handelt es sich um folgende Attribute:
+
 Nodelist:
 - name
 - number
@@ -324,7 +292,7 @@ Das Attribut 'number' zeigt die Rückennummer der jeweiligen Spieler. Diese varr
 
 Mit dem Attribut 'club' wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zu dem Zeitpunkt der Fußballweltmeisterschaft 2010 unter Vertrag stand. Dabei lässt sich erkennen, dass bei dem Fußballverein Real Madrid, mit dem Kürzel (RMA), insgesamt 4 Spieler und bei dem Fußballverein FC Barcelona, mit dem Kürzel (BAR), 7 Spieler unter Vertrag standen. Damit stellten diese beiden Vereine die meisten Spieler. 
 
-Das Attribut 'weight' veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 10 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammenspielten. Als Beispiel hierfür lässt sich die Beziehung zwischen den Spielern Xavi und Iniesta nennen.
+Das Attribut 'weight' veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 10 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammenspielten. Als Beispiel hierfür lässt sich die Beziehung zwischen den Spielern Xavi und Iniesta nennen (Der Westen, 2012). 
 
 'Relation' ist das Attribut, welches beschreibt, ob die Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2010, also in der Saison 2009/10, mit einem anderen Spieler im selben Verein gespielt haben. 
 
@@ -356,7 +324,7 @@ Das Attribut number zeigt die Rückennummer der jeweiligen Spieler. Diese varrie
 
 Mit dem Attribut 'club' wird das jeweilige Kürzel des Fußballvereins angezeigt, bei dem der jeweilige Spieler zum Zeitpunkt der Fußballweltmeisterschaft unter Vertrag stand. Dabei lässt sich erkennen, dass bei dem Fußballverein Bayern München, mit dem Kürzel (FCB), 7 Spieler unter Vertrag standen und damit insgesamt in der gesamten Untersuchung dieser Block der Größte ist. Bei dem Fußballverein Borussia Dortmund, mit dem Kürzel (BVB), standen zum Zeitpunkt der Fußballweltmeisterschaft 2014, 4 Spieler unter Vertrag. Diese beiden Vereine stellten somit die meisten Spieler des deutschen Kaders. Es lässt sich hierbei festellen, dass sowohl bei Spanien2010 als auch bei Deutschland2014, die auf nationaler- und internationaler Ebene erfolgreichsten Vereine des jeweiligen Landes die meisten Spieler für die Nationalmannschaft stellten. 
 
-Das Attribut 'weight' veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 11 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammenspielten. Als Beispiel hierfür lässt sich die Beziehung von Schweinsteiger und Lahm nennen. Damit ist diese Beziehung in der gesamten Untersuchung die stärkste aller drei Fußballnationalmannschaften.  
+Das Attribut 'weight' veranschaulicht die Anzahl an Saisons, die die Spieler mit anderen Spielern aus der Nationalmannschaft zusammen in einem Verein spielten. Dabei werden alle Verbindungen von einem Spieler zu anderen Spielern zusammengezählt. Es lässt sich erkennen, dass einige Spieler bis zu 11 Saisons mit anderen Spielern aus der Nationalmannschaft in einem Verein zusammenspielten. Als Beispiel hierfür lässt sich die Beziehung von Schweinsteiger und Lahm nennen (Abendzeitung München, 2018). Damit ist diese Beziehung in der gesamten Untersuchung die stärkste aller drei Fußballnationalmannschaften.  
 
 'Relation' ist das Attribut welches beschreibt, ob die Spieler zum Zeitpunkt der Fußballweltmeisterschaft 2014, also in der Saison 2013/14, mit einem anderen Spieler im selben Verein gespielt haben. 
 
@@ -379,7 +347,7 @@ edge.attributes(Frankreich18)$relation
 *Aussagekraft der einzelnen Attribute beim Netzwerk der französischen Nationalmannschaft 2018*
 Durch das Auslesen der einzelnen Attribute von Frankreich2018 lassen sich folgende Ergebnisse festhalten:
 
-Das Attribut 'age' beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler war zum Zeitpunkt der Weltmeisterschaft 19 Jahre alt und der älteste Spieler war 33 Jahre alt. Das Durchschnittsalter der Spieler lag zum Zeitpunkt der Weltmeisterschaft bei 26,0 Jahren. Diese Auswertung verdeutlicht, dass im Vergleich zu den Netzwerken Spanien2010 und Deutschland2014 das Netzwerk Frankreich2018 mit dem 19-jährigen Kylian Mbappé den jüngsten Spieler stellt, hingegen Deutschland2014 in Person von Miroslav Klose (36 Jahre) den ältesten Spieler stellt. Das Durschschnittsalter bei dem Netzwerk Spanien2010 ist mit 25,9 Jahren somit am Niedrigsten. 
+Das Attribut 'age' beschreibt in der ersten Zeile das Alter der Spieler. Der jüngste Spieler war zum Zeitpunkt der Weltmeisterschaft 19 Jahre alt und der älteste Spieler war 33 Jahre alt. Das Durchschnittsalter der Spieler lag zum Zeitpunkt der Weltmeisterschaft bei 26,0 Jahren. Diese Auswertung verdeutlicht, dass im Vergleich zu den Netzwerken Spanien2010 und Deutschland2014 das Netzwerk Frankreich2018 mit dem 19-jährigen Kylian Mbappé den jüngsten Spieler der drei Netzwerke stellt, hingegen Deutschland2014 in Person von Miroslav Klose (36 Jahre) den ältesten Spieler stellt. Das Durschschnittsalter bei dem Netzwerk Spanien2010 ist mit 25,9 Jahren somit am Niedrigsten. 
 
 Durch das Attribut 'value' werden die Spieleinsätze der französischen Nationalspieler während der Fußballweltmeisterschaft 2018 beschrieben. Dadurch, dass Frankreich im Jahr 2018 die Fußballweltmeisterschaft gewinnen konnte, haben die Spieler ebenfalls insgesamt 7 Spiele absolviert. Bei dieser Beschreibung wurden ebenfalls nicht die Einsatzminuten als Berechnungsgrundlage verwendet, sondern lediglich ob der jeweilige Spieler in einem der Spiele eingesetzt wurde. Somit beträgt der höchste 'value'-Wert 7 und der niedrigste 0. Das bedeutet, dass einige Spieler bei allen Spielen eingesetzt wurden und einige Spieler in keinem Spiel berücksichtigt wurden. 
 
@@ -590,7 +558,7 @@ farthest_vertices(Frankreich18)
 ```
 
 
-Die Ergebnisse zeigen, dass Spanien2010 eine Dichte von 20,2% aufweist und somit das dichteste Netzwerk in dieser Untersuchung ist. Die Dichte von 19,4% von Deutschland2014 kommt der Dichte von Spanien2010 sehr nahe und liegt nur knapp dahinter. Frankreich2018 weißt mit einer Dichte von 11,1%, mit Abstand das am wenigsten dichte Netzwerk auf. Das bestätigt den ersten Eindruck nach Auslesen des ersten Chunks im vorherigen Teil der Forschungsarbeit, dass das Netzwerk Frankreich2018 eine geringere Dichte aufwieß. Es lässt den Anschein erwecken, dass dadurch dieser Kader deutlich weniger eingespielt war. Dies lässt sich auch durch das junge Alter dieser Mannschaft belegen. Kompensieren konnte dies die französische Mannschaft vor allem durch viele Individualisten. 
+Die Ergebnisse zeigen, dass Spanien2010 eine Dichte von 20,2% aufweist und somit das dichteste Netzwerk in dieser Untersuchung ist. Die Dichte von 19,4% von Deutschland2014 kommt der Dichte von Spanien2010 sehr nahe und liegt nur knapp dahinter. Frankreich2018 weißt mit einer Dichte von 11,1%, mit Abstand das am wenigsten dichte Netzwerk auf. Das bestätigt den ersten Eindruck nach Auslesen des ersten Chunks im vorherigen Teil der Forschungsarbeit, dass das Netzwerk Frankreich2018 eine geringere Dichte aufwieß. Es lässt den Anschein erwecken, dass dadurch dieser Kader deutlich weniger eingespielt war. Dies lässt sich auch durch das junge Alter dieser Mannschaft belegen. Kompensieren konnte dies die französische Mannschaft vor allem durch viele Individualisten (abseits.at, 2018). 
 
 Mit der Untersuchung der Pfaddistanzen wird festgestellt, welche zwei Knoten am weitesten voneinander entfernt sind und wie groß die Distanz zwischen diesen beiden Knoten ist. Bei dem Netzwerk Spanien2010 lässt sich erkennen, dass die Spieler Machena und Pedro insgesamt 14 Knoten voneinander entfernt liegen und somit die weiteste Distanz zueinander aufweisen. Bei Deutschland2014 lässt sich feststellen, dass die Spieler Durm und Höwedes 9 Knoten voneinander entfernt liegen und somit die weiteste Distanz in diesem Kader zueinander haben. Bei dem Netzwerk von Frankreich2018 haben die weiteste Diszanz zueinander die Spieler Matuidi und Dembele, mit ebenfalls 9 Knoten.
 
@@ -626,13 +594,13 @@ betweenness(Frankreich18)
 
 In den Reihen von Deutschland2014 gibt es Spieler, welche 9 Verbindungen haben. Sie sind also mit vielen Teammitgliedern vernetzt. Auch das erhöht die Chance, dass die Spieler untereinander gut harmonieren.
 
-Spieler mit vielen Verbindungen sind bei Frankreich2018 nicht existent. Mit Mendy gibt es nur einen Spieler mit 6 Verbindungen (Höchstwert bei Frankreich2018). Das könnte dafür sprechen, dass die Spieler sich fußballerisch gesehen nicht gut untereinander verstehen. 
+Spieler mit vielen Verbindungen sind bei Frankreich2018 nicht existent. Mit Mendy gibt es nur einen Spieler mit 6 Verbindungen (Höchstwert bei Frankreich2018). Das könnte dafür sprechen, dass die Spieler sich fußballerisch gesehen eigentlich nicht gut untereinander verstehen. 
                   
 #Betweenness
  
 Reina (Spanien), Neuer (Deutschland) und Sidibe (Frankreich) haben jeweils in ihrer Mannschaft den höchsten 'Betweeness'-Wert. Bei Spanien2010 ist auffällig, dass die Knoten mit hohem 'Degree'-Wert häufig einen 'Betweeness'-Wert von 0 haben. Das spricht in diesem Fall dafür, dass das gesamte Netzwerk so gut vernetzt ist, dass diese Knoten nicht überbrückt werden müssen, um zu weiteren Knoten zu gelangen. Viele Spieler sind auf direktem Weg verbunden. In einer ähnlichen, allerdings abgeschwächten Form, ist das auch bei Deutschland2014 zu beobachten. Bei Frankreich2018 braucht es diese Spieler mit hohem 'Betwenness'-Wert, da es insgesamt weniger Verbindungen gibt.
 
-Gerade bei Spanien2010 und Deutschland2014 gibt es nicht den einen wichtigen Akteur. Es geht vielmehr darum, dass es Blöcke gibt. Um ein Netzwerk zu erstellen, benötigt es nicht nur ein Ego, sondern in diesem Fall viele wichtige Spieler. Diese wurden über den 'Degree'-Wert analysiert. Jedoch kann ein Spieler mit beispielsweise zwei Verbindungen ebenfalls sehr wichtig sein, wenn er zwei große Cliquen verbindet. Im Endeffekt geht es also, wie so oft im Fußball, um das Team an sich.
+Gerade bei Spanien2010 und Deutschland2014 gibt es nicht den einen wichtigen Akteur. Es geht vielmehr darum, dass es Blöcke gibt. Um ein Netzwerk zu erstellen, benötigt es nicht nur ein Ego, sondern in diesem Fall viele wichtige Spieler. Diese wurden über den 'Degree'-Wert analysiert. Jedoch kann ein Spieler mit beispielsweise zwei Verbindungen ebenfalls sehr wichtig sein, wenn er zwei große Cliquen verbindet. Wie Sepp Herberger schon beim ersten Fußballweltmeisterschaftstriumph der deutschen Mannschaft im Jahre 1954 sagte: "11 Freunde müsst ihr sein" (SRF, 2017).
 
 #K-Core
 
@@ -775,11 +743,11 @@ max_cliques(Frankreich18)
 ```
 
 
-Spanien2010 hat drei klare Cliquen, welche sehr viele Spieler beinhalten. Die größte Clique besteht aus sieben Spielern (Pedro, Valdes, Pique, Puyol, Busquets, Iniesta und Xavi). Besonders auffällig ist, dass diese Spieler allesamt bei dem FC Barcelona, mit dem Kürzel (BAR), spielen. Insgesamt kann R bei Spanien maximal 10 Cliquen erkennen. 
+Spanien2010 hat drei klare Cliquen, welche sehr viele Spieler beinhalten. Die größte Clique besteht aus sieben Spielern (Pedro, Valdes, Pique, Puyol, Busquets, Iniesta und Xavi). Besonders auffällig ist, dass diese Spieler allesamt bei dem FC Barcelona, mit dem Kürzel (BAR), spielen. Insgesamt kann die statistische Programmiersprache R bei Spanien maximal 10 Cliquen erkennen. 
 Bei Deutschland2014 sehen die Ergebnisse nicht so aus wie vermutet. Die Spieler werden in fünf Cliquen unterteilt. Dabei werden auch sehr kleine Cliquen aufgelistet. Die größte Clique besteht auch hier aus sieben Spielern (Neuer, Boateng, Lahm, Götze, Kroos, Schweinsteiger und Müller). Auch diese gehören demselben Verein an, in diesem Fall dem FC Bayern München mit dem Kürzel (FCB). Insgesamt können bei Deutschland2014 maximal 17 Cliquen gebildet werden.
 Frankreich2018 hat ähnliche Ergebnisse wie Deutschland2014: fünf klare Cliquen, maximal 16. Die größte Clique besteht lediglich aus vier Spielern. Zudem ist diese nicht eindeutig zu erkennen, sondern es gibt zwei Möglichkeiten. Eine Vereins-Verbundenheit herrscht jeweils aber nicht. 
 Die Visualisierung gewährleistet jedoch noch einmal einen anderen Blick. Das Ergebnis von Spanien2010 bestätigt sich. Neben dem Barcelona-Block sind aber auch noch 2 weitere große Cluster zu erkennen mit 5 bezeihungsweise 7 Knoten. 
-Deutschland2014 lehnt sich in der Visaulisierung nun stärker an das Vorbild Spanien2010 an. Es gibt zwei große Gruppierungen mit 5 und 7 Spielern, Borussia Dortmund (BVB) und FC Bayern München (FCB). Nur wenige Spieler sind isoliert. Bei Frankreich2018 gibt es jedoch keine großen Cluster. Das lässt darauf schließen, dass es keine Blöcke wie bei den vorherigen Fußballweltmeistern gab. 
+Deutschland2014 lehnt sich in der Visaulisierung nun stärker an das Vorbild Spanien2010 an. Es gibt zwei große Gruppierungen mit 5 und 7 Spielern, Borussia Dortmund (BVB) und FC Bayern München (FCB). Nur wenige Spieler sind isoliert. Bei Frankreich2018 gibt es jedoch keine großen Cluster. Das lässt darauf schließen, dass es keine Blöcke wie bei den vorherigen Fußballweltmeistern Spanien2010 und Deutschland2014 gab. 
 
 
 ### 4.2.2 Teilnetzwerke nach Node-Attributen (Nationale Top-Clubs)
@@ -812,7 +780,7 @@ plot(Frankreich18, vertex.label=V(Frankreich18)$number)
 
 
 Bei dem Kader von Spanien2010 sind es 7 Spieler vom FC Barcelona, mit dem Kürzel (BAR) in blau, sowie 4 Spieler von Real Madrid. mit dem Kürzel (RMA) in gold. Die beiden besten Vereine Spaniens machen somit knapp die Hälfte des Kaders aus und bilden somit eine große, eingespielte Gruppe.
-Die gleichen Ergebnisse lassen sich auch bei Deutschland 2014 festhalten. 7 Spieler von FC Bayern München, mit dem Kürzel (FCB) in rot, sowie 4 Spieler von Borussia Dortmund, mit dem Kürzel (BVB) in gelb, machen den Großteil des Kaders aus. Im Vergleich zu Spanien2010 sind diese Blöcke auch vor allem durch den Spieler mit der Nummer 19, Mario Götze, untereinander vernetzt. Götze, der ein Jahr vor der Beginn der Fußballweltmeisterschaft von Borussia Dortmund zu dem FC Bayern München wechselte, erzielte in dem Finale der Fußballweltmeisterschaft das Siegtor gegen Argentinien. Bei Frankreich2018 lässt sich erkennen, dass lediglich 2 der nationalen Vereine, Paris Saint Germain, mit dem Kürzel (PSG) in dunkelblau, und Olympique Marseille, mit dem Kürzel (OM) in hellblau, jeweils 3 Spieler für den Kader stellten. Aus diesem Grund kann man hier nicht von einer Blockbildung sprechen. Außerdem ist deutlich zu sehen, dass die einzelnen Knoten nicht so stark untereinander vernetzt sind wie bei den Kadern von Spanien2010 und Deutschland2014.
+Die gleichen Ergebnisse lassen sich auch bei Deutschland 2014 festhalten. 7 Spieler von FC Bayern München, mit dem Kürzel (FCB) in rot, sowie 4 Spieler von Borussia Dortmund, mit dem Kürzel (BVB) in gelb, machen den Großteil des Kaders aus. Im Vergleich zu Spanien2010 sind diese Blöcke auch vor allem durch den Spieler mit der Nummer 19, Mario Götze, untereinander vernetzt. Götze, der ein Jahr vor der Beginn der Fußballweltmeisterschaft von Borussia Dortmund zu dem FC Bayern München wechselte, erzielte in dem Finale der Fußballweltmeisterschaft das Siegtor gegen Argentinien (DFB, 2020). Bei Frankreich2018 lässt sich erkennen, dass lediglich 2 der nationalen Vereine, Paris Saint Germain, mit dem Kürzel (PSG) in dunkelblau, und Olympique Marseille, mit dem Kürzel (OM) in hellblau, jeweils 3 Spieler für den Kader stellten. Aus diesem Grund kann man hier nicht von einer Blockbildung sprechen. Außerdem ist deutlich zu sehen, dass die einzelnen Knoten nicht so stark untereinander vernetzt sind wie bei den Kadern von Spanien2010 und Deutschland2014.
 
 # Wichtigkeit der Spieler für den Erfolg
 
@@ -848,7 +816,7 @@ plot(Deutschland14_imp,
 ```
 
 
-Bei dem Teilnetzwerk Deutschland2014_imp wurden insgesamt 14 Spieler in mindestens 4 Spielen eingesetzt. Diese 14 Spieler weisen untereinander insgesamt 33 Verbindungen auf, somit sind es also mehr als doppelt so viele Verbidungen wie Spieler. Dadurch lässt sich festellen, dass die Spieler dieses Netzwerks sehr starke Beziehungen zueinander haben und auch hier klare Blöcke erkennbar sind, die deutlich stärker als bei dem Teilnetzwerk Spanien2010_imp sind. Der Faktor der Eingespieltheit wird bei Deutschland2014 am intensivsten auf die wichtigen Spieler übertragen. Lediglich der Spieler mit der Nummer 9, Andre Schürrle, ist nicht Teil des einen großen Blockes des Netzwerks Deutschland2014_imp. Er hat keine einzige Verbindungen zu einem anderen wichtigen Spieler.
+Bei dem Teilnetzwerk Deutschland2014_imp wurden insgesamt 14 Spieler in mindestens 4 Spielen eingesetzt. Diese 14 Spieler weisen untereinander insgesamt 33 Verbindungen auf, somit sind es also mehr als doppelt so viele Verbidungen wie Spieler. Dadurch lässt sich festellen, dass die Spieler dieses Netzwerks sehr starke Beziehungen zueinander haben und auch hier klare Blöcke erkennbar sind, die deutlich stärker als bei dem Teilnetzwerk Spanien2010_imp sind. Der Faktor der Eingespieltheit wird bei Deutschland2014 am intensivsten auf die wichtigen Spieler übertragen. Lediglich der Spieler mit der Nummer 9, Andre Schürrle, ist nicht Teil des einen großen Blockes des Netzwerks Deutschland2014_imp. Er hat keine einzige Verbindung zu einem anderen wichtigen Spieler.
 
 
 ```{r Frankreich18 Important}
@@ -865,8 +833,7 @@ plot(Frankreich18_imp,
 
 Bei dem Teilnetzwerk Frankreich2018_imp lässt sich erkennen, dass insgesamt 15 Spieler während der Fußballweltmeisterschaft in mehr als 4 Spielen zum Einsatz kamen. Es lässt sich außerdem beobachten, dass diese Spieler allerdings nur 5 Beziehungen zueinander haben und damit deutlich weniger, als bei den Teilnetzwerken Spanien2010_imp und Deutschland2014_imp. Es entsteht also keine Blockbildung. Insbesondere lässt sich in dem Teilnetzwerk von Frankreich2018_imp beboachten, dass die jeweiligen Blöcke nicht aus der nationalen Liga stammen. Bei den vorherigen Untersuchungen der Teilnetzwerke Spanien2010_imp und Deutschland2014_imp, waren die größten Blöcke von Vereinen aus der jeweiligen nationalen Liga. Das trifft auf das Teilnetzwerk von Frankreich2018_imp nicht zu. 
 
-Oft haben die Blöcke aus der nationalen Liga ein hohes Ausmaß an demErfolg der Teams, da die Spieler dadurch eingespielter sind und sich untereinander besser kennen. So wird in Berichterstattungen oft schon vor Anpfiff des Spiels diskutiert, ob das Team einen Erfolg einbringen kann, wenn der jeweilige nationale Block nicht dabei sein sollte. Wie zu sehen ist, hat das nicht unbedingt etwas zu bedeuten. Da die französische Liga nicht so stark ist wie andere europäische Top-Ligen (Spanien, England oder Deutschland) spielen hier relativ wenige Nationalspieler. Trotzdem konnte sich das neuformierte Team im Jahr 2018 durchsetzen und die Weltmeisterschaft gewinnen.  
-*--> können wir das ohne Quellen so sagen? Zu viel Gefachsimpelt?
+Oft haben die Blöcke aus der nationalen Liga ein hohes Ausmaß an dem Erfolg der Teams, da die Spieler dadurch eingespielter sind und sich untereinander besser kennen (Spiegel, 2016). So wird in Berichterstattungen oft schon vor Anpfiff des Spiels diskutiert, ob das Team einen Erfolg einbringen kann, wenn der jeweilige nationale Block nicht dabei sein sollte. Wie zu sehen ist, hat das nicht unbedingt etwas zu bedeuten und zeigt neue Entwicklungen in der Blockbildung auf (Spiegel, 2016). Da die französische Liga nicht so stark ist wie andere europäische Top-Ligen (Spanien, England oder Deutschland) spielen hier relativ wenige Nationalspieler (UEFA, 2020). Trotzdem konnte sich das neuformierte Team im Jahr 2018 durchsetzen und die Weltmeisterschaft gewinnen.  
 
 ### Gesamtvisualisierung
 
@@ -944,7 +911,6 @@ V(Deutschland14)[V(Deutschland14)$club == "RMA"]$color <- "gold"
 V(Deutschland14)[V(Deutschland14)$club == "BMG"]$color <- "darkgreen"
 V(Deutschland14)[V(Deutschland14)$club == "CHE"]$color <- "blue2"
 V(Deutschland14)[V(Deutschland14)$club == "LAZ"]$color <- "white"
-E(Deutschland14)[E(Deutschland14)$relation == "yes"]$color <- "green"
 
 plot(Deutschland14,
      layout=layout_with_kk,
@@ -1017,56 +983,42 @@ par(mar=c(0,0,0,0))
 ```
 
 
-# 6. Diskussion
+*6. Diskussion*
 
 ##Fazit 
 
-Bei den Kadern der spanischen Nationalmannschaft bei der Fußballweltmeisterschaft 2010 und der deutschen Nationalmannschaft bei der Fußballweltmeisterschaft 2014 wird klar, dass es durchaus wichtig für den Erfolg ist, dass die Spieler auch schon in den Vereinen zusammenspielten. Frankreich bildet hierbei jedoch einen Gegenpart.
-Die Dichte der spanischen und der deutschen Nationalmannschaft sind sehr hoch. Das wird schon sehr deutlich, da sie viele Beziehungen aufweisen, vor allem im Vergleich zur Nationalmannschaft Frankreichs 2018. Einige weitere Netzwerkmaße zeigen ein ähnliches Bild.
-Interessant ist auch, dass die Clusterbildung bei den ersten beiden Netzwerken deutlich stärker ausgeprägt ist, als bei Frankreich. Das deutet auf die vermuteten Blöcke innerhalb der Nationalmannschaften hin. So gab es zum Beispiel bei Deutschland 2014 einen ausgeprägten Bayern- und BVB-Block. Spannend ist, dass auch bei Spanien 2010 der Block durch Vereine aus dem eigenen Land besteht (FC Barcelona und Real Madrid).
-Durch die Berechnung der Akteursmaße sieht man auch sehr deutlich, dass es gewisse Spieler gibt, die eine Bindeglied-Funktion haben. So zum Beispiel Mario Götze in der deutschen Nationalmannschaft 2014, der sowohl bei Bayern München und Borussia Dortmund spielte. Er verbindet somit die beiden größten Gruppen zu einem mächtigen Block. Das Bild ändert sich im Generellen auch nicht, wenn man sich die wichtigsten Spieler anschaut. 
-Oft haben Spieler sowohl in der Nationalmannschaft eine prägende Rolle als auch in einem der nationalen Top-Clubs. Als Beispiel lassen sich hier Iker Casillas (Torwart, Real Madrid) und Carles Puyol (Abwehrchef, FC Barcelona) bei Spanien 2010 und Bastian Schweinsteiger (Mittelfeldstratege, FC Bayern München) und Mats Hummels (Abwehrchef, Borussia Dortmund) nennen. 
-Dass Spieler einer Nationalmannschaft schon in Vereinen zusammenspielten kann also ein Faktor für den Erfolg sein. Das sieht man bei den Weltmeistern von 2010 und 2014 deutlich. Der Champion von 2018, Frankreich, hingegen zeigt aber auch auf, dass man für den Erfolg im Sinne eines Weltmeistertitels keine komplett eingespielte Mannschaft braucht. Somit lassen sich die von uns aufgestellten Hypothesen zur Clusterbildung ("Die Nationalmannschaften waren erfolgreich, da sie eine hohe Clusterbildung aufweisen" und "Die gleichen Nationalmannschaften waren weniger erfolgreich, da sie weniger Cluster aufwiesen.") nur bedingt bestätigen. 
+Bei den Kadern der spanischen Nationalmannschaft bei der Fußballweltmeisterschaft 2010 und der deutschen Nationalmannschaft bei der Fußballweltmeisterschaft 2014 wird klar, dass es durchaus wichtig für den Erfolg sein kann, dass die Spieler auch schon in den Vereinen zusammenspielten. Frankreich bildet bei der Fußballweltmeisterschaft im Jahr 2018 hierbei jedoch einen Gegenpart.
+Die Dichte des spanischen und deutschen Netzwerks sind sehr hoch. Das wird sehr deutlich, da sie viele Beziehungen aufweisen, vor allem im Vergleich zur Nationalmannschaft Frankreichs 2018. Einige weitere Netzwerkmaße, wie 'betweeness' und 'degree', zeigen ein ähnliches Bild.
+Interessant ist auch, dass die Clusterbildung bei den ersten beiden Netzwerken deutlich stärker ausgeprägt ist, als bei Frankreich im Jahre 2018. Das deutet auf die vermuteten Blöcke innerhalb der Nationalmannschaften hin. So gab es zum Beispiel bei der Fußballweltmeisterschaft 2014 in Brasilien im deutschen Kader einen ausgeprägten Bayern- und BVB-Block. Spannend ist, dass auch bei den Spaniern im Jahre 2010 der Block durch Vereine aus dem eigenen Land bestand (FC Barcelona und Real Madrid).
+Durch die Berechnung der Akteursmaße sieht man auch sehr deutlich, dass es gewisse Spieler gibt, die eine Bindeglied-Funktion haben. So zum Beispiel Mario Götze in der deutschen Nationalmannschaft 2014, der sowohl bei Bayern München als auch Borussia Dortmund spielte. Er verbindet somit die beiden größten Gruppen zu einem mächtigen Block.  
+Oft haben Spieler sowohl in der Nationalmannschaft eine prägende Rolle als auch in einem der nationalen Top-Clubs. Als Beispiel lassen sich hier Iker Casillas (Torwart, Real Madrid) und Carles Puyol (Abwehr, FC Barcelona) bei Spanien 2010 und Bastian Schweinsteiger (Mittelfeld, FC Bayern München) und Mats Hummels (Abwehr, Borussia Dortmund) nennen (Transfermarkt, 2020). 
+Dass Spieler einer Nationalmannschaft schon in Vereinen zusammenspielten kann also ein Faktor für den Erfolg sein. Das Bild ändert sich im Generellen auch nicht, wenn man sich die wichtigsten Spieler anschaut. Das sieht man bei den Weltmeistern von 2010 und 2014 deutlich. Der Sieger von 2018, Frankreich, hingegen zeigt, dass man für den Erfolg im Sinne eines Weltmeistertitels keine komplett eingespielte Mannschaft braucht. Somit lassen sich die von uns aufgestellten Hypothesen zur Clusterbildung ("Die Nationalmannschaften waren erfolgreich, da sie eine hohe Clusterbildung aufweisen" und "Die gleichen Nationalmannschaften waren weniger erfolgreich, da sie weniger Cluster aufwiesen.") nur bedingt bestätigen. 
 
-Die nationalen Ligen sind für die Zusammensetzung der Nationalmannschaft oft von enormer Relevanz. Dies sieht man vor allem bei den Nationalmannschaften Spaniens 2010 und Deutschlands 2014: Viele der hier eingesetzten Spieler kommen aus der nationalen Liga (19 viele bei Spanien, 16 viele bei Deutschland). Dadurch zeigt sich auch, dass die Spieler untereinander eingespielter sind und sich besser kennen. Bei Frankreich war dies nicht unbedingt der Fall (8 Spieler spielten in der nationalen Liga), allerdings waren die Spieler auch zum Zeitpunkt der WM in Russland im Schnitt noch relativ jung. Daher lässt sich die zweite unserer Hypothesen ("Die Mannschaftsblöcke kommen nicht bei jedem der Weltmeister aus der jeweiligen nationalen Liga") bestätigen, jedoch war es in den vergangenen Jahrzehnten öfter der Fall, dass der Weltmeister eine breite Anzahl an Spielern der eigenen Liga besaß. 
-(Anmerkung Patrick: Ich hab jetzt mal rausgelesen wie viele Spieler zum Zeitpunkt des Titels in der heimischen Liga gespielt haben. Die kommen aber ja nicht da her theoretisch unbedingt...)
+Die nationalen Ligen sind für die Zusammensetzung der Nationalmannschaft oft von enormer Relevanz. Dies sieht man vor allem bei den Nationalmannschaften Spanien im Jahre 2010 und bei Deutschland 2014: Viele der hier eingesetzten Spieler spielten zum Zeitpunkt der Fußballweltmeisterschaft in der nationalen Liga (19 Spieler bei Spanien, 16 Spieler bei Deutschland). Dadurch zeigt sich auch, dass die Spieler untereinander eingespielter sind. Es lässt sich vermuten, dass sie sich durch den nationalen Ligabetrieb besser kennen. Bei Frankreich war dies nicht unbedingt der Fall (8 Spieler spielten in der nationalen Liga), allerdings waren die Spieler auch zum Zeitpunkt der Fußballweltmeisterschaft in Russland im Schnitt noch relativ jung. Daher lässt sich die zweite unserer Hypothesen ("Die Mannschaftsblöcke kommen nicht bei jedem der Weltmeister aus der jeweiligen nationalen Liga") bestätigen, allerdings ist zu beobachten, dass dies bei zwei der letzten drei Weltmeister der Fall war.  
 
-Auch die Einsatzzeiten veränderten das Ergebnis nicht. Die Spieler mit vielen Einsätzen (also einem hohen Value-Wert) hatten im Verhältnis ähnlich viele Verbindungen untereinander. Es würde keinen Mehrwert bieten, wenn die Auswechselspieler eine große Verbundenheit durch die Vereine haben, da diese gar nicht oft spielten. Ganz außer Acht lassen sollte man aber nicht, dass diese Auswechselspieler ebenfalls positiv zum Mannschaftsgefüge beitragen können.
-
-Allerdings zeigen sich hier auch schon die ersten Limitationen auf, welche im Folgenden behandelt werden.
+Auch die Einsatzzeiten veränderten das Ergebnis nicht. Die Spieler mit vielen Einsätzen (also einem hohen 'value'-Wert) hatten im Verhältnis ähnlich viele Verbindungen untereinander. Es würde keinen Mehrwert bieten, wenn die Auswechselspieler eine große Verbundenheit durch die Vereine haben, da diese gar nicht oft spielten. Ganz außer Acht lassen sollte man aber nicht, dass diese Auswechselspieler ebenfalls positiv zum Mannschaftsgefüge beitragen können.
+Hier zeigen sich auch schon die ersten Limitationen auf, welche im Folgenden behandelt werden.
 
 ## Limitationen / Grenzen
 
-Die Eingespieltheit aus den Vereinen ist nicht der einzige Grund für einen Titel. Bei Nationen, die auch eine starke nationale Liga haben (La Liga oder Bundesliga), ist dies oft der Fall. Allerdings ist dies nicht auf andere Länder, in unserem Fall Frankreich, zu beziehen. Hier war die Mannschaft sehr jung und bestand aus vielen Individualisten die von Trainer Didier Deschamps zu einer Erfolgstruppe geformt wurde. Des weiteren spielen bei den Turnieren auch massenhaft andere Faktoren eine entscheidende Rolle, wie die gewählte Taktik des Trainers, die Stimmung im Team, Talente in den eigenen Reihen, Verletzungen im eigenen Team und bei der Konkurrenz sowie natürlich auch ein Quäntchen Glück und Ehrgeiz. Auffällig war dies bei den Champions Spanien 2010 und Deutschland 2014. Nachdem die spanische Nationalmannschaft bereits 2008 die Fußballeuropameisterschaft, 2010 die Fußballweltmeisterschft und 2012 erneut die Fußballeuropameisterschaft gewann, war beim Turnier 2014 in Brasilien nicht mehr der erforderliche Ehrgeiz und "Titel-Hunger" spürbar, was im Vorrunden-Aus resultierte. Ein ähnliches Resultat war bei Deutschland zu beobachten. Nach dem Erfolg im Jahr 2014 und sämtlichen Karriere-Enden in der Nationalmannschaft ging die Mannschaft von Bundestrainer Joachim Löw zu sicher in das Turnier 2018 in Russland und schied bereits in der Vorrunde aus. Bei Frankreich hingegen hat sich durch jahrelangen Misserfolg (2. Platz 2006, WM-Skandal 2010 und frühes Ausscheiden 2014 gegen Deutschland) ein Titelhunger bei der jungen Truppe entwickelt, sodass diese es trotz einer uneingespielten Mannschaft geschafft haben den WM-Titel zu holen. Des Weiteren gibt es auch Spieler, die während der Fußballweltmeisterschaft möglicherweise kein einziges Spiel bestritten haben, aber in Hintergrund enorm wichtig für den Zusammenhalt der Mannschaft sind. Somit lässt sich zusammenfassend sagen, dass der Erfolg einer Mannschaft bei einer Fußballweltmeisterschaft rational nicht messbar ist. 
-Hypothese Mannschaftsblöcke
-Hypothese Age und Value
-*--> braucht man das noch
+Die Eingespieltheit aus den Vereinen ist nicht der einzige Grund für einen Fußballweltmeisterschaftstitel. Bei Nationen, die auch eine starke nationale Liga haben (wie die spanische La Liga oder die deutsche Bundesliga), ist dies oft der Fall. Allerdings ist dies nicht unbedingt auf andere Länder, in unserem Fall Frankreich, zu beziehen. Hier war die Mannschaft sehr jung und bestand aus vielen Individualisten die von Trainer Didier Deschamps zu einer Erfolgstruppe geformt wurde. Des Weiteren spielen bei den Turnieren auch massenhaft andere Faktoren eine entscheidende Rolle, wie die gewählte Taktik des Trainers, die Stimmung im Team, Talente in den eigenen Reihen, Verletzungen im eigenen Team und bei der Konkurrenz sowie natürlich auch ein Quäntchen Glück und Ehrgeiz. Auffällig war dies bei den Sieger Spanien 2010 und Deutschland 2014. Nachdem die spanische Nationalmannschaft bereits 2008 die Fußballeuropameisterschaft, 2010 die Fußballweltmeisterschft und 2012 erneut die Fußballeuropameisterschaft gewann, war beim Turnier 2014 in Brasilien nicht mehr der erforderliche Ehrgeiz und "Titel-Hunger" spürbar, was im Vorrunden-Aus resultierte. Ein ähnliches Resultat war bei Deutschland zu beobachten. Nach dem Erfolg im Jahr 2014 und sämtlichen Karriere-Enden in der Nationalmannschaft ging die Mannschaft von Bundestrainer Joachim Löw zu sicher in das Turnier 2018 in Russland und schied bereits in der Vorrunde aus. Bei Frankreich hingegen hat sich durch jahrelangen Misserfolg (2. Platz 2006, WM-Skandal 2010 und frühes Ausscheiden 2014 gegen Deutschland) ein Titelhunger im französischen Lager entwickelt, sodass dieses junge Team trotz einer uneingespielten Mannschaft geschafft hat den Fußballweltmeisterschaftstitel zu holen. Des Weiteren gibt es auch Spieler, die während der Fußballweltmeisterschaft möglicherweise kein einziges Spiel bestritten haben, aber in Hintergrund enorm wichtig für den Zusammenhalt der Mannschaft sind. Somit lässt sich zusammenfassend sagen, dass der Erfolg einer Mannschaft bei einer Fußballweltmeisterschaft rational nicht messbar ist. 
 
 ## Ausblick
 
-Es lässt sich sagen, dass das Erforschen von Beziehungen innerhalb Sportmannschaften im Allgemeinen ein sehr schwieriges und nicht repräsentatives Vorhaben ist. So lassen sich viele Erkenntnisse aus den uns vorliegenden Daten gewinnen, allerdings gibt es zu viele Störfaktoren, die nicht einrechenbar sind. Somit ist es weiterhin spannend zu beobachten, wer die kommende, erstmalige "Winter"-Fußballweltmeisterschaft 2022 in Katar für sich entscheiden wird - der Gewinner wird sich nicht aus einer Netzwerkforschung prophezeien lassen. 
+Es lässt sich sagen, dass das Erforschen von Beziehungen innerhalb Sportmannschaften im Allgemeinen ein sehr schwieriges und nicht repräsentatives Vorhaben ist. So lassen sich viele Erkenntnisse aus den uns vorliegenden Daten gewinnen, allerdings gibt es zu viele Störfaktoren, die nicht einrechenbar und kalkulierbar sind. Wie Sepp Herberg schon sagte "Fußball ist deshalb spannend, weil niemand weiß, wie das Spiel ausgeht" (SRF, 2017). Somit ist es weiterhin spannend zu beobachten, wer die kommende, erstmalige "Winter"-Fußballweltmeisterschaft 2022 in Katar für sich entscheiden wird - der Gewinner wird sich nicht aus einer Netzwerkforschung prophezeien lassen.
+
+## Literaturverzeichnis 
+
+- Deutscher Fußballbund, 2020, https://www.dfb.de/news/detail/mario-goetzes-wm-siegtreffer-ist-das-tor-des-jahrzehnts-215608/ 
+- Spiegel, 2016, https://www.spiegel.de/sport/fussball/nationalmannschaft-das-ende-der-blockbildung-a-1096228.html 
+- Der Westen, 2012, https://www.derwesten.de/sport/fussball/em/xavi-und-iniesta-spaniens-unnachahmliches-erfolgsduo-id6834677.html 
+- Abendzeitung München, 2018, https://www.abendzeitung-muenchen.de/sport/fcbayern/philipp-lahm-ueber-bastian-schweinsteiger-waren-die-perfekte-mischung-art-451787 
+- Abseits.at, 2018, https://abseits.at/fusball-international/wm-2018/frankreich-ist-weltmeister-die-grosse-wm-2018-finalanalyse/ 
+- UEFA, 2020, https://de.uefa.com/memberassociations/uefarankings/country/#/yr/2021 
+- SRF, 2017, https://www.srf.ch/sport/fussball/fussball-allgemein/das-runde-muss-ins-eckige-in-erinnerung-an-sepp-herberger 
+
 
 ## Teamreflexion
 
-Die Zusammenarbeit im Team lief durchgehend gut. Zu Beginn der Arbeit konnten wir uns schnell einigen, auf was wir den Fokus der Untersuchung legen wollen. Allerdings wussten wir noch nicht genau, ob wir nur die Champions, die Champions und das Ausscheiden der Champions nach dem Titelgewinn oder die drei Nationalmannschaften in drei Fußballweltmeisterschaften vergleichen wollen. Daher haben wir über den Sommer  gemeinsam die Daten zu den Nationalmannschafen Spanien, Deutschland und Frankreich zu den Fußballweltmeisterschaft 2010, 2014 und 2018 gesammelt, aufgegliedert in Edge-, Nodelist und zudem Karrierelisten der einzelnen Spieler erstellt. Zu Beginn des Wintersemesters 2020/2021 haben wir dann unseren Schwerpunkt gefunden und dementsprechend begonnen unseren Forschungsbericht zu schreiben. Am Anfang mussten wir uns darüber klarwerden, wie wir die einzelnen Teile visualisieren möchten, aber nachdem wir unser grobes Skript erstellt haben, verlief die Arbeit nahezu reibungslos. Parallel dazu wurden die Texte hierfür verfasst, wobei wir generell die Arbeit des Programmierens und des Schreibens hauptsächlich in 2er-Teams aufgeteilt haben. Die Arbeitsteilung war somit auch gut gemanaged. Unseren Zeitplan konnten wir auch einhalten, was das Arbeiten vereinfacht hat.
-
-Die Zusammenarbeit im Team lief durchgehend gut. Gemeinsam konnten wir schnell ein Thema finden. Dieses wurde im Verlauf der Zeit immer konkreter. Das reslutierte aus einer guten Kommunikation. Jeder stellte seine Ideen vor, welche im Anschluss diskutiert wurde.
-Diese Kommunikation und Zielstrebigkeit förderte die Stimmung im Team. Auch das gute Zeitmanagement wirkte der positiven Stimmung bei.
-Jeder einzelne brachte seine Stärken ein. So kam es zu Einezelarbeiten oder Treffen zu zweit. Der entscheidende Punkt für den Erfolg war sicherlich, dass es nach jeder Einzelarbeit ein Treffen mit der gesamten Gruppe gab. Somit war jedes Team-Mitglied zu jeder Zeit auf demselben Kenntnisstand. 
-
-    © 2020 GitHub, Inc.
-    Terms
-    Privacy
-    Security
-    Status
-    Help
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-We use optional third-party analytics cookies to understand how you use GitHub.com so we can build better products.
-
-.
+Die Zusammenarbeit im Team lief durchgehend gut. Zu Beginn der Arbeit wurde uns schnell klar, dass wir ähnliche Interessenschwerpunkte haben. Dadurch konnten wir uns schnell einigen, auf was wir den Fokus der Untersuchung legen wollen. Allerdings wussten wir noch nicht genau, ob wir nur die Champions, die Gewinner und das Ausscheiden der Sieger nach dem Titelgewinn oder die drei Nationalmannschaften in drei Fußballweltmeisterschaften vergleichen wollen. Daher haben wir über den Sommer 2020  gemeinsam die Daten zu den Nationalmannschafen Spanien, Deutschland und Frankreich zu den Fußballweltmeisterschaft 2010, 2014 und 2018 gesammelt, aufgegliedert in Edge-, Nodelist und zudem Karrierelisten der einzelnen Spieler erstellt. Zu Beginn des Wintersemesters 2020/2021 haben wir dann unseren Schwerpunkt gefunden und dementsprechend begonnen unseren Forschungsbericht zu schreiben. Am Anfang mussten wir uns darüber klarwerden, wie wir die einzelnen Teile visualisieren möchten, aber nachdem wir unser grobes Skript erstellt haben, verlief die Arbeit nahezu reibungslos. Parallel dazu wurden die Texte hierfür verfasst, wobei wir generell die Arbeit des Programmierens und des Schreibens hauptsächlich in 2er-Teams aufgeteilt haben. Die Arbeitsteilung war somit auch gut gemanaged. Durch einen guten Kenntnissstand über das Themenfeld konnten wir uns mehr auf die Visualisierung in R fokusieren. Unseren Zeitplan konnten wir auch einhalten, was das Arbeiten vereinfacht hat und der positiven Stimmung beiwirkte. Jeder einzelne brachte seine Stärken ein. Der entscheidende Punkt für den Erfolg war sicherlich, dass es nach jeder Einzelarbeit ein Treffen mit der gesamten Gruppe gab. Somit war jedes Team-Mitglied zu jeder Zeit auf demselben Kenntnisstand.
+Wir haben für eine verbesserte Kommunikation ein gemeinsames Google Drive Dokument angelegt, um die Daten zu sammeln (https://docs.google.com/spreadsheets/d/1OwQ6AHSsqH7aRtFXfzDSp0lfxKbGqiQdhiOFK6ZTDOM/edit#gid=620372324)
